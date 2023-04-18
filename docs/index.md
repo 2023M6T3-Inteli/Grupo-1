@@ -109,12 +109,12 @@ Apresenta a matriz de risco com relação ao projeto.
 
 ### Análise financeira do projeto
 
-Descrição: informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
+Informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
 
 
 ## Mapeamento do processo
 
-Descrição: apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
+Apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
 
 
 ## Descritivo da Solução
@@ -124,7 +124,7 @@ Descrição da solução a ser desenvolvida (o que é, quais principais funciona
 
 ### Objetivos
 
-Descrição: Descrever o objetivo geral e os objetivos específicos.
+Descrever o objetivo geral e os objetivos específicos.
 
 
 #### Objetivos gerais
@@ -137,7 +137,7 @@ Descrição: Descrever o objetivo geral e os objetivos específicos.
 
 ### Justificativa
 
-Descrição: Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser utilizada e quais os benefícios que ela proporciona.
+Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser utilizada e quais os benefícios que ela proporciona.
 
 
 ## Partes Interessadas 

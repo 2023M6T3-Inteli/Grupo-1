@@ -44,8 +44,8 @@ Solução de otimização de corte de bobinas de papel
     - [Mapeamento do processo](#mapeamento-do-processo)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
-      - [ObjetivosObjetivos gerais](#objetivos-gerais)
-      - [ObjetivosObjetivos específicos](#objetivos-específicos)
+      - [Objetivos gerais](#objetivos-gerais)
+      - [Objetivos específicos](#objetivos-específicos)
     - [Justificativa](#justificativa)
   - [Partes Interessadas](#partes-interessadas)
 - [Requisitos](#requisitos)
@@ -115,7 +115,7 @@ Descrição: informar o quanto o parceiro tem projetado para investir no projeto
 
 ## Mapeamento do processo
 
-Descrição: apresentar a modelagem do processo "to be".
+Descrição: apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
 
 
 ## Descritivo da Solução

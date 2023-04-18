@@ -37,10 +37,11 @@ Solução de otimização de corte de bobinas de papel
   - [Parceiro de Negócios](#parceiro-de-negócios)
   - [Problema](#problema)
     - [Análise do Problema](#análise-do-problema)
-    - [Análise da Indústria](#análise-da-indústria)
-    - [Análise do cenário e Matriz SWOT](#análise-do-cenário-e-Matriz-SWOT)
+    - [Matriz de avaliação de valor Oceano Azul](#matriz-de-avaliação-de-valor-oceano-azul)
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
+    - [Análise financeira do projeto](#análise-financeira-do-projeto)
+    - [Mapeamento do processo](#mapeamento-do-processo)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
       - [ObjetivosObjetivos gerais](#objetivos-gerais)
@@ -92,14 +93,9 @@ Descrever o problema ou a oportunidade de negócio.
 Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
 
 
-### Análise da Indústria
+### Matriz de avaliação de valor Oceano Azul
 
-Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário da empresa parceira.
-
-
-### Análise do cenário e Matriz SWOT
-
-Apresenta a Matriz SWOT com análise da empresa parceira.
+Definir 8 atributos que são importantes para os clientes e diferenciá-los da concorrência por meio das ações de Reduzir, Eliminar, Aumentar e Criar.
 
 
 ### Proposta de Valor e Value Proposition Canvas
@@ -110,6 +106,16 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 ### Matriz de Risco
 
 Apresenta a matriz de risco com relação ao projeto.
+
+
+### Análise financeira do projeto
+
+Descrição: informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
+
+
+## Mapeamento do processo
+
+Descrição: apresentar a modelagem do processo "to be".
 
 
 ## Descritivo da Solução

@@ -219,6 +219,7 @@ Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, ro
 
 Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação
 
+
 ## Design de Interface - Guia de Estilos
 Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
 Aqu

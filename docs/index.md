@@ -13,13 +13,16 @@
 </tr>
 </table>
 
-. Nome do Projeto: xxxx
-. Nome do Parceiro: xxxx
+. Nome do Projeto: App Dispositivo Móvel
+. Nome do Parceiro: DELL
 . Nome do Grupo: xxxx
 . Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
+  Ana Clara
+  Daniel Cunha
+  Jordan Andrade
+  Luísa Leite
+  Pedro Gattai
+  Wagner Estevam
 
 <font size="+12"><center>
 Template do Documento do Projeto

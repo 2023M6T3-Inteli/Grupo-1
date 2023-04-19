@@ -14,14 +14,23 @@
 </table>
 
 . Nome do Projeto: App Dispositivo Móvel
+<tr>
 . Nome do Parceiro: DELL
+<tr>
 . Nome do Grupo: xxxx
+<tr>
 . Integrantes do grupo…
+<tr>
   Ana Clara
+<tr>
   Daniel Cunha
+<tr>
   Jordan Andrade
+<tr>
   Luísa Leite
+<tr>
   Pedro Gattai
+<tr>
   Wagner Estevam
 
 <font size="+12"><center>

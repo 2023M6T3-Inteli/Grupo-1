@@ -13,20 +13,22 @@
 </tr>
 </table>
 
-. Nome do Projeto: App Dispositivo Móvel
+<h2> Nome do Projeto: App Dispositivo Móvel</h2>
 <tr>
-# Nome do Parceiro: DELL
+	<h2>Nome do Parceiro: DELL</h2>
 <tr>
-## Nome do Grupo: xxxx
+	<h2> Nome do Grupo: xxxx </h2>
 <tr>
-## Integrantes do grupo:
+	<h2> Integrantes do grupo:</h2>
 <tr>
-  Ana Clara Loureiro Muller Zaidan
-  Daniel Cunha
-  Jordan Andrade
-  Luísa Leite
-  Pedro Gattai
-  Wagner Estevam
+<ul>
+	<li>Ana Clara Loureiro Muller Zaidan</li>
+	<li>Daniel Cunha</li>
+  	<li>Jordan Andrade</li>
+  	<li>Luísa Leite</li>
+  	<li>Pedro Gattai</li>
+ 	<li> Wagner Estevam</li>
+</ul>
 
 <font size="+12"><center>
 Template do Documento do Projeto

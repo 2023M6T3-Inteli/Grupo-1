@@ -15,11 +15,11 @@
 
 . Nome do Projeto: App Dispositivo Móvel
 <tr>
-#Nome do Parceiro: DELL
+# Nome do Parceiro: DELL
 <tr>
-##Nome do Grupo: xxxx
+## Nome do Grupo: xxxx
 <tr>
-##Integrantes do grupo:
+## Integrantes do grupo:
 <tr>
   Ana Clara Loureiro Muller Zaidan
   Daniel Cunha

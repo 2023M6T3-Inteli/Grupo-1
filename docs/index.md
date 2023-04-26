@@ -200,6 +200,7 @@ Exemplo de Diagrama de Casos de Uso
 	
 <img src="./img/matriz_rastreabilidade.png">
 
+Segue o link do sheets para análise detalhada da matriz de rastreabilidade: https://docs.google.com/spreadsheets/d/1h7dybGE_3WqlJQOYH61XaNoXmFmM-0_dJddb_wh2OYs/edit?usp=sharing
 		
 
 # Arquitetura do Sistema

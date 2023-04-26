@@ -8,7 +8,7 @@
 <td>
 <a href= "https://klabin.com.br/"><img src="https://klabin.com.br/o/klabinklabinonline-theme/images/klabin-logo.png" alt="Klabin" border="0" width="100%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="../img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="./img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -114,7 +114,7 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 ### Matriz de Risco
 
 Apresenta a matriz de risco com relação ao projeto.
-
+"
 
 ### Análise financeira do projeto
 
@@ -186,6 +186,17 @@ do software e como elas serão utilizadas pelos usuários. Aqui, são listados t
 
 Exemplo de Diagrama de Casos de Uso
 </center>
+
+## Matriz de Rastreabilidade
+<img src="./img/requisitos.png" width="100%" alt="Requisitos funcionais e não funcionais">
+<center> Requisitos Funcionais e Não Funcionais </center>
+<br>
+<img src="./img/casos_de_uso.png"width="100%">
+<center> Casos de Uso </center>
+<br>
+
+<img src="./img/matriz_rastreabilidade.png">
+<center> Matriz de Rastreabilidade </center>
 
 
 # Arquitetura do Sistema

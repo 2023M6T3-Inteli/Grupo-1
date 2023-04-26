@@ -168,6 +168,13 @@ Esta seção da documentação do software fornece uma descrição detalhada dos
 ## Requisitos não Funcionais
 
 Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
+	
+## Relação do 12-Factor App e Requisitos
+
+<p align="center">
+	<img width="467" alt="12FactorApp" src="https://user-images.githubusercontent.com/99257595/234683632-220ef2fc-5163-4844-bcd3-cc4cedfe6aa3.PNG">
+</p>
+
 
 
 ## Perfis de Usuários 

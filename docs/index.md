@@ -188,16 +188,19 @@ Exemplo de Diagrama de Casos de Uso
 </center>
 
 ## Matriz de Rastreabilidade
+### Requisitos Funcionais e Não Funcionais
 <img src="./img/requisitos.png" width="100%" alt="Requisitos funcionais e não funcionais">
-<center> Requisitos Funcionais e Não Funcionais </center>
-<br>
-<img src="./img/casos_de_uso.png"width="100%">
-<center> Casos de Uso </center>
-<br>
+	
+### Casos de Uso
+	
+<img src="./img/casos_de_uso.png" width="100%">
 
+	
+### Matriz de Rastreabilidade
+	
 <img src="./img/matriz_rastreabilidade.png">
-<center> Matriz de Rastreabilidade </center>
 
+		
 
 # Arquitetura do Sistema
 

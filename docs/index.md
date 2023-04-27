@@ -200,7 +200,9 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 	
 02 - Como líder do projeto, posso editar um projeto que criei para alterar alguma informação equivocada
 
+03 - Como usuário do aplicação, posso denunciar uma publicação que considero imprópria na plataforma para garantir que as diretrizes do aplicativo sejam cumpridas.
 
+04 - Como moderador da plataforma, posso validar ou excluir uma publicação para manter os conteúdos de acordo com as diretrizes e normas especificadas.
 		
 
 ## Matriz de Rastreabilidade

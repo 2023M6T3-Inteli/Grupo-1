@@ -184,15 +184,29 @@ A seção de perfil de usuário da documentação de software é responsável po
 
 ## Casos de Uso
 
-A seção de casos de uso da documentação de software é uma parte crucial que descreve as funcionalidades 
-do software e como elas serão utilizadas pelos usuários. Aqui, são listados todos os cenários possíveis de uso do software, incluindo as ações que o usuário pode realizar, as interações com o sistema e os resultados esperados. Os casos de uso são descritos em detalhes, incluindo a descrição do objetivo da funcionalidade, as entradas de dados, as ações do usuário e os resultados esperados. Além disso, também são incluídos os critérios de aceitação, que são os padrões que o software precisa atender para ser considerado como funcionando corretamente.
+Neste projeto, para aprendermos mais sobre o fluxo do usuário, aplicamos as técnicas de User Stories e Casos de uso. Os dois têm como principal objetivo resumir os detalhes do usuário no sistema e suas interações com ele.
 
+As User Stories seguem um modelo base, contendo os seguintes elementos:
 
-<center>
-[template-documento3](../img/template-documento3.jpg)
+PERFIL: perfil do usuário que realizará a ação
 
-Exemplo de Diagrama de Casos de Uso
-</center>
+DEVO/POSSO: obrigatoriedade da ação
+
+AÇÃO: o que será realizado
+
+OBJETIVO: qual a finalidade da ação.
+
+Formando a frase: Como PERFIL, DEVO/POSSO AÇÃO para OBJETIVO
+
+Para o diagrama dos casos de uso, criamos três atores: um administrador, um moderador e um funcionário Dell, que seria o usuário principal. Depois, inserimos as ações e intenções de cada um no sistema.
+	
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/99257595/234940623-bf6586e4-5bb0-4178-8b77-bfdab8e27ff1.png">
+
+	
+</p>
+
+		
 
 ## Matriz de Rastreabilidade
 ### Requisitos Funcionais e Não Funcionais

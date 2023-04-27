@@ -30,15 +30,6 @@
  	<li> Wagner Estevam</li>
 </ul>
 
-<font size="+12"><center>
-Template do Documento do Projeto
-Módulo 6 - Engenharia de Software
-Solução de otimização de corte de bobinas de papel
-</center></font>
-
->*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
-
->*Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo.*
 
 **Conteúdo**
 
@@ -93,13 +84,12 @@ A Dell é uma empresa que foi criada em 1984 com o objetivo de oferecer acesso f
 
 ## Problema
 
-Descrever o problema ou a oportunidade de negócio.
+O problema identificado no projeto é a retenção de talentos dentro da Dell. Na empresa, alguns profissionais estão saindo da empresa por não estarem se sentindo desafiados, não estarem tendo oportunidades de ganhar novos conhecimentos e não se sentirem engajados e motivados.
 
 
 ### Análise do Problema
 
-Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
-
+Como o problema está centrado na falta de engajamento e motivação dos funcionários em relação à Dell, urge que uma solução seja construída com base nesse óbice. Dessa forma, foi pensado como paliação um sistema que oferecesse e entregasse conteúdos que fizessem com que os funcionários pegassem o celular fora do horário de trabalho, fazendo com que eles queiram participar de projetos da empresa e que queiram aprender novos assuntos. Um dos benefícios esperados é a otimização do processo de seleção de tópicos interessantes por meio do sistema de recomendação. Outro benefício esperado é o aumento da transparência e comunicação entre os colaboradores, permitindo troca de feedbacks e críticas construtivas. 
 
 ### Matriz de avaliação de valor Oceano Azul
 
@@ -128,25 +118,25 @@ Apresentar a modelagem do processo "to be", representando em alto nível o fluxo
 
 ## Descritivo da Solução
 
-Descrição da solução a ser desenvolvida (o que é, quais principais funcionalidades, como usar) . Caso ainda não esteja definida a solução na Sprint 1, o faça assim que possível.
-
+A solução envolve a construção de um sistema de recomendação a partir de bases rotuladas de projetos e documentários fornecidos pelos colaboradores. Os usuários poderão criar e também interagir com conteúdos criados por outras pessoas, podendo fazer comentários, curtir, descurtir, dar match com as postagens e pedir para participar deles. Ademais, existirá a possibilidade de denunciar conteúdos que infrinjam as diretrizes da empresa e de visualizar uma FAQ(Frequently Asked Questions). Soma-se, ainda, o fato de poderem ver sua posição no ranking da empresa de acordo com seu engajamento no sistema.
 
 ### Objetivos
 
-Descrever o objetivo geral e os objetivos específicos.
-
-
+	
 #### Objetivos gerais
 
+O objetivo desta iniciativa é fomentar a retenção de talentos dentro da empresa Dell por meio do incentivo e aprendizagem de forma diferenciada.
 
 
 #### Objetivos específicos
 
-
+Como objetivos específicos, espera-se que a solução aumente o engajamento dos funcionários e faça com que eles se sintam motivados a pegarem o celular fora do horário de trabalho, fazendo com que eles se sintam cada vez como parte da empresa.
 
 ### Justificativa
 
-Descrever o tipo de arquitetura escolhida, sua justificativa, como deverá ser utilizada e quais os benefícios que ela proporciona.
+A plataforma será desenvolvida na arquitetura de nuvem chamada IaaS (Insfrastructure as a Service), pois ela elimina a necessidade de investimento, monitoramento e manutenção em servidores locais. Dentre os diversos benefícios de se utilizar o IaaS, pode-se citar a eliminação de uma grande quantia de custos de capitais, a redução de custos contínuos, o aprimoramento da continuidade dos negócios, o aprimoramento da recuperação de desastres, a possibilidade de respostas mais rápidas às condições de negócios em mudança, o fornecimento de novos aplicativos para usuários com mais rapidez e a diminuição das chances de indisponibilidade.
+Dessa forma, foi definido que a parte de front-end (client) da aplicação, ou seja, aquela que o usuário tem contato direto, será armazenada na Amazon S3, uma vez que essa hospeda sites estáticos, idealmente para aqueles que possuem script apenas na parte do cliente (AMAZON, 2023). Outrossim, usaremos o serviço Amazon CloudFront, que acelera a distribuição do conteúdo estático e dinâmico da web. Além disso, tanto para o back-end, quanto para o banco de dados, será usado para armazená-los a Amazon EC2, uma vez que essa aceita o dinamismo que essas áreas da aplicação exigem.
+
 
 
 ## Partes Interessadas 

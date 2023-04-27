@@ -195,6 +195,11 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 
 	
 </p>
+	
+01 - Como usuário da aplicação, posso publicar um projeto para que outras pessoas vejam
+	
+02 - Como líder do projeto, posso editar um projeto que criei para alterar alguma informação equivocada
+
 
 		
 

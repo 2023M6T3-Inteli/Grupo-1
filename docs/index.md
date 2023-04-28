@@ -94,6 +94,7 @@ Como o problema está centrado na falta de engajamento e motivação dos funcion
 ### Matriz de avaliação de valor Oceano Azul
 
 Definir 8 atributos que são importantes para os clientes e diferenciá-los da concorrência por meio das ações de Reduzir, Eliminar, Aumentar e Criar.
+<img width="1187" alt="oceanoazul" src="https://user-images.githubusercontent.com/99202282/235203822-966e1338-b790-4231-9746-bda248e621c0.png">
 
 
 ### Proposta de Valor e Value Proposition Canvas

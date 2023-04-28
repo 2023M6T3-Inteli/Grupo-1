@@ -152,12 +152,77 @@ A seção de requisitos do sistema é atualizada constantemente durante o ciclo 
 
 
 ## Requisitos Funcionais
-Esta seção da documentação do software fornece uma descrição detalhada dos requisitos do sistema. Ela inclui informações sobre as funcionalidades esperadas do software, as restrições e limitações do sistema e outras especificações relevantes.
+	
+Sabendo que se define por “Requisitos Funcionais“ aqueles que incluem informações sobre as funcionalidades esperadas do software, além de restrições e limitações do sistema. São compostos por duas partes: função (que se refere ao que o sistema faz) e comportamento (que refere-se como o sistema faz isso) (VISURE, 2023). Dessa forma, viu-se a necessidade de elencar esses, de acordo com a solução.
 
+FR-01: A página inicial do aplicativo deve ter uma lista de conteúdos disponíveis para os usuários interagirem
+
+FR-02: A página inicial do aplicativo deve ter uma barra de busca para encontrar documentários e projetos específicos
+
+FR-03: O aplicativo deve conter um sistema de recomendação com base nas curtidas do usuário
+
+FR-04: Os usuários devem conseguir publicar, editar e excluir projetos criados
+
+FR-05: Os usuários devem poder pedir para participar de um projeto
+
+FR-06: Os usuários devem ser capazes de fazer comentários/sugestões nos conteúdos
+
+FR-07: Os usuários devem ter um perfil onde vejam todos os seus conteúdos publicados, sendo capazes de visualizar o histórico de criação
+
+FR-08: Sistema deve poder premiar os criadores de conteúdo por meio de badges, bem como ranking de top criadores de conteúdo
+
+FR-09: O sistema deve ter um filtro de palavras e expressões
+
+FR-10: O sistema deve ter tutoriais e um FAQ de como criar e se inscrever nos projetos e como submeter a recomendação de um documentário 
+
+FR-11: O sistema deve ser capaz de notificar os usuários sobre novos conteúdos disponíveis, edições feitas em seus próprios conteúdos ou interações em seus conteúdos
+
+FR-12: O sistema deve ter um modo escuro
+
+FR-13: A solução deve contemplar integração com sistemas internos de single sign on (SSO)
+
+FR-14: A aplicação deve ser feita toda em inglês
+
+FR-15: O sistema deve ser interno, funcionar apenas para os funcionários da DELL
+
+FR-16: O sistema deve permitir que o usuário curta e descurta conteúdos, tais como conteúdos a fim de expressar sua opinião e interagir com outros usuários.
+
+FR-17: O sistema deve ter a possibilidade de editar ou excluir um comentário feito em alguma publicação
+
+FR-18: O sistema deve rotular conteúdos através de tags para facilitar o sistema de recomendação e interagir com as tags dos projetos para auxiliar o sistema de match.
+
+
+FR-19: O sistema deve possuir uma área disponível apenas ao(s) moderador(es).
+
+FR-20: O sistema deve ter uma ferramenta de feedback e avaliação do aplicativo.
+
+FR-21: No sistema deve ter o botão “NON-COMPLIANT” em cada conteúdo que funcionará como uma forma de denunciar conteúdo. 
+
+FR-22: O moderador poderá excluir conteúdos que foram denunciados.
+	
 
 ## Requisitos não Funcionais
 
-Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
+Os requisitos não funcionais referem-se aos atributos de qualidade do sistema. Geralmente, esses são indicados com adjetivos de desempenho, segurança e escalabilidade. Para a aplicação em questão foram elencados os seguintes requisitos:
+
+NFR-01:  A aplicação deve ter uma interface de usuário intuitiva e fácil de navegar
+ 
+NFR-02:  A solução deve ter um design limpo seguindo o design system da empresa
+
+NFR-03:  O aplicativo mobile deve ser responsivo para ficar funcional tanto em celulares quanto tablets
+
+NFR-04: O sistema deve ser resistente a falhas
+
+NFR-05: O sistema deve mostrar feedbacks constantes sobre o andamento do uso do aplicativo para os usuários
+
+NFR-06: O sistema deve ser de fácil manutenção e ter uma boa escalabilidade
+
+NFR-07: A solução deve estar majoritariamente disponível, ou seja, estar sempre acessível ao usuário 
+
+NFR-08: O aplicativo deve ser interativo e engajante, para que o funcionário da DELL se sinta encorajado a usar o app fora do trabalho
+
+NFR-09: O sistema deve proteger os dados do usuário, seguindo a LGPD
+
 	
 ## Relação do 12-Factor App e Requisitos
 
@@ -207,6 +272,24 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 05 - Como colaborador, posso visualizar um feed com posts de conteúdo relevante ao meu perfil, para explorar assuntos e tecnologias do meu interesse.
 
 06 - Como colaborador, posso buscar por projetos a partir de palavras chave (tags), para encontrar projetos específicos.
+	
+	
+11 - Como manager quero ter a possibilidade de aprovar ou rejeitar um projeto proposto por algum dos meus funcionários, para que o projeto fique disponível na plataforma.
+	
+12 - Como usuário desejo comentar nas publicações como também editar e excluir meu comentário caso necessário, para que seja possível passar feedback sobre os projetos e publicações feitas na plataforma.
+	
+13 - Como usuário desejo me inscrever em projetos, para que eu possa aprender com eles
+	
+14 - Como usuário desejo que a plataforma me recomende postagens relacionadas a publicações das quais já interagi, para fazer com que eu me engaje mais com a plataforma.
+	
+15- Como usuário, desejo poder ver meu perfil e todas as minhas ações já feitas dentro da plataforma, para que eu tenha acesso a tudo que já fiz na plataforma.
+	
+16-Como usuário desejo ter uma experiência gamificada dentro da plataforma da qual me proporciona recompensas, para que eu me engaje mais com a plataforma.
+	
+17-Como usuário desejo receber notificações da plataforma, para estar atualizado do quem vem ocorrendo na plataforma.
+	
+18-Como usuário desejo fazer login com minha conta da DELL, para facilitar meu login na plataforma.
+
 
 ## Matriz de Rastreabilidade
 ### Requisitos Funcionais e Não Funcionais

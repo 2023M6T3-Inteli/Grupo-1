@@ -314,13 +314,12 @@ Segue o link do sheets para análise detalhada da matriz de rastreabilidade: htt
 
 Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 versões no documento..
 
-
+Arquitetura - Sprint 1
 <center>
-[template-documento4](../img/template-documento4.jpg)
-
-Exemplo de Diagrama de Arquitetura
+<img src="./img/arquitetura g1m6.png">
+link do design da arquitetura da nuvem em PDF: https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/arquitetura%20g1m6.pdf
+Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
 </center>
-
 
 # UX e UI Design
 

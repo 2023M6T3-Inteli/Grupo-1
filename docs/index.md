@@ -203,7 +203,10 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 03 - Como usuário do aplicação, posso denunciar uma publicação que considero imprópria na plataforma para garantir que as diretrizes do aplicativo sejam cumpridas.
 
 04 - Como moderador da plataforma, posso validar ou excluir uma publicação para manter os conteúdos de acordo com as diretrizes e normas especificadas.
-		
+
+05 - Como colaborador, posso visualizar um feed com posts de conteúdo relevante ao meu perfil, para explorar assuntos e tecnologias do meu interesse.
+
+06 - Como colaborador, posso buscar por projetos a partir de palavras chave (tags), para encontrar projetos específicos.
 
 ## Matriz de Rastreabilidade
 ### Requisitos Funcionais e Não Funcionais

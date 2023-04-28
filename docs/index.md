@@ -272,7 +272,10 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 05 - Como colaborador, posso visualizar um feed com posts de conteúdo relevante ao meu perfil, para explorar assuntos e tecnologias do meu interesse.
 
 06 - Como colaborador, posso buscar por projetos a partir de palavras chave (tags), para encontrar projetos específicos.
+
+07- Como funcionário da Dell logado no aplicativo, posso curtir ou descurtir  um projeto recomendado para indicar meu interesse em participar da atividade ou o interesse em não participar, respectivamente;
 	
+08- Como líder de um projeto, posso aprovar ou desaprovar uma uma solicitação de participação no meu projeto para selecionar aqueles que mais se adequam ao perfil procurado para a atividade;
 	
 11 - Como manager quero ter a possibilidade de aprovar ou rejeitar um projeto proposto por algum dos meus funcionários, para que o projeto fique disponível na plataforma.
 	

@@ -15,9 +15,9 @@
 
 <h2> Nome do Projeto: App Dispositivo Móvel</h2>
 <tr>
-	<h2>Nome do Parceiro: DELL</h2>
+	<h2>Nome do Parceiro: Dell Technologies</h2>
 <tr>
-	<h2> Nome do Grupo: xxxx </h2>
+	<h2> Nome do Grupo: Dell Genius</h2>
 <tr>
 	<h2> Integrantes do grupo:</h2>
 <tr>
@@ -27,7 +27,7 @@
   	<li>Jordan Andrade</li>
   	<li>Luísa Leite</li>
   	<li>Pedro Gattai</li>
- 	<li> Wagner Estevam</li>
+ 	<li>Wagner Estevam</li>
 </ul>
 
 

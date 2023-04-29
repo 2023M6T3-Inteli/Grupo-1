@@ -327,19 +327,15 @@ Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVM
 Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fornece informações sobre como o software é projetado para ser fácil de usar e intuitivo para os usuários. Nesta seção, deve ser possível encontrar descrições detalhadas sobre as principais características e recursos da interface do usuário, como botões, menus, ícones e outros elementos que são utilizados para facilitar a interação do usuário com o software. Além disso, são fornecidos exemplos de como as funcionalidades do software são acessadas e usadas pelos usuários, incluindo informações sobre os passos necessários para realizar tarefas específicas. Esta seção também aborda as principais preocupações de UX, como acessibilidade, usabilidade, consistência e simplicidade. São apresentados exemplos de como o software é projetado para atender às necessidades dos usuários com diferentes tipos de habilidades e recursos.
 
 
-## Wireframes
+## Wireframes / Prototipação
 
-Telas de baixa fidelidade das áreas do usuário, conectados, demonstrando a diagramação e o fluxo de navegação.
-
-Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, rodapé, barra lateral, área de conteúdo.
-
-Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação.
-
+O protótipo foi desenvolvido com a ferramenta Figma, e pode ser visualizado através do seguinte link: https://www.figma.com/file/PZw7A4hfUjc0dphS2dZKTD/G1M6T3?node-id=3%3A4&t=Djr2Ab8i69ufcL2k-1
 
 ## Design de Interface - Guia de Estilos
 Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
 Aqui você deve colocar o link para seu documento de guia de estilos.
-
+	
+O Guia de Estilos foi desenvolvido com a ferramenta Figma, baseado nas Foundations do Design System da Dell Technologies, e pode ser visualizado através do seguinte link: https://www.figma.com/file/PZw7A4hfUjc0dphS2dZKTD/G1M6T3?node-id=91%3A4553&t=Djr2Ab8i69ufcL2k-1
 
 # Projeto de Banco de Dados
 

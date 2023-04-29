@@ -114,7 +114,19 @@ Informar o quanto o parceiro tem projetado para investir no projeto e quais são
 
 ## Mapeamento do processo
 
-Apresentar a modelagem do processo "to be", representando em alto nível o fluxo de trabalho a ser realizado dentro da solução.
+O mapeamento de processos é uma técnica de gestão que tem como objetivo descrever, de forma detalhada, todas as etapas de um processo de negócio. Esse processo pode ser qualquer atividade que faz parte das operações de uma organização, desde a produção de um produto até o atendimento ao cliente.
+O mapeamento de processos envolve a criação de um mapa ou fluxograma que ilustra todas as etapas do processo, bem como as interações entre elas. Dessa forma, foram elaborados pelo time de desenvolvimento alguns desses fluxogramas que contém as etapas das funcionalidade principais da aolução desenvolvida. O objetivo dessa ação, é facilitar a visualização holística de todo o projeto e identicar possíveis inconsistências, oportunidades de melhoria das funcionalidades e oportunidades de otimização do processo. A seguir, seguem anexados os fluxogramas criados:
+
+<img  alt="mapeamento de processos - login" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/login.svg">
+<img  alt="mapeamento de processos - Inscrever em projetos" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/inscrever.svg">
+<img  alt="mapeamento de processos - Criar projetos" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/criarProjeto.svg">
+<img  alt="mapeamento de processos - Denunciar projetos/posts" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/denunciar.svg">
+<img  alt="mapeamento de processos - Publicar Comentários" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/comentar.svg">
+<img  alt="mapeamento de processos - Editar posts" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/editarPost.svg">
+<img  alt="mapeamento de processos - Curtir" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/curtir.svg">
+<img  alt="mapeamento de processos - FAQ" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/faq.svg">
+<img  alt="mapeamento de processos - Criar Postagens" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/postagem.svg">
+<img  alt="mapeamento de processos - Editar Projetos" src="https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/editar.svg">
 
 
 ## Descritivo da Solução

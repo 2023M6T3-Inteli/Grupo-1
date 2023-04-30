@@ -122,7 +122,7 @@ Juntando os valores estimados dos três serviços, o custo anual seria de **US$ 
 	Em relação ao gasto com a criação do MVP, não existem custos, pois a empresa DELL tem uma parceria com o Inteli para criação de 6 MVPs feitos pela sala de engenharia de software de forma gratuita. Mas levando em conta que esse serviço de criação da aplicação fosse pago a empresa precisaria de desenvolvedores back-end, front-end e DevOps. Com base nos salários oferecidos no mercado para essas vagas segue tabela de preços:
 
 | Cargo | Salário |
-| --- | --- |
+| ------ | ------ |
 | Desenvolvedor Back-end Sênior | R$ 10.483,00 |
 | Desenvolvedor Back-end Júnior | R$ 3.355,00 |
 | Desenvolvedor Front-end Sênior | R$ 10.095,00 |
@@ -136,6 +136,7 @@ Somando o total dos salários o valor é R$ 47.729,00 por mês, ao ano o valor v
 
 Resumindo todos os custos, temos essa tabela:
 | Custos | Valor |
+| --- | --- |
 | Serviços de Nuvem | US$ 278,13 convertendo esse para real é **R$ 1.384,39** |
 | Salários | O valor de três meses de salários dos desenvolvedores é  **R$143.187,00** |
 | Total | **R$ 144.571,39** |
@@ -318,6 +319,10 @@ Para o diagrama dos casos de uso, criamos três atores: um administrador, um mod
 07- Como funcionário da Dell logado no aplicativo, posso curtir ou descurtir  um projeto recomendado para indicar meu interesse em participar da atividade ou o interesse em não participar, respectivamente;
 	
 08- Como líder de um projeto, posso aprovar ou desaprovar uma uma solicitação de participação no meu projeto para selecionar aqueles que mais se adequam ao perfil procurado para a atividade;
+
+09 - Como usuário quero que a plataforma me ofereça uma explicação de como fazer o uso das aplicações disponíveis nela, para que não exista dificuldades de usar a plataforma e melhorar minha experiência;
+
+10 - Como usuário quero poder avaliar o aplicativo e dar sugestões para o desenvolvimento do próprio aplicativo;
 	
 11 - Como manager quero ter a possibilidade de aprovar ou rejeitar um projeto proposto por algum dos meus funcionários, para que o projeto fique disponível na plataforma.
 	

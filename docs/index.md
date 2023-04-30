@@ -109,7 +109,36 @@ Apresenta a matriz de risco com relação ao projeto.
 
 ### Análise financeira do projeto
 
-Informar o quanto o parceiro tem projetado para investir no projeto e quais são as projeções de custos e de receitas, relacionadas ao projeto (para o período de um ano), que o parceiro projeta ter.
+Uma vez que o nosso projeto é destinado exclusivamente ao uso interno pelos funcionários, não dispomos de dados de receita estimada, já que não haverá vendas envolvidas. O resultado que pretendemos alcançar com este projeto é aumentar o engajamento e a motivação dos colaboradores, o que deve resultar em melhorias na qualidade da entrega e na retenção de talentos, reduzindo a rotatividade de funcionários na empresa.
+Mas em relação a projeção de custos, temos:
+- **Serviços de nuvem**: O custo dos serviços da AWS pode variar significativamente dependendo do número de usuários da plataforma, que no caso são os funcionários da DELL, e do tempo de uso. Quando se contrata um serviço da AWS, não há uma taxa fixa mensal, mas sim uma cobrança baseada no uso dos serviços. Resumindo, o preço pode variar de acordo com o tipo de serviço, a região geográfica e o tempo de uso.
+No entanto, os serviços básicos da AWS que são obrigatórios para hospedar um site são a instância EC2 (para o back-end), RDS (para o banco de dados) e S3 (para o front-end). Supondo que vamos usar o EC2 na região Norte da Virgínia com o t2.micro, o valor é de US$ 0,0116 por hora. Usando esse serviço durante 24 horas por dia e sete dias por semana durante um ano, o valor seria de **US$ 101,61**. No entanto, os preços podem variar de acordo com a demanda e a disponibilidade de capacidade.
+Para o RDS com 10 GB de armazenamento e 100.000 leituras/gravações por mês com o MySQL, o preço começa em US$ 0,017 por hora para instâncias de banco de dados de tamanho pequeno. Supondo que usemos esse serviço durante um ano, 24 horas por dia e sete dias por semana, o valor seria de **US$ 148,92**.
+Quanto ao S3 na região Norte da Virgínia, o preço começa em US$ 0,023 por GB/mês para armazenamento e US$ 0,09 por GB para transferência de dados de saída. Usando esses preços como base, o custo anual para 10 GB de armazenamento e 100GB de transferência de dados seria de cerca de **US$ 27,60**.
+Juntando os valores estimados dos três serviços, o custo anual seria de **US$ 278,13**.
+- **Custos com a Manutenção**: Depois da entrega do projeto, que é um MVP (Minimum Viable Product), ou seja, um protótipo, é importante que ele passe por melhorias e manutenção contínuas. Esse processo demandará uma equipe especializada em front-end, back-end e infraestrutura. Pois a manutenção contínua de um projeto é essencial para seu sucesso, além de permitir a implementação de novas funcionalidades e melhorias ao longo do tempo. Por isso, é fundamental contar com uma equipe de profissionais especializados e comprometidos com o sucesso do projeto.
+- **Custos com a escalabilidade**: Conforme cresce o número de usuários o preço para armazenar o banco de dados e o site cresce também, ou seja, devemos considerar um valor para escalabilidade. Até mesmo porque a DELL é uma empresa mundial com 133 mil funcionários.
+- **Distribuição**: Para o acesso dos funcionários a aplicação é preciso contratar um serviço de distribuição, e ele pode ser o Android Enterprise que é um programa desenvolvido pela Google para facilitar o uso de dispositivos móveis e aplicativos para sistemas Android no ambiente corporativo.  Em relação ao valor ele pode variar muito dependendo do provedor de serviços e das funcionalidades específicas que é necessária. Geralmente, é oferecido como um serviço de assinatura com preços diferentes de acordo com o número de dispositivos gerenciados e o nível de suporte necessário. 
+	Em relação ao gasto com a criação do MVP, não existem custos, pois a empresa DELL tem uma parceria com o Inteli para criação de 6 MVPs feitos pela sala de engenharia de software de forma gratuita. Mas levando em conta que esse serviço de criação da aplicação fosse pago a empresa precisaria de desenvolvedores back-end, front-end e DevOps. Com base nos salários oferecidos no mercado para essas vagas segue tabela de preços:
+
+| Cargo | Salário |
+| --- | --- |
+| Desenvolvedor Back-end Sênior | R$ 10.483,00 |
+| Desenvolvedor Back-end Júnior | R$ 3.355,00 |
+| Desenvolvedor Front-end Sênior | R$ 10.095,00 |
+| Desenvolvedor Front-end Júnior | R$ 3.000,00 |
+| UX/UI | R$ 6.169,00 |
+| Desenvolvedor DevOps Sênior | R$ 10.581,00 |
+| Desenvolvedor DevOps Júnior | R$ 4.046,00 |
+| **Total** | **R$ 47.729,00** |
+
+Somando o total dos salários o valor é R$ 47.729,00 por mês, ao ano o valor vai para R$ 572.748,00. Mas considerando que vamos contratar esses esses desenvolvedores por somente 3 meses para desenvolver a aplicação o valor é de **R$143.187,00**. 
+
+Resumindo todos os custos, temos essa tabela:
+| Custos | Valor |
+| Serviços de Nuvem | US$ 278,13 convertendo esse para real é **R$ 1.384,39** |
+| Salários | O valor de três meses de salários dos desenvolvedores é  **R$143.187,00** |
+| Total | **R$ 144.571,39** |
 
 
 ## Mapeamento do processo

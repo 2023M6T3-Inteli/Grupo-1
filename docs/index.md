@@ -234,7 +234,6 @@ FR-17: O sistema deve ter a possibilidade de editar ou excluir um comentário fe
 
 FR-18: O sistema deve rotular conteúdos através de tags para facilitar o sistema de recomendação e interagir com as tags dos projetos para auxiliar o sistema de match.
 
-
 FR-19: O sistema deve possuir uma área disponível apenas ao(s) moderador(es).
 
 FR-20: O sistema deve ter uma ferramenta de feedback e avaliação do aplicativo.
@@ -372,6 +371,10 @@ Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVM
 
 Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fornece informações sobre como o software é projetado para ser fácil de usar e intuitivo para os usuários. Nesta seção, deve ser possível encontrar descrições detalhadas sobre as principais características e recursos da interface do usuário, como botões, menus, ícones e outros elementos que são utilizados para facilitar a interação do usuário com o software. Além disso, são fornecidos exemplos de como as funcionalidades do software são acessadas e usadas pelos usuários, incluindo informações sobre os passos necessários para realizar tarefas específicas. Esta seção também aborda as principais preocupações de UX, como acessibilidade, usabilidade, consistência e simplicidade. São apresentados exemplos de como o software é projetado para atender às necessidades dos usuários com diferentes tipos de habilidades e recursos.
 
+## Benchmark e Revisão de Design Systems
+<img src="./img/design system.png">
+Link do Benchmark e Revisão de Design Systems em PDF: https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/Benchmark_Design_System.pdf
+Link do Benchmark e revisão de Design Systems no Google Sheets: https://docs.google.com/spreadsheets/d/10xqS13fX90MrVT1yV-PZNmlSNg-UNKO5x1Zj6QJq6vg/edit?usp=sharing
 
 ## Wireframes / Prototipação
 

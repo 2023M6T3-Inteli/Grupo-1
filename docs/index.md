@@ -99,9 +99,52 @@ Definir 8 atributos que são importantes para os clientes e diferenciá-los da c
 
 ### Proposta de Valor e Value Proposition Canvas
 
-Apresenta o Canvas de Proposta de Valor com relação à solução.
+<img src="./img/canvas.png">
+Idea as we understand it: Dell employees want to learn a new skill. They can do this in the form of a project. They can create their own project or join an existing project. The project is outside of their regular work schedule. The employees can collaborate together to stimulate personal and professional growth.
 
-
+#### Customer Profile
+<bold>Gains – the benefits which the customer expects and needs, what would delight customers and the things which may increase likelihood of adopting a value proposition.</bold>
+	<li>Being able to learn in an interactive and collaborative way</li>
+	<li>Getting access to insider knowledge from colleagues </li>
+	<li>Exploring new skills and fun projects</li>
+	<p></p>
+<bold>Pains – the negative experiences, emotions and risks that the customer experiences in the process of getting the job done.</bold>
+	<li>Learning through books is boring and often contains outdated information
+ </li>
+	<li>Being able to come up with a fun project to work on is hard
+ </li>
+	<li>Not being motivated to work on your project
+ </li>
+	<p></p>
+<bold>Customer jobs – the functional, social and emotional tasks customers are trying to perform, problems they are trying to solve and needs they wish to satisfy.</bold>
+	<li>Satisfying your own need to grow and learn as a person </li>
+	<li>Contributing to the growth of your cherished colleagues
+ </li>
+	<li>Getting rid of the feeling of feeling stuck in your own job
+ </li>
+	<p></p>
+	
+#### Value Proposition
+Gain creators – how the product or service creates customer gains and how it offers added value to the customer.
+	<li>Providing an easy to use platform where personal goals are matched with interesting projects
+ </li>
+	<li>Linking up with valuable colleagues to learn from/teach to
+ </li>
+	<li>Satisfying your own curiosity as to what colleagues are doing by reading up on their project (i.e. devblog)
+ </li>
+	<p></p>
+Pain relievers – a description of exactly how the product or service alleviates customer pains.
+	<li>Getting rid of old teaching techniques and adopting a ‘boots on the ground’ (practical) approach through collaboration
+ </li>
+	<li>Getting inspired to join a project or to start your own project </li>
+	<li>Implementing gamification (i.e. points, streaks, rewards, customizability, cosmetics), setting personal goals, making it easy to use, fun and having an accountability partner </li>
+	<p></p>
+Products and services – the products and services which create gain and relieve pain, and which underpin the creation of value for the customer.
+	<li>Dell employees can easily join the app, see existing projects, get inspired to join a project or make their own project
+ </li>
+	<li>Dell employees can contribute to a project and earn points </li>
+	<li>Dell employees can track their own growth so they can be proud of their achievements </li>
+	
 ### Matriz de Risco
 <img src="./img/matrizderisco.png">
 

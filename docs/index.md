@@ -103,21 +103,35 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 
 
 ### Matriz de Risco
-<img width="1187" alt="matrizderisco" src="C:\Users\Inteli\Documents\GitHub\Modulo6 - DELL\Grupo-1\docs\img">
+<img src="./img/matrizderisco.png">
+
 1- O escopo do projeto ficar muito aberto, dificultando o alcance do objetivo principal.
+
 2- A aplicação ficar indisponível para o usuário na maior parte do tempo.
+
 3- Não conseguir desenvolver uma aplicação iterativa que engaje o usuário.
+
 4- Acontecer um vazamento de dados dos usuários.
+
 5- Não conseguir entregar todas as funcionalidades dentro do prazo estipulado.
+
 6- Enfrentarmos limitações nos recursos disponíbilizados pelo Inteli da AWS.
+
 7- O grupo não conseguir desenvolver todas as habilidades necessárias para avançar no aprendizado.
+
 8- Melhorar nossas habilidades em Cloud Computing.
+
 9- Falta de comunicação nos membros da equipe causando retrabalhos e falhas na execução do projeto.
+
 10- Problemas de compatibilidade entre diferentes sistemas operacionais e dispositivos, o que pode dificultar a usabilidade da aplicação pelos usuários.
+
 11- Falta de testes adequados, levando a erros e bugs na aplicação.
+
 12- Dificuldades técnicas durante o desenvolvimento, como a integração de APIs ou o uso de bibliotecas específicas.
+
 13- Falta de clareza nas especificações e requisitos do projeto, resultando em ambiguidade e confusão entre os membros da equipe.
-14- A oportunidade de criar uma solução inovadora que geraria um grande impacto na empresa DELL
+
+14- A oportunidade de criar uma solução inovadora que geraria um grande impacto na empresa DELL.
 
 ### Análise financeira do projeto
 

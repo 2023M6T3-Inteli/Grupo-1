@@ -26,6 +26,11 @@
  	<li>Wagner Estevam</li>
 </ul>
 
+**Módulo 6 - Engenharia de Software**
+	
+**APP Dispositivo Móvel**
+</center></font>
+
 **Conteúdo**
 
 - [Visão Geral do Projeto](#visão-geral-do-projeto)

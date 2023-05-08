@@ -19,12 +19,34 @@ model user {
   idManager Int?
 
   projects project[]
-
+  posts post[]
   userApplyProject   userApplyProject[]
   saveProject        saveProject[]
 }
 
+model post {
+id                 Int      @id @default(autoincrement())
+media              String
+description        String
 
+
+
+idUser    Int?
+User    user?    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+
+}
+model comments{
+  idPost Int
+  idUser    Int
+  comment   String
+
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
+  Role    role    @relation(fields: [idRole], references: [id],onDelete: Cascade)
+
+  @@id([idUser, idProject, idRole])
+
+}
 
 model project {
   id                 Int      @id @default(autoincrement())

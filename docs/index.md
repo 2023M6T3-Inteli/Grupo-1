@@ -10,14 +10,13 @@
 </tr>
 </table>
 
-<h2> Nome do Projeto: App Dispositivo Móvel</h2>
-<tr>
-	<h2>Nome do Parceiro: Dell Technologies</h2>
-<tr>
-	<h2> Nome do Grupo: Dell Genius</h2>
-<tr>
-	<h2> Integrantes do grupo:</h2>
-<tr>
+**Nome do Projeto**: App Dispositivo Móvel
+	
+**Nome do Parceiro**:  Dell Technologies
+	
+**Nome do Grupo**: Dell Genius
+	
+**Integrantes do grupo**
 <ul>
 	<li>Ana Clara Loureiro Muller Zaidan</li>
 	<li>Daniel Cunha</li>
@@ -26,7 +25,6 @@
   	<li>Pedro Gattai</li>
  	<li>Wagner Estevam</li>
 </ul>
-
 
 **Conteúdo**
 

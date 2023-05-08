@@ -15,25 +15,32 @@ model user {
   mobileNumber Int    @unique
   location     String
   job          String
-  isManager Boolean?
-  idManager Int?
+  isManager    Boolean?
+  idManager    Int?
+  rankPoints   Int
 
-  projects project[]
-  posts post[]
+
+  projects           project[]
+  posts              post[]
   userApplyProject   userApplyProject[]
   saveProject        saveProject[]
+  comment            comments[]
+  postLike           postLike[]
 }
 
 model post {
 id                 Int      @id @default(autoincrement())
 media              String
 description        String
+tags               String
 
 
 
 idUser    Int?
 User    user?    @relation(fields: [idUser], references: [id],onDelete: Cascade)
-
+comments  comments[]
+postLike  postLike[]
+postTag   postTag[]
 }
 model comments{
   idPost Int
@@ -41,11 +48,21 @@ model comments{
   comment   String
 
   User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
-  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
-  Role    role    @relation(fields: [idRole], references: [id],onDelete: Cascade)
+  Posts   post    @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  
 
-  @@id([idUser, idProject, idRole])
+  @@id([idUser, idPost])
 
+}
+
+model postLike {
+  idPost    Int
+  idUser    Int
+
+  Post post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+
+  @@id([idUser, idPost])
 }
 
 model project {
@@ -115,8 +132,17 @@ model tag {
   id         Int          @id @default(autoincrement())
   name       String
   projectTag projectTag[]
+  postTag postTag[]
 }
+model postTag {
+  idPost    Int
+  idTag     Int
 
+  Post  post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  Tag     tag     @relation(fields: [idTag], references: [id],onDelete: Cascade)
+
+  @@id([idPost, idTag])
+}
 model projectTag {
   idProject Int
   idTag     Int

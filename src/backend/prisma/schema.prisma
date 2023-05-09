@@ -26,6 +26,8 @@ model user {
   saveProject        saveProject[]
   comment            comments[]
   postLike           postLike[]
+  postComplaint      postComplaint[]
+  notifications      notifications[]
 }
 
 model post {
@@ -41,6 +43,7 @@ User    user?    @relation(fields: [idUser], references: [id],onDelete: Cascade)
 comments  comments[]
 postLike  postLike[]
 postTag   postTag[]
+postComplaint postComplaint[]
 }
 model comments{
   idPost Int
@@ -63,6 +66,34 @@ model postLike {
   User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
 
   @@id([idUser, idPost])
+}
+model complaint{
+  id        Int      @id @default(autoincrement())
+  reason    String
+  
+  
+  
+  postComplaint postComplaint[]
+}
+model postComplaint {
+  idPost    Int
+  idUser    Int
+  idComplaint Int
+  Post    post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+  Complaint complaint @relation(fields:[idComplaint],references: [id],onDelete: Cascade)
+  @@id([idUser, idPost])
+
+}
+model notifications {
+  id                 Int @id @default(autoincrement())
+  name               String
+  description        String
+  idUser             Int?
+
+
+
+  User    user?     @relation(fields: [idUser],references: [id],onDelete: Cascade)
 }
 
 model project {

@@ -11,7 +11,7 @@ import { ServiceGetAllProjects } from './app.service';
 
 @Controller()
 @ApiTags('System')
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 export class ControllerGetAllProject {
     constructor(
         private readonly serviceGetAllProjects: ServiceGetAllProjects,

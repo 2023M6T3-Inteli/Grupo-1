@@ -3,7 +3,7 @@ import { ServicesDeleteProject } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 export class ControllerDeleteProject {
     constructor(private readonly serviceDeleteProject: ServicesDeleteProject) {}
 

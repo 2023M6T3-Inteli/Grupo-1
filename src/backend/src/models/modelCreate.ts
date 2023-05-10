@@ -1,12 +1,13 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 
 import { Tproject } from '../Project/createProject/types/TmodelCreate';
+import { Tpost } from '../Posts/createPost/types/TmodelCreate';
 
 import { PrismaService } from '../prismaServices/prisma.service';
 
 @Injectable()
 export class ModelCreate {
-    constructor(private readonly prisma: PrismaService) { }
+    constructor(private readonly prisma: PrismaService) {}
 
     async createProject(data: Tproject) {
         const {
@@ -32,6 +33,36 @@ export class ModelCreate {
 
                     idUser: idUser,
                     idManager: idManager,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+    async createPost(data: Tpost) {
+        const {
+            media,
+            description,
+            idUser,
+            tags,
+
+        } = data;
+
+        try {
+            const result = await this.prisma.post.create({
+                data: {
+                    media:media,
+                    description: description,
+                    idUser: idUser,
+                    tags:tags
                 },
             });
 
@@ -92,7 +123,7 @@ export class ModelCreate {
             const result = await this.prisma.saveProject.create({
                 data: {
                     idProject: idProject,
-                    idUser: idUser
+                    idUser: idUser,
                 },
             });
             return result;
@@ -100,25 +131,42 @@ export class ModelCreate {
             throw new HttpException(
                 {
                     status: HttpStatus.BAD_REQUEST,
-                    error: error
+                    error: error,
                 },
-                HttpStatus.BAD_REQUEST
+                HttpStatus.BAD_REQUEST,
             );
         }
     }
-
+    async likePost(idPost: number, idUser: number) {
+        try {
+            const result = await this.prisma.postLike.create({
+                data: {
+                    idPost: idPost,
+                    idUser: idUser,
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
 
     async applyProject(idProject: number, idUser: number, idRole: number) {
         const result = await this.prisma.userApplyProject.create({
             data: {
                 idProject: idProject,
                 idUser: idUser,
-                idRole: idRole
-            }
-        })
+                idRole: idRole,
+            },
+        });
 
-        return result
-
+        return result;
     }
 }
 

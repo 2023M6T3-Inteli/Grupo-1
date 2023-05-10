@@ -114,6 +114,25 @@ export class ModelSelect {
             );
         }
     }
+    async findPostById(postId: number) {
+        try {
+            const result = await this.prisma.project.findUnique({
+                where: {
+                    id: postId,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
     async filterTag(tag: Array<number>) {
         try {
             const result = await this.prisma.projectTag.findMany({

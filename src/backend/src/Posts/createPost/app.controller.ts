@@ -1,17 +1,17 @@
-import { ServiceCreateProject } from './app.service';
+import { ServiceCreatePost } from './app.service';
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
-import { DTOBodyCreateProject } from './DTO/DTOCreateProject';
+import { DTOBodyCreatePost } from './DTO/DTOCreatePost';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
-@ApiTags('Project')
+@ApiTags('Post')
 // @UseGuards(AuthGuard('jwt'))
-export class ControllerCreateProject {
-    constructor(private serviceCreateProject: ServiceCreateProject) {}
+export class ControllerCreatePost {
+    constructor(private serviceCreatePost: ServiceCreatePost) {}
 
-    @Post('createProject')
-    @ApiOperation({ summary: 'Create project' })
+    @Post('createPost')
+    @ApiOperation({ summary: 'Create post' })
     @ApiResponse({
         status: 201,
         description:
@@ -30,8 +30,8 @@ export class ControllerCreateProject {
         description: 'This name is in use',
     })
     // TODO fazer Api response para sucess e faild
-    async createProject(@Body() body: DTOBodyCreateProject) {
-        const result = await this.serviceCreateProject.execute(body);
+    async createPost(@Body() body: DTOBodyCreatePost) {
+        const result = await this.serviceCreatePost.execute(body);
         return result;
     }
 }

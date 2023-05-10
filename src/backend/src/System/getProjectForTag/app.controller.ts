@@ -6,7 +6,7 @@ import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 @ApiTags('System')
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 export class ControllerGetProjectForTag {
     constructor(private serviceFilterTag: ServiceFilterTag) {}
 

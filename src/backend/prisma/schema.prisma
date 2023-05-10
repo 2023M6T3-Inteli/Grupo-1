@@ -46,15 +46,13 @@ postTag   postTag[]
 postComplaint postComplaint[]
 }
 model comments{
+  id     Int    @id @default(autoincrement())
   idPost Int
-  idUser    Int
-  comment   String
+  idUser Int
+  comment String
 
   User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
   Posts   post    @relation(fields: [idPost], references: [id],onDelete: Cascade)
-  
-
-  @@id([idUser, idPost])
 
 }
 

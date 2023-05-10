@@ -6,7 +6,7 @@ import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 @ApiTags('unApplyUser')
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 export class ControllerUnApplyUser {
     constructor(private servicesDeleteApplyUser: ServicesDeleteApplyUser) {}
 

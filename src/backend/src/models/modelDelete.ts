@@ -26,6 +26,26 @@ export class ModelDelete {
             );
         }
     }
+    async deletePost(postId: number) {
+        try {
+            const result = await this.prisma.post.delete({
+                where: {
+                    id: postId,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_GATEWAY,
+                    error: error,
+                },
+
+                HttpStatus.BAD_GATEWAY,
+            );
+        }
+    }
 
     async deleteApplayUser(idProject: number, idRole: number, idUser: number) {
         try {

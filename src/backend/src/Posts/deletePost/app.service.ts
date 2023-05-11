@@ -3,12 +3,12 @@ import { ModelDelete } from 'src/models/modelDelete';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 
 @Injectable()
-export class ServicesDeleteProject {
+export class ServicesDeletePost {
     constructor(private readonly modelDelete: ModelDelete) {}
 
-    async execute(idProject: number) {
-        await this.modelDelete.deleteProject(Number(idProject));
+    async execute(idPost: number) {
+        await this.modelDelete.deleteProject(Number(idPost));
 
-        return `Projeto ${idProject} deletado com succeso`;
+        return `Post ${idPost} deleted with success`;
     }
 }

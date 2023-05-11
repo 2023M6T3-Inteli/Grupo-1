@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { modelModule } from 'src/models/app.module';
-import { ControllerDeleteProject } from './app.controller';
-import { ServicesDeleteProject } from './app.service';
+import { ControllerDeletePost } from './app.controller';
+import { ServicesDeletePost } from './app.service';
 
 @Module({
     imports: [modelModule],
-    controllers: [ControllerDeleteProject],
-    providers: [ServicesDeleteProject],
-    exports: [ServicesDeleteProject],
+    controllers: [ControllerDeletePost],
+    providers: [ServicesDeletePost],
+    exports: [ServicesDeletePost],
 })
 export class DeleteProject {}

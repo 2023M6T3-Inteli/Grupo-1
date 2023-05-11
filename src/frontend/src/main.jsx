@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import RankingPage from '../pages/Ranking/index.jsx';
+import RankingPage from './pages/Ranking/index.jsx';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Community from './pages/Community/Community.jsx';
 const router = createBrowserRouter([

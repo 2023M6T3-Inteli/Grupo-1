@@ -1,70 +1,70 @@
-body{
+body {
     background-color: #ffff;
     position: fixed;
     width: 100%;
     margin: 0;
 
 
-    .header{
-         width: 100%;
-         margin-bottom: 80px;
+    .header {
+        width: 100%;
+        margin-bottom: 80px;
 
-            .vetor{
-                width: 100%;
-                height: 200px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-                
-
-                position: relative;
+        .vetor {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
 
-                background-color: #0672CB;
-                border-radius: 0 0 40% 40%;
-                color: #0672CB;
 
-                .logotipo{
-                    position: absolute;
-                    bottom: -55px;
-                    background-Repeat: no-repeat;
-                    background-Size: 80%;
-                    background-Position: center;
-                    background-image: url('./imglogo.jpg');
-                                                
-                    background-color: #ffff;
-                    border-radius: 50%;
-                    box-shadow: 0px 0px 8px 0px #C5C5C5;
-                    width: 110px;
-                    height: 110px;
-                    
-                }
+            position: relative;
+
+
+            background-color: #0672CB;
+            border-radius: 0 0 40% 40%;
+            color: #0672CB;
+
+            .logotipo {
+                position: absolute;
+                bottom: -55px;
+                background-Repeat: no-repeat;
+                background-Size: 80%;
+                background-Position: center;
+                background-image: url('../../assets/imglogo.jpg');
+
+                background-color: #ffff;
+                border-radius: 50%;
+                box-shadow: 0px 0px 8px 0px #C5C5C5;
+                width: 110px;
+                height: 110px;
+
             }
+        }
     }
 
 
 
 
-    .emailPassword{
+    .emailPassword {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        .email{
+
+        .email {
             margin: auto;
             width: 80%;
             margin-bottom: 10px;
-            
+
 
             font-size: 170%;
             font-family: 'roboto', sans-serif;
-            
-            .inputEmail{  
+
+            .inputEmail {
                 width: 100%;
                 height: 100%;
-                
+
 
                 font-size: 1em;
                 font-family: 'roboto', sans-serif;
@@ -72,23 +72,23 @@ body{
                 border-color: #C5C5C5;
                 border-width: 0.125em;
                 border-style: solid;
-                
+
             }
         }
 
-        .Password{
+        .Password {
             margin: auto;
             width: 80%;
             margin-bottom: 40px;
 
-            
+
             font-size: 170%;
             font-family: 'roboto', sans-serif;
 
-            .inputPassword{
+            .inputPassword {
                 width: 100%;
-                height: 100%; 
-                
+                height: 100%;
+
                 font-size: 1em;
                 font-family: 'roboto', sans-serif;
                 border-radius: 0.5em;
@@ -96,7 +96,7 @@ body{
                 border-width: 0.125em;
                 border-style: solid;
 
-                
+
             }
 
 
@@ -104,20 +104,20 @@ body{
     }
 
 
-    .buttons{
+    .buttons {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        
-        
-        .button{
-            
+
+
+        .button {
+
             margin: auto;
             width: 80%;
             height: 100%;
-            
+
 
 
             font-size: 170%;
@@ -127,10 +127,10 @@ body{
             background-color: #0672CB;
             color: #ffff;
             border-width: 0.125em;
-            border-style: solid;             
+            border-style: solid;
         }
 
-        .button2{
+        .button2 {
             margin: auto;
             width: 80%;
             height: 100%;
@@ -142,12 +142,12 @@ body{
             background-color: #ffff;
             color: black;
             border-width: 0.125em;
-            border-style: solid; 
+            border-style: solid;
 
 
         }
 
-        .button3{
+        .button3 {
             margin: auto;
             width: 80%;
             height: 100%;
@@ -159,7 +159,7 @@ body{
             background-color: black;
             color: #ffff;
             border-width: 0.125em;
-            border-style: solid; 
+            border-style: solid;
         }
     }
 }

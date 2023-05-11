@@ -1,0 +1,183 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id           Int    @id @default(autoincrement())
+  fullName     String
+  email        String @unique
+  phoneNumber  Int
+  mobileNumber Int    @unique
+  location     String
+  job          String
+  isManager    Boolean?
+  idManager    Int?
+  rankPoints   Int
+
+
+  projects           project[]
+  posts              post[]
+  userApplyProject   userApplyProject[]
+  saveProject        saveProject[]
+  comment            comments[]
+  postLike           postLike[]
+  postComplaint      postComplaint[]
+  notifications      notifications[]
+}
+
+model post {
+id                 Int      @id @default(autoincrement())
+media              String
+description        String
+tags               String
+
+
+
+idUser    Int?
+User    user?    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+comments  comments[]
+postLike  postLike[]
+postTag   postTag[]
+postComplaint postComplaint[]
+}
+model comments{
+  id     Int    @id @default(autoincrement())
+  idPost Int
+  idUser Int
+  comment String
+
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+  Posts   post    @relation(fields: [idPost], references: [id],onDelete: Cascade)
+
+}
+
+model postLike {
+  idPost    Int
+  idUser    Int
+
+  Post post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+
+  @@id([idUser, idPost])
+}
+model complaint{
+  id        Int      @id @default(autoincrement())
+  reason    String
+  
+  
+  
+  postComplaint postComplaint[]
+}
+model postComplaint {
+  idPost    Int
+  idUser    Int
+  idComplaint Int
+  Post    post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+  Complaint complaint @relation(fields:[idComplaint],references: [id],onDelete: Cascade)
+  @@id([idUser, idPost])
+
+}
+model notifications {
+  id                 Int @id @default(autoincrement())
+  name               String
+  description        String
+  idUser             Int?
+
+
+
+  User    user?     @relation(fields: [idUser],references: [id],onDelete: Cascade)
+}
+
+model project {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  description        String
+  aplicationDeadLine DateTime
+  duration           String
+  status             String
+  dateStart          DateTime
+  isApproved          Boolean?
+
+  idUser    Int?
+  idManager Int?
+
+  User    user?    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+
+
+  userApplyProject   userApplyProject[]
+  projectRole        projectRole[]
+  saveProject        saveProject[]
+  projectTag         projectTag[]
+}
+
+model userApplyProject {
+  idProject Int
+  idUser    Int
+  idRole    Int
+
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
+  Role    role    @relation(fields: [idRole], references: [id],onDelete: Cascade)
+
+  @@id([idUser, idProject, idRole])
+}
+
+
+
+model role {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  userApplyProject   userApplyProject[]
+  projectRole        projectRole[]
+}
+
+model projectRole {
+  idRole    Int
+  idProject Int
+
+  Role    role    @relation(fields: [idRole], references: [id],onDelete: Cascade)
+  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
+
+  @@id([idRole, idProject])
+}
+
+model saveProject {
+  idProject Int
+  idUser    Int
+
+  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
+  User    user    @relation(fields: [idUser], references: [id],onDelete: Cascade)
+
+  @@id([idUser, idProject])
+}
+
+model tag {
+  id         Int          @id @default(autoincrement())
+  name       String
+  projectTag projectTag[]
+  postTag postTag[]
+}
+model postTag {
+  idPost    Int
+  idTag     Int
+
+  Post  post @relation(fields: [idPost], references: [id],onDelete: Cascade)
+  Tag     tag     @relation(fields: [idTag], references: [id],onDelete: Cascade)
+
+  @@id([idPost, idTag])
+}
+model projectTag {
+  idProject Int
+  idTag     Int
+
+  Project project @relation(fields: [idProject], references: [id],onDelete: Cascade)
+  Tag     tag     @relation(fields: [idTag], references: [id],onDelete: Cascade)
+
+  @@id([idProject, idTag])
+}

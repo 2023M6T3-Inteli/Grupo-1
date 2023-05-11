@@ -1,13 +1,13 @@
 import './App.css'
 
 //components
-import NavBar from "./components/NavBar"
+import Community from './pages/Community'
 
 function App() {
 
   return (
     <div>
-        <NavBar></NavBar>
+        <Community></Community>
     </div>
   )
 }

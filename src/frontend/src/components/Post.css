@@ -1,0 +1,13 @@
+.post-item{
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}

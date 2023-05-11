@@ -9,4 +9,4 @@ import { ServiceUpdateApprovalProject } from './app.service';
     providers: [ServiceUpdateApprovalProject],
     exports: [ServiceUpdateApprovalProject],
 })
-export class DeleteProjectModule {}
+export class ApprovalProjectModule {}

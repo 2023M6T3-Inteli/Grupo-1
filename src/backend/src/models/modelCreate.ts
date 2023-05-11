@@ -48,21 +48,37 @@ export class ModelCreate {
         }
     }
     async createPost(data: Tpost) {
-        const {
-            media,
-            description,
-            idUser,
-            tags,
-
-        } = data;
+        const { media, description, idUser, tags } = data;
 
         try {
             const result = await this.prisma.post.create({
                 data: {
-                    media:media,
+                    media: media,
                     description: description,
                     idUser: idUser,
-                    tags:tags
+                    tags: tags,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+    async createComment(idUser: number, idPost: number, comment: string) {
+
+        try {
+            const result = await this.prisma.comments.create({
+                data: {
+                    idUser: idUser,
+                    idPost: idPost,
+                    comment:comment
                 },
             });
 

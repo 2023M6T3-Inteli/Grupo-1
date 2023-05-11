@@ -6,6 +6,6 @@ import { ApiTags } from '@nestjs/swagger';
 export class ControllerHelth {
     @Get('/')
     async hello() {
-        return 'Hello skyWeb APi';
+        return 'Hello Project 6 APi';
     }
 }

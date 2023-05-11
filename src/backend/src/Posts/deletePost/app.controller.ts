@@ -1,15 +1,15 @@
 import { Body, Controller, Delete, Param, UseGuards } from '@nestjs/common';
-import { ServicesDeleteProject } from './app.service';
+import { ServicesDeletePost } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 // @UseGuards(AuthGuard('jwt'))
-export class ControllerDeleteProject {
-    constructor(private readonly serviceDeleteProject: ServicesDeleteProject) {}
+export class ControllerDeletePost {
+    constructor(private readonly serviceDeletePost: ServicesDeletePost) {}
 
-    @Delete('project/:id')
+    @Delete('post/:id')
     async deleteProject(@Param() id: { id: number }) {
-        const result = await this.serviceDeleteProject.execute(id.id);
+        const result = await this.serviceDeletePost.execute(id.id);
 
         return result;
     }

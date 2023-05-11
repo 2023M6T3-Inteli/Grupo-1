@@ -21,6 +21,11 @@
   
 }
 
+.nav-item button{
+    background-color: transparent;
+    border: none;
+}
+
 /* .nav-toda{
     background-color: #FFFFFF;
     display: flex;

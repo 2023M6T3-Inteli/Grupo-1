@@ -1,42 +1,42 @@
 import React, { useState } from "react";
 import "./CreateProject.css";
 
-export default function Modal() {
-  const [modal, setModal] = useState(false);
+export default function Modal(props) {
+  // const [modal, setModal] = useState(false);
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+  // const toggleModal = () => {
+  //   setModal(!modal);
+  // };
 
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+  // if(modal) {
+  //   document.body.classList.add('active-modal')
+  // } else {
+  //   document.body.classList.remove('active-modal')
+  // }
 
-  const [tags, setTags] = useState([])
+  // const [tags, setTags] = useState([])
 
-  function handleKeyDown(e) {
-    if(e.key !== 'Enter') return
-    const value = e.target.value
-    if(!value.trim()) return
-    setTags([...tags, value])
-    e.target.value = ''
-  }
+  // function handleKeyDown(e) {
+  //   if(e.key !== 'Enter') return
+  //   const value = e.target.value
+  //   if(!value.trim()) return
+  //   setTags([...tags, value])
+  //   e.target.value = ''
+  // }
 
-  function removeTag(index) {
-    setTags(tags.filter((el, i) => i !== index))
-  }
+  // function removeTag(index) {
+  //   setTags(tags.filter((el, i) => i !== index))
+  // }
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
+      {/* <button onClick={toggleModal} className="btn-modal">
         Open
-      </button>
+      </button> */}
 
-      {modal && (
+      {/* {modal && ( */}
         <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
+          <div onClick={props.toggleModal} className="overlay"></div>
           <div className="modal-content">
           <div className="modal-header">
             <h2 className="create-project">Create Project</h2>
@@ -92,14 +92,14 @@ export default function Modal() {
                       <span className="close">&times;</span>
                     </div> */  }
 
-                    { tags.map((tag, index) => (
+                    { props.tags.map((tag, index) => (
                       <div className="tag-item" key={index} >
                         <span className="text">{tag}</span>
                         <span className="close" onClick={() => removeTag(index)}>&times;</span>
                       </div>
                       
                       )) }
-                    <input onKeyDown={handleKeyDown}  type="text" className="tags-input" placeholder="Type something" />
+                    <input onKeyDown={props.handleKeyDown}  type="text" className="tags-input" placeholder="Type something" />
                   </div>
                   <div className="submit">
                     <button className="submit-btn" type="submit">Create project</button>
@@ -112,12 +112,12 @@ export default function Modal() {
             
             
             
-            <button className="close-modal" onClick={toggleModal}>
+            <button className="close-modal" onClick={props.toggleModal}>
               <span className="close-modal-text"> X </span> 
             </button>
           </div>
         </div>
-      )}
+      {/* )} */}
       
     </>
   );

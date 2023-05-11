@@ -35,7 +35,7 @@ function Login() {
       <div className="buttons">
         <button className="button">Continue</button>
         <button className="button2">Sign in with google</button>
-        <button classNames="button3">Sign in with SSO</button>
+        <button className="button3">Sign in with SSO</button>
       </div>
 
     </div>

@@ -1,18 +1,21 @@
 import { Module } from '@nestjs/common';
 import { CreatePostModule } from './createPost/app.module';
-import { DeleteProject } from './deletePost/app.module';
-import { SaveProjectModule } from './likePost/app.module';
+import { DeletePost } from './deletePost/app.module';
+import { LikePostModule } from './likePost/app.module';
+import { GetPostsModule } from './getPost/app.module';
 
 @Module({
     imports: [
         CreatePostModule,
-        SaveProjectModule,
-        DeleteProject,
+        LikePostModule,
+        DeletePost,
+        GetPostsModule,
     ],
     exports: [
         CreatePostModule,
-        SaveProjectModule,
-        DeleteProject,
+        LikePostModule,
+        DeletePost,
+        GetPostsModule,
     ],
 })
 export class PostModule {}

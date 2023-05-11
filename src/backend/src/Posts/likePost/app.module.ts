@@ -9,4 +9,4 @@ import { ServiceLikePost } from './app.service';
     providers: [ServiceLikePost],
     exports: [ServiceLikePost],
 })
-export class SaveProjectModule { }
+export class LikePostModule { }

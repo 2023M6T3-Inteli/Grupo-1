@@ -94,6 +94,24 @@ export class ModelSelect {
             );
         }
     }
+    async getAllPosts() {
+        try {
+            const result = await this.prisma.post.findMany({
+                select: {media:true,description:true,tags:true,User:{select:{fullName:true}}
+                    
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
 
     async findProjectById(projectId: number) {
         try {
@@ -101,6 +119,26 @@ export class ModelSelect {
                 where: {
                     id: projectId,
                 },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+    async findComments(idPost: number) {
+        try {
+            const result = await this.prisma.comments.findMany({
+                where: {
+                    id: idPost,
+                },
+                select: { comment: true, User: { select: { fullName: true } } },
             });
 
             return result;

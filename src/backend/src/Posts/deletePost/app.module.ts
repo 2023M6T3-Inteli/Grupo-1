@@ -9,4 +9,4 @@ import { ServicesDeletePost } from './app.service';
     providers: [ServicesDeletePost],
     exports: [ServicesDeletePost],
 })
-export class DeleteProject {}
+export class DeletePost {}

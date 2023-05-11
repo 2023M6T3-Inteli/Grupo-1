@@ -8,7 +8,7 @@ import { AuthGuard } from '@nestjs/passport';
 @ApiTags('Post')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerLikePost {
-    constructor(private serviceLikePost: ServiceLikePost) {}
+    constructor(private serviceLikePost: ServiceLikePost) { }
 
     @Post('likePost')
     @ApiOperation({ summary: 'User can like posts' })
@@ -18,7 +18,7 @@ export class ControllerLikePost {
     })
     @ApiResponse({
         status: 300,
-        description: `This data of save project already exist`,
+        description: `This data of like post already exist`,
     })
     @ApiResponse({
         status: 404,

@@ -5,8 +5,12 @@ export class DTOBodyCreatePost {
     @ApiProperty()
     @IsString({ message: `descriptionis not a string` })
     description: string;
+
+    @ApiProperty()
     @IsString({ message: `media not a string` })
     media: string;
+
+    @ApiProperty()
     @IsString({ message: `media not a string` })
     tags: string;
 

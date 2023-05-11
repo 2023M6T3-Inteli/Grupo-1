@@ -5,26 +5,26 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
-@ApiTags('Post')
+@ApiTags('Comment')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerCreateComment {
-    constructor(private serviceCreateCommnent: ServiceCreateComment) {}
+    constructor(private serviceCreateCommnent: ServiceCreateComment) { }
 
-    @Post('createPost')
+    @Post('createComment')
     @ApiOperation({ summary: 'Create comment' })
     @ApiResponse({
         status: 201,
         description:
-            '[{  name: string, description: string, aplicationDeadLine: string, dateStart: string, duration: string, isAproved: true, status: string, idUser: 0, idManager: 0, idProject: 0, idTag: [ string ], idRole: [ string]}]',
+            '{"idPost": number, "idUser": number, "comment": "string"}',
     })
     @ApiResponse({
         status: 400,
-        description: `Failed to create a post`,
+        description: `Failed to create a comment`,
     })
     // TODO fazer Api response para sucess e faild
     async createPost(@Body() body: DTOCreateComment) {
         const { idPost, idUser, comment } = body;
-        const result = await this.serviceCreateCommnent.execute(idUser,idPost,comment);
+        const result = await this.serviceCreateCommnent.execute(idUser, idPost, comment);
         return result;
     }
 }

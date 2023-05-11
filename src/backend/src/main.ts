@@ -8,7 +8,7 @@ async function bootstrap() {
     app.useGlobalPipes(new ValidationPipe());
 
     const config = new DocumentBuilder()
-        .setTitle('Skyweb Documentacion API')
+        .setTitle('DELL Genius API')
         .setDescription('Documentacion for all router')
         .setVersion('0.0.1')
         .addBearerAuth()

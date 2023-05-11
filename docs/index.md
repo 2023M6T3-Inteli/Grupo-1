@@ -431,18 +431,20 @@ Segue o link do sheets para análise detalhada da matriz de rastreabilidade: htt
 <center>
 <img src="./img/arquitetura g1m6.png">
 link do design da arquitetura da nuvem em PDF: https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/arquitetura%20g1m6.pdf
+
 Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
 </center>
 
 ## Arquitetura - Versão 2
+Na segunda versão da Arquitetura da Solução, adicionamos a tecnologia de mensageria Kafka.
+
 ![image](https://github.com/2023M6T3-Inteli/Grupo-1/assets/99202282/f8ded034-9d59-401f-a1a5-2a5e054e1443)
 
-link do design da arquitetura da nuvem em PDF: 
+link do design da arquitetura da nuvem em PDF: https://github.com/2023M6T3-Inteli/Grupo-1/blob/main/docs/img/arquitetura2.pdf
+
 Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
 </center>
-link do design da arquitetura da nuvem em PDF: 
-Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
-</center>
+
 
 # UX e UI Design
 

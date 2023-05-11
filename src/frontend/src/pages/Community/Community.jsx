@@ -8,7 +8,7 @@ function Community() {
 
   return (
     <div className='body'>
-      <TopBar></TopBar>
+      <TopBar title={"Community"}></TopBar>
       <Post></Post>
       <Post></Post>
       <NavBar></NavBar>

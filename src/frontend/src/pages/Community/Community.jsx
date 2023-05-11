@@ -6,7 +6,7 @@ import Post from '../../components//Post/Post';
 function Community() {
 
   return (
-    <div>
+    <div className='body'>
       <Post></Post>
       <Post></Post>
       <NavBar></NavBar>

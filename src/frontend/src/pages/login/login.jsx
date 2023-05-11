@@ -8,34 +8,34 @@ function Login() {
   const [count, setCount] = useState(0)
 
   return (
-    <div class="body">
+    <div className="body">
 
-      <header class="header">
-        <div class="vetor">
+      <header className="header">
+        <div className="vetor">
 
-          <div class="logotipo">
+          <div className="logotipo">
           </div>
 
         </div>
       </header>
 
-      <div class='emailPassword'>
+      <div className='emailPassword'>
 
-        <div class="email">
+        <div className="email">
           <p>Your email address: </p>
-          <input type="text" class="inputEmail" />
+          <input type="text" className="inputEmail" />
         </div>
 
-        <div class="Password">
+        <div className="Password">
           <p>Choose password:</p>
-          <input type="text" class="inputPassword" />
+          <input type="text" className="inputPassword" />
         </div>
       </div>
 
-      <div class="buttons">
-        <button class="button">Continue</button>
-        <button class="button2">Sign in with google</button>
-        <button class="button3">Sign in with SSO</button>
+      <div className="buttons">
+        <button className="button">Continue</button>
+        <button className="button2">Sign in with google</button>
+        <button classNames="button3">Sign in with SSO</button>
       </div>
 
     </div>

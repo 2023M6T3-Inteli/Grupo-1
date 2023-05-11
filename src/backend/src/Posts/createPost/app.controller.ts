@@ -8,26 +8,22 @@ import { AuthGuard } from '@nestjs/passport';
 @ApiTags('Post')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerCreatePost {
-    constructor(private serviceCreatePost: ServiceCreatePost) {}
+    constructor(private serviceCreatePost: ServiceCreatePost) { }
 
     @Post('createPost')
-    @ApiOperation({ summary: 'Create post' })
+    @ApiOperation({ summary: 'Create a post' })
     @ApiResponse({
         status: 201,
         description:
-            '[{  name: string, description: string, aplicationDeadLine: string, dateStart: string, duration: string, isAproved: true, status: string, idUser: 0, idManager: 0, idProject: 0, idTag: [ string ], idRole: [ string]}]',
+            '{"description": "string", "media": "string", "tags": [string], "idUser": number }',
     })
     @ApiResponse({
         status: 400,
-        description: `Failed to create a project`,
+        description: `Failed to create a post`,
     })
     @ApiResponse({
         status: 404,
-        description: `Does not exist roles or tags with this id's`,
-    })
-    @ApiResponse({
-        status: 409,
-        description: 'This name is in use',
+        description: `Does not exist tags with this id's`,
     })
     // TODO fazer Api response para sucess e faild
     async createPost(@Body() body: DTOBodyCreatePost) {

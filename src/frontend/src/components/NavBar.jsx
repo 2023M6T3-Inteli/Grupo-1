@@ -9,7 +9,7 @@ import Create from '../assets/create-comp.svg';
 function NavBar(){
 
   return (
-    <div className='nav-toda'>
+    // <div className='nav-toda'>
             <div className="nav-bar">
                 <div className='nav-item'>
                     <img src={CarryCase} alt="carry-case"/>
@@ -31,7 +31,7 @@ function NavBar(){
                 <p>Profile</p>
             </div>
         </div>
-    </div>
+    // </div>
   );
 };
 

@@ -9,8 +9,11 @@ function Community() {
   return (
     <div className='body'>
       <TopBar title={"Community"}></TopBar>
+      <div className='posts'>
       <Post></Post>
       <Post></Post>
+      </div>
+      
       <NavBar></NavBar>
     </div>
   );

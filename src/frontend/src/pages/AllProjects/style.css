@@ -14,7 +14,7 @@ body{
     width: 100%;
     position: fixed;
     background: #F0F0F0;
-    z-index:999;
+    z-index:997;
 }
 
 .search-container{
@@ -27,7 +27,7 @@ body{
 .behind{
     width: 100%;
     height: 180px;
-    z-index:998;
+    z-index:996;
 }
 
 .projects-container{
@@ -37,6 +37,6 @@ body{
     margin-top: 12px;
     flex-direction: column;
     align-items: center;
-    z-index:997;
+    z-index:995;
 }
 

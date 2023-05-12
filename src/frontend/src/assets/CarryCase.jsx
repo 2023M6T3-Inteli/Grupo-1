@@ -3,9 +3,9 @@ import './Icons.css';
 
 function CarryCase() {
   return (
-    <svg
+    <svg style={{cursor:"pointer"}}
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
+      width= "32"
       height="26"
       fill="none"
       viewBox="0 0 32 26"

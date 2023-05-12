@@ -1,5 +1,6 @@
 import Ranking from "../../components/Ranking/index";
 import TopBar from "../../components/TopBarRank/index";
+import NavBar from "../../components/NavBar/NavBar"
 import "./style.css"
 import silverTrophy from "../../assets/award-trophy 2.svg"
 import goldTrophy from "../../assets/award-trophy 3.svg"
@@ -29,6 +30,7 @@ export default function RankingPage() {
             <div className="componentRanking">
                 <Ranking />
             </div>
+            <NavBar/>
         </div>
     );
 }

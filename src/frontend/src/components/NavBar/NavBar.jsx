@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Route, Link, Routes, useLocation } from "react-router-dom";
 
+import AllProjects from "../../pages/AllProjects/index";
+import RankingPage from "../../pages/Community/Community";
+import Community from "../../pages/Ranking/index";
+
 import Modal from "../CreateProject/CreateProject";
 
 import CarryCase from "../../assets/CarryCase";
@@ -42,29 +46,40 @@ function NavBar() {
     setTags(tags.filter((el, i) => i !== index));
   }
 
+
+
   return (
     <>
       <div className="nav-toda">
         <div className="nav-bar">
-            <div className='nav-item'>
-                <CarryCase></CarryCase>
-                <p className='navName'>Projects</p>
-            </div>
-            <div className='nav-item'>
-                <People></People>
-                <p className='navName'>Community</p>
-            </div>
-            <div className='nav-item'>
-                <Create></Create>
-            </div>
-            <div className='nav-item'>
-                <Trophy></Trophy>
-                <p className='navName'>Ranking</p>
-            </div>
-            <div className='nav-item'>
-                <Person></Person>
-                <p className='navName'>Profile</p>
-            </div>
+          <div className="nav-item">
+            <CarryCase  />
+            <a href="/Projects">Projects</a>
+          </div>
+          <div className="nav-item">
+            <People />
+            <a href="/Community">Community</a>
+          </div>
+          <div className="nav-item">
+            <button
+              onClick={
+                currentPath === "/Community"
+                  ? () =>
+                      console.log("Coloque sua função de togglePostModal aqui")
+                  : toggleProjectModal
+              }
+            >
+              <Create/>
+            </button>
+          </div>
+          <div className="nav-item">
+            <Trophy />
+            <a href="/Ranking">Ranking</a>
+          </div>
+          <div className="nav-item">
+            <Person></Person>
+            <p>Profile</p>
+          </div>
         </div>
       </div>
       {projectModal && (

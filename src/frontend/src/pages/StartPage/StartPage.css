@@ -16,26 +16,24 @@
         height: 400px;
         display: flex;
         justify-content: center;
+
         align-items: center;
-
-
-
         position: relative;
 
-
         background-color: #0672CB;
-        border-radius: 0 0 40% 40%;
+        border-radius: 0 0 150px 150px;
         color: #0672CB;
 
         .logotipoSP {
+            display: flex;
             position: absolute;
             bottom: -55px;
             background-Repeat: no-repeat;
             background-Size: 80%;
             background-Position: center;
-            background-image: url('../../assets/imglogo.jpg');
-
-            background-color: #ffff;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
             border-radius: 50%;
             box-shadow: 0px 0px 8px 0px #C5C5C5;
             width: 110px;
@@ -48,13 +46,13 @@
     .textSP {
         width: 100%;
         height: 100%;
-        margin-bottom: 10%;
+        margin-bottom: 20%;
         
 
         .titleSP{
             width: 100%;
             height: 100%;
-            margin-bottom: 10%;
+            margin-bottom: 5%;
 
             display: flex;
             justify-content: center;
@@ -62,18 +60,16 @@
 
             font-size: 250%;
             font-family: 'roboto', sans-serif;
+            font-weight: 300;
         }
 
         .subtitleSP{
-            width: 100%;
-            height: 100%;
-
             display: flex;
             justify-content: center;
             text-align: center;
-
-            font-size: 150%;
+            font-size: 16px;
             font-family: 'roboto', sans-serif;
+            font-weight: 400;
         }
     }
 
@@ -84,25 +80,28 @@
         align-items: center;
 
         .buttonSP{
-            width: 80%;
-            height: 100%;
-            border-radius: 0.5em;
-
-
-            
+            display: flex;
+            width: 53%;
+            height: 38px;
+            border-radius: 30px;
             text-align: center;
             font-family: 'roboto', sans-serif;
             background-color: #0672CB;
             color: #ffff;
             border-color: #0672CB;
-
-            font-size: 2em;
+            font-size: 16px;
             font-family: 'roboto', sans-serif;
             border-style: solid;
+            justify-content: center;
+            flex-direction: row;
 
             .linkSP{
+                display: flex;
                 text-decoration: none;
                 color: #ffff;
+                padding: 5px;
+                font-weight: 300;
+
             }
         }
     }

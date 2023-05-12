@@ -98,7 +98,7 @@ export class ModelSelect {
         try {
             const result = await this.prisma.post.findMany({
                 select: {media:true,description:true,tags:true,User:{select:{fullName:true}}
-                    
+               
                 },
             });
             return result;

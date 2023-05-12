@@ -7,7 +7,7 @@ export class ServicesDeletePost {
     constructor(private readonly modelDelete: ModelDelete) {}
 
     async execute(idPost: number) {
-        await this.modelDelete.deleteProject(Number(idPost));
+        await this.modelDelete.deletePost(Number(idPost));
 
         return `Post ${idPost} deleted with success`;
     }

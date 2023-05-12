@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Route, Link, Routes, useLocation } from "react-router-dom";
 
+import AllProjects from "../../pages/AllProjects/index";
+import RankingPage from "../../pages/Community/Community";
+import Community from "../../pages/Ranking/index";
+
 import Modal from "../CreateProject/CreateProject";
 
 import CarryCase from "../../assets/CarryCase";
@@ -42,17 +46,19 @@ function NavBar() {
     setTags(tags.filter((el, i) => i !== index));
   }
 
+
+
   return (
     <>
       <div className="nav-toda">
         <div className="nav-bar">
           <div className="nav-item">
-            <CarryCase></CarryCase>
-            <p>Projects</p>
+            <CarryCase  />
+            <a href="/Projects">Projects</a>
           </div>
           <div className="nav-item">
-            <People></People>
-            <p>Community</p>
+            <People />
+            <a href="/Community">Community</a>
           </div>
           <div className="nav-item">
             <button
@@ -63,12 +69,12 @@ function NavBar() {
                   : toggleProjectModal
               }
             >
-              <Create></Create>
+              <Create/>
             </button>
           </div>
           <div className="nav-item">
-            <Trophy></Trophy>
-            <p>Ranking</p>
+            <Trophy />
+            <a href="/Ranking">Ranking</a>
           </div>
           <div className="nav-item">
             <Person></Person>

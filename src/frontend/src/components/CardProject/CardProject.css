@@ -8,6 +8,7 @@
     font-family:'Roboto', sans-serif;
     position:relative;
     box-shadow:0px 5px 5px 0px #C9C9C9;
+    margin-top: 12px;
     
 }
 
@@ -73,7 +74,7 @@
     color:#636363
 }
 
-.status{
+.statusProject{
     color:#E6AC28;
 }
 

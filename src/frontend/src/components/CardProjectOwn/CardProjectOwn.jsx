@@ -28,7 +28,7 @@ function CardProjectOwn(props){
                     </li>
                     <li>
                         <p className="title">Status:</p>
-                        <p className="status" >In Progress</p>
+                        <p className="statusCard" >In Progress</p>
                     </li>
                 </ul>
             </div>

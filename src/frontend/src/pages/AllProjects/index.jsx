@@ -4,7 +4,9 @@ import TopNavBar from "../../components/Top-nav-bar/Top-nav-bar";
 import CardProject from "../../components/CardProject/CardProject";
 import Search from "../../components/Search/Search"
 import CardProjectOwn from "../../components/CardProjectOwn/CardProjectOwn"
+import NavBar from "../../components/NavBar/NavBar"
 import { useState } from "react";
+import {useLocation} from "react-router-dom"
 
 export default function AllProjects() {
   const[allProjectPage, setAllProjectPage] = useState(true);
@@ -13,10 +15,12 @@ export default function AllProjects() {
   const[cardLiked,setCardLiked]=useState(false)
   const[cardDisliked,setCardDisliked]=useState(true)
 
-    function likeCard() {
-        setCardLiked(true)
-        setCardDisliked(false)
-    }
+  
+
+  function likeCard() {
+      setCardLiked(true)
+      setCardDisliked(false)
+  }
 
     function dislikeCard() {
         setCardLiked(false)
@@ -59,30 +63,31 @@ export default function AllProjects() {
       <div className="behind"></div>
         {allProjectPage && (
             <main className="projects-container">
+                <p>All Projects</p>
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
@@ -94,30 +99,31 @@ export default function AllProjects() {
         )}
         {subProjectPage && (
             <main className="projects-container">
+                <p>Sub Project</p>
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
@@ -129,30 +135,31 @@ export default function AllProjects() {
         )}
         {createdProjectPage && (
             <main className="projects-container">
+                <p>Created Project</p>
                 <CardProjectOwn
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProjectOwn
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProjectOwn
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProjectOwn
                 onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />,
+                />
                 <CardProjectOwn
                 onLike={likeCard}
                 onDisLike={dislikeCard}
@@ -162,6 +169,7 @@ export default function AllProjects() {
             </main>
             
         ) }
+        <NavBar/>
       </>
   );
 }

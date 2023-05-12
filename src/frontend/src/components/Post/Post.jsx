@@ -13,8 +13,8 @@ function Post() {
                     <div><h3>Daniel Cunha</h3></div>
                 </div>
                 <div className='parte-12'>
-                    <Trash></Trash>
-                    <Alert></Alert>
+                    <div><Trash></Trash></div>
+                    <div><Alert></Alert></div>
                 </div>
             </div>
             <div className='item-2'>

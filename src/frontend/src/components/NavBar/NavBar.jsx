@@ -46,34 +46,25 @@ function NavBar() {
     <>
       <div className="nav-toda">
         <div className="nav-bar">
-          <div className="nav-item">
-            <CarryCase></CarryCase>
-            <p>Projects</p>
-          </div>
-          <div className="nav-item">
-            <People></People>
-            <p>Community</p>
-          </div>
-          <div className="nav-item">
-            <button
-              onClick={
-                currentPath === "/Community"
-                  ? () =>
-                      console.log("Coloque sua função de togglePostModal aqui")
-                  : toggleProjectModal
-              }
-            >
-              <Create></Create>
-            </button>
-          </div>
-          <div className="nav-item">
-            <Trophy></Trophy>
-            <p>Ranking</p>
-          </div>
-          <div className="nav-item">
-            <Person></Person>
-            <p>Profile</p>
-          </div>
+            <div className='nav-item'>
+                <CarryCase></CarryCase>
+                <p className='navName'>Projects</p>
+            </div>
+            <div className='nav-item'>
+                <People></People>
+                <p className='navName'>Community</p>
+            </div>
+            <div className='nav-item'>
+                <Create></Create>
+            </div>
+            <div className='nav-item'>
+                <Trophy></Trophy>
+                <p className='navName'>Ranking</p>
+            </div>
+            <div className='nav-item'>
+                <Person></Person>
+                <p className='navName'>Profile</p>
+            </div>
         </div>
       </div>
       {projectModal && (

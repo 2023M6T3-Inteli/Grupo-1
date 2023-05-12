@@ -13,22 +13,22 @@ function NavBar() {
         <div className="nav-bar">
             <div className='nav-item'>
                 <CarryCase></CarryCase>
-                <p>Projects</p>
+                <p className='navName'>Projects</p>
             </div>
             <div className='nav-item'>
                 <People></People>
-                <p>Community</p>
+                <p className='navName'>Community</p>
             </div>
             <div className='nav-item'>
                 <Create></Create>
             </div>
             <div className='nav-item'>
                 <Trophy></Trophy>
-                <p>Ranking</p>
+                <p className='navName'>Ranking</p>
             </div>
             <div className='nav-item'>
                 <Person></Person>
-                <p>Profile</p>
+                <p className='navName'>Profile</p>
             </div>
         </div>
         //</div>

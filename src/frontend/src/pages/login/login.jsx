@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './login.css';
 import BrandDell from '../../assets/BrandDell';
+import GoogleIcon from '../../assets/GoogleIcon';
 
 
 function Login() {
@@ -31,7 +32,7 @@ function Login() {
 
       <div className="buttons">
         <button className="button">Continue</button>
-        <button className="button2">Sign in with google</button>
+        <button className="button2"><GoogleIcon></GoogleIcon>Sign in with google</button>
         <button className="button3">Sign in with SSO</button>
       </div>
 

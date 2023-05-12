@@ -6,6 +6,8 @@ import RankingPage from './pages/Ranking/index.jsx';
 import Community from './pages/Community/Community.jsx';
 import Login from './pages/login/login.jsx';
 import StartPage from './pages/StartPage/StartPage.jsx';
+import Notifications from './pages/Notifications/Notifications.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,12 @@ const router = createBrowserRouter([
   {
     path: "/StartPage",
     element: <StartPage />
-  }
+  },
+  {
+    path: "/Notifications",
+    element: <Notifications />
+  },
+
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

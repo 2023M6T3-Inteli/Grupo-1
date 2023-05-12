@@ -22,7 +22,7 @@ export class ControllerCreateComment {
         description: `Failed to create a comment`,
     })
     // TODO fazer Api response para sucess e faild
-    async createPost(@Body() body: DTOCreateComment) {
+    async createComment(@Body() body: DTOCreateComment) {
         const { idPost, idUser, comment } = body;
         const result = await this.serviceCreateCommnent.execute(idUser, idPost, comment);
         return result;

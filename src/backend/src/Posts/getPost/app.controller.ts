@@ -1,12 +1,12 @@
 import { ServiceGetPosts } from './app.service';
 import { Body, Controller, Get, UseGuards } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { AuthGuard } from '@nestjs/passport';
+// import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
-@ApiTags('Post')
+@ApiTags('Get')
 // @UseGuards(AuthGuard('jwt'))
-export class ControllerGetComments {
+export class ControllerGetPosts {
     constructor(private serviceGetPosts: ServiceGetPosts) { }
 
     @Get('getPost')
@@ -17,8 +17,8 @@ export class ControllerGetComments {
             '[{"description": "string", "media": "string", "tags": [string], "idUser": number },]',
     })
     @ApiResponse({
-        status: 400,
-        description: `id of post is required`,
+        status: 404,
+        description: `Bad Request, Not Found`,
     })
     // TODO fazer Api response para sucess e faild
     async getPost() {

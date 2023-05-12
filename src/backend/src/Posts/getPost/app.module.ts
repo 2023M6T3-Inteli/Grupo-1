@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { modelModule } from 'src/models/app.module';
-import { ControllerGetComments } from './app.controller';
+import { ControllerGetPosts } from './app.controller';
 import { ServiceGetPosts } from './app.service';
 
 @Module({
     imports: [modelModule],
-    controllers: [ControllerGetComments],
+    controllers: [ControllerGetPosts],
     providers: [ServiceGetPosts],
     exports: [ServiceGetPosts],
 })

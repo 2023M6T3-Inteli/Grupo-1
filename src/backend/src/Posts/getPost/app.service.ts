@@ -10,8 +10,8 @@ export class ServiceGetPosts {
 
     async execute() {
         try {
-            const getComments = await this.modelSelect.getAllPosts();
-            return getComments;
+            const getPosts = await this.modelSelect.getAllPosts();
+            return getPosts;
         } catch (error) {
             throw new HttpException(
                 {

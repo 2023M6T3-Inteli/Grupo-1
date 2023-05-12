@@ -24,7 +24,7 @@ export class ControllerLikePost {
         status: 404,
         description: `Does not exist user or post with this id`,
     })
-    async saveProject(@Body() body: DTOLikePost) {
+    async likePost(@Body() body: DTOLikePost) {
         const { idPost, idUser } = body;
 
         const result = await this.serviceLikePost.execute(idPost, idUser);

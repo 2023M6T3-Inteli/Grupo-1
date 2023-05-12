@@ -49,7 +49,7 @@ export default function AllProjects() {
   return (
     <>
       <div className="header">
-        <TopBar />
+        <TopBar title={"Projects"}/>
         <TopNavBar
             onChangeToAll={changeToAllProject}
             onchangeToSub={changeToSubProject}

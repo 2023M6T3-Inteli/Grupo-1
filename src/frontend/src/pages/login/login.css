@@ -127,6 +127,15 @@
         }
     }
 
+
+    .linkContinue{
+        display: flex;
+        text-decoration: none;
+        color: #ffff;
+        padding: 5px;
+        font-weight: 300;
+
+    }
     .buttons {
         display: flex;
         flex-direction: column;

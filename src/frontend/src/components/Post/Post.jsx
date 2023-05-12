@@ -10,7 +10,7 @@ function Post() {
             <div className='item-1'>
                 <div className='parte-11'>
                     <div><Person></Person></div>
-                    <div><h3>Daniel Cunha</h3></div>
+                    <div><h3 className='userName'>Daniel Cunha</h3></div>
                 </div>
                 <div className='parte-12'>
                     <div><Trash></Trash></div>

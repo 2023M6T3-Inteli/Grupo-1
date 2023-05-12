@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './login.css';
 import BrandDell from '../../assets/BrandDell';
 import GoogleIcon from '../../assets/GoogleIcon';
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -31,7 +32,8 @@ function Login() {
       </div>
 
       <div className="buttons">
-        <button className="button">Continue</button>
+        <button className="button"><Link to="/Projects" className="linkContinue">Continue</Link>
+          </button>
         <button className="button2"><GoogleIcon></GoogleIcon>Sign in with google</button>
         <button className="button3">Sign in with SSO</button>
       </div>

@@ -40,8 +40,14 @@
     align-items: center;
 }
 
-h3{
+.userName{
     margin: 0;
     margin-left: 10px;
     font-weight: 400;
+    font-size: 16px;
+}
+
+.item-2{
+    margin-top: 5px;
+    font-size: 14px;
 }

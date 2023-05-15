@@ -445,6 +445,9 @@ link do design da arquitetura da nuvem em PDF: https://github.com/2023M6T3-Intel
 Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
 </center>
 
+## Arquitetura do sistema de mensageria
+
+<img src="./img/banco de dados.png">
 
 # UX e UI Design
 

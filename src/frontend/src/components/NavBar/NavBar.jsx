@@ -78,7 +78,7 @@ function NavBar() {
           </div>
           <div className="nav-item">
             <Person></Person>
-            <a>Profile</a>
+            <a href="/Profile">Profile</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,277 @@
+.bodyP{
+    min-height: 100vh;
+    height: 100%;
+    background-color: #f0f0f0;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    .FirstContainer{
+        width: 80%; 
+        height: 300px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        color: black;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .Picture{
+            display: flex;
+            position: absolute;
+            top: 20px;
+            background-Repeat: no-repeat;
+            background-Size: 80%;
+            background-Position: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0px 0px 8px 0px #C5C5C5;
+            width: 110px;
+            height: 110px;
+        }
+
+        .Name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-size: 32px;
+            font-weight: 300;
+            color: #0672CB;
+            font-style: normal;
+
+            .FullName{
+                display: flex;
+                position: absolute;
+                top: 45px;
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                color: #636363;
+            }
+
+            .Occupation{
+                display: flex;
+                position: absolute;
+                top: 65px;
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                color: #636363
+            }
+
+            .Area{
+                display: flex;
+                position: absolute;
+                top: 85px;
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                color: #636363
+            }
+        }
+
+        .ButtonsP{
+            display: grid;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+
+            .DellCurriculum{
+                margin-bottom: -180%;
+                width: 120px;
+                height: 19px;
+                border: 1px solid #A95ADC;
+                background-color: #FFFFFF;
+                color: #A95ADC;
+                border-radius: 5px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+                line-height: 1;
+            }
+
+            .Teams{
+                margin-bottom: -180%;
+                width: 120px;
+                height: 19px;
+                border: 1px solid #A95ADC;
+                background-color: #FFFFFF;
+                color: #A95ADC;
+                border-radius: 5px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+                line-height: 1;
+            }
+
+        }
+    }
+
+    .SecondContainer{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        
+        width: 80%; 
+        margin: 20px auto;
+
+
+        .Technologies{
+            width: 80%; 
+            height: 100px; 
+            margin: 20px auto;
+            padding: 15px;
+            
+            
+            
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            flex-direction: column;
+            filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+            
+            
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+            .TextTechnologies{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 20px;
+            color: black;
+            display: flex;
+            position: absolute;
+            top: 20px;
+            }
+        }
+
+        .Experience{
+            width: 80%; 
+            height: 100px; 
+            margin: 20px auto;
+            padding: 15px;
+            
+            
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            flex-direction: column;
+            filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+            font-family: 'Roboto', sans-serif;
+            
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+
+            .TextExperience{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            color: black;
+            font-size: 14px; 
+            display: flex;
+            position: absolute;
+            top: 20px;
+            }   
+        }
+    }
+
+    .ThirdContainer{
+        width: 80%; 
+        height: 100px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .TextProjects{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            display: flex;
+            position: absolute;
+            top: 20px;  
+            color: black;  
+        }
+
+        .Projects{
+            display: flex;
+            position: absolute;
+            background-color: #8A3FBA;
+            border-radius: 10px;
+            width: 30%;
+            height: 60px;
+            top: 50px;
+            left: 20px;
+
+            .NameProject{
+                color: #FFFFFF;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                
+                display: flex;
+                position: absolute;
+                text-align: center;
+               
+                padding: 15px;
+                
+            }
+        }
+        
+    }
+
+    
+}

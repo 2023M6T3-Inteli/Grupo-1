@@ -446,7 +446,8 @@ Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVM
 </center>
 
 ## Arquitetura do sistema de mensageria
-
+<img src="./img/arqmensageria.png">
+canvas: https://www.canva.com/design/DAFi8xkYJf4/D-8njrz19fpwz4vlDU8BCQ/edit?utm_content=DAFi8xkYJf4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 <img src="./img/Banco de dados.png">
 
 # UX e UI Design

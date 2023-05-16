@@ -488,7 +488,7 @@ entidades e tipos de entidades
 atributos e tipos de atributos
 relacionamentos e tipos de relacionamentos
 
-<img src="./img/matrizderisco.png">
+<img src="./img/modeloconceitual.png">
 
 
 ## Modelo Lógico 

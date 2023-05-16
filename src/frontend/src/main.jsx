@@ -37,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Faq",
-    element: <FaqPage />,
+    element: <FaqPage/>,
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

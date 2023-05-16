@@ -4,7 +4,7 @@ export type Tpost = {
     description: string;
 
     idUser: number;
-    tags: string;
+    idTag: number[];
 
-   
+
 };

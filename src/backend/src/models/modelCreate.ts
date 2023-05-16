@@ -7,7 +7,7 @@ import { PrismaService } from '../prismaServices/prisma.service';
 
 @Injectable()
 export class ModelCreate {
-    constructor(private readonly prisma: PrismaService) {}
+    constructor(private readonly prisma: PrismaService) { }
 
     async createProject(data: Tproject) {
         const {
@@ -48,7 +48,7 @@ export class ModelCreate {
         }
     }
     async createPost(data: Tpost) {
-        const { media, description, idUser, tags } = data;
+        const { media, description, idUser } = data;
 
         try {
             const result = await this.prisma.post.create({
@@ -56,7 +56,6 @@ export class ModelCreate {
                     media: media,
                     description: description,
                     idUser: idUser,
-                    tags: tags,
                 },
             });
 
@@ -78,7 +77,7 @@ export class ModelCreate {
                 data: {
                     idUser: idUser,
                     idPost: idPost,
-                    comment:comment
+                    comment: comment
                 },
             });
 
@@ -99,6 +98,26 @@ export class ModelCreate {
             const result = await this.prisma.projectTag.create({
                 data: {
                     idProject: idProject,
+                    idTag: idTag,
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
+    async connectTagsPost(idPost: number, idTag: number) {
+        try {
+            const result = await this.prisma.postTag.create({
+                data: {
+                    idPost: idPost,
                     idTag: idTag,
                 },
             });

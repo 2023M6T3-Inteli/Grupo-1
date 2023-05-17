@@ -1,4 +1,4 @@
-import { IsNotEmpty, Length, IsString } from 'class-validator';
+import { IsNotEmpty, Length, IsString, IsNumber, isNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class DTOBodyCreatePost {
@@ -11,8 +11,7 @@ export class DTOBodyCreatePost {
     media: string;
 
     @ApiProperty()
-    @IsString({ message: `media not a string` })
-    tags: string;
+    idTag: number[];
 
     @ApiProperty()
     idUser: number;

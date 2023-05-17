@@ -9,7 +9,7 @@ import { PrismaService } from '../prismaServices/prisma.service';
 
 @Injectable()
 export class ModelSelect {
-    constructor(private prisma: PrismaService) {}
+    constructor(private prisma: PrismaService) { }
 
     async getAllProjects() {
         try {
@@ -97,8 +97,9 @@ export class ModelSelect {
     async getAllPosts() {
         try {
             const result = await this.prisma.post.findMany({
-                select: {media:true,description:true,tags:true,User:{select:{fullName:true}}
-               
+                select: {
+                    media: true, description: true, User: { select: { fullName: true } }
+
                 },
             });
             return result;
@@ -427,6 +428,29 @@ export class ModelSelect {
             const result = await this.prisma.saveProject.findMany({
                 where: {
                     idProject: idProject,
+                    idUser: idUser,
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
+    async getExistUserAndPostInPostLike(
+        idPost: number,
+        idUser: number,
+    ) {
+        try {
+            const result = await this.prisma.postLike.findMany({
+                where: {
+                    idPost: idPost,
                     idUser: idUser,
                 },
             });

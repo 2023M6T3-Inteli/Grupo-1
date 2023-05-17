@@ -40,7 +40,7 @@ export class ServiceCreatePost {
                 const { id } = firstStepPost;
 
                 for (let index = 0; index < idTag.length; index++) {
-                    await this.modelCreate.connectTagsProject(id, idTag[index]);
+                    await this.modelCreate.connectTagsPost(id, idTag[index]);
                 }
 
                 return firstStepPost;

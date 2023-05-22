@@ -52,10 +52,11 @@ function Community() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
-      <Post onLike={likeCard}
+       <Post onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
+      
       </main>)}
       
       {MyPostsPage && (
@@ -64,6 +65,7 @@ function Community() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
+
       </main>)}
 
       <NavBar></NavBar>

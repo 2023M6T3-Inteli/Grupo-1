@@ -6,6 +6,8 @@ import KeyWord from '../KeyWord/KeyWord';
 import heart from "../../assets/heart.svg"
 import chat from "../../assets/chat.svg"
 import fullHeart from "../../assets/fullHeart.svg"
+import { useState } from "react";
+import DocPost from '../DocPost/DocPost';
 
 function Post(props) {
     // const[cardLiked,setCardLiked]=useState(false)
@@ -21,6 +23,7 @@ function Post(props) {
     //       setCardLiked(false)
     //       setCardDisliked(true)
     //   }
+    
 
     return (
         <div className='post-item'>
@@ -39,11 +42,13 @@ function Post(props) {
             </div>
             <div className='item-3'>
             </div>
+            <DocPost></DocPost>
             <div className='item-4'>
                 <div className='item-keys'>
-                <KeyWord></KeyWord>
-                <KeyWord></KeyWord>
+                    <KeyWord></KeyWord>
+                    <KeyWord></KeyWord>
                 </div>
+                
                 <div className='item-41'>
                     {props.cardDisliked && 
                         <img 

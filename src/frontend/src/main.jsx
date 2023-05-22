@@ -7,7 +7,9 @@ import Community from './pages/Community/Community.jsx';
 import Login from './pages/login/login.jsx';
 import StartPage from './pages/StartPage/StartPage.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
+import FaqPage from './pages/Faq';
 import Profile from './pages/Profile/profile.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -21,24 +23,30 @@ const router = createBrowserRouter([
   },
   {
     path: "/Community",
-    element: <Community />
+    element: <Community />,
   },
   {
     path: "/Login",
-    element: <Login />
+    element: <Login />,
   },
   {
     path: "/StartPage",
-    element: <StartPage />
+    element: <StartPage />,
   },
   {
     path: "/Notifications",
-    element: <Notifications />
+    element: <Notifications />,
   },
+  {
+    path: "/Faq",
+    element: <FaqPage/>,
+  },
+
   {
     path: "/Profile",
     element: <Profile />
   }
+
 
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

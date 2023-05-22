@@ -43,7 +43,7 @@ function Community() {
         onChangeToMy={changeToMyPosts}
         MyPostsPage={MyPostsPage}
         allPostsPage={allPostsPage}/>
-
+      
       <Search></Search>
 
       {allPostsPage && (

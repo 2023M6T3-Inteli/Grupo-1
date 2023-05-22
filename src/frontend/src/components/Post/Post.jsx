@@ -43,8 +43,6 @@ function Post(props) {
                 <div className='item-keys'>
                 <KeyWord></KeyWord>
                 <KeyWord></KeyWord>
-                <KeyWord></KeyWord>
-               
                 </div>
                 <div className='item-41'>
                     {props.cardDisliked && 

@@ -8,7 +8,9 @@ function Search(){
             placeholder="Search for Key-Words"
             src={magnifier}
             />   
-            <img src={magnifier}/>    
+            <div className="div-lupa">
+            <img src={magnifier}/> 
+            </div>
         </div>
     )
 }

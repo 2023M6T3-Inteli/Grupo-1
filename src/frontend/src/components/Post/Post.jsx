@@ -2,6 +2,10 @@ import './Post.css';
 import Person from '../../assets/UserCir'
 import Alert from '../../assets/AlertNotice'
 import Trash from '../../assets/Trash'
+import KeyWord from '../KeyWord/KeyWord';
+import heart from "../../assets/heart.svg"
+import chat from "../../assets/chat.svg"
+import fullHeart from "../../assets/fullHeart.svg"
 
 function Post() {
 
@@ -21,9 +25,33 @@ function Post() {
                 <p>Found out this really interesting podcast about Artifical Intelligence! Check it out:</p>
             </div>
             <div className='item-3'>
-
             </div>
+            <div className='item-4'>
+                <div className='item-keys'>
+                <KeyWord></KeyWord>
+                <KeyWord></KeyWord>
+                <KeyWord></KeyWord>
+                <KeyWord></KeyWord>
+                </div>
+                <div className='item-41'>
+                    {/* {props.cardDisliked && 
+                        <img 
+                        onClick={()=>props.onLike()}
+                        src={heart} 
+                        alt="like"/>
+                    }
+                    {props.cardLiked && 
+                        <img
+                        onClick={()=> props.onDisLike()}
+                        src={fullHeart}
+                        alt="like"/>
+                    }
+                    <img src={chat} alt="comment"/> */}
+                </div>
+            </div>
+            
 
+            
         </div>
     );
 };

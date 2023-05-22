@@ -13,6 +13,7 @@
     padding: 15px;
     height: 21%;
     width: 78%;
+    gap: 5px;
 }
 
 .item-1{
@@ -38,6 +39,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    gap: 10px;
 }
 
 .userName{
@@ -50,4 +52,12 @@
 .item-2{
     margin-top: 5px;
     font-size: 14px;
+}
+
+.item-keys{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;
+    flex-wrap: wrap;
 }

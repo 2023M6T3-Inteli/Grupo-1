@@ -11,6 +11,7 @@
 }
 
 .search input{
+    display: flex;
     width: 78%;
     border-radius: 300px;
     border:0;
@@ -23,8 +24,13 @@
 }
 
 .search img{
+    
     position:absolute;
     right: 12vw;
     top:0.7vh;
     cursor:pointer;
+}
+
+.div-lupa{
+    display: flex;
 }

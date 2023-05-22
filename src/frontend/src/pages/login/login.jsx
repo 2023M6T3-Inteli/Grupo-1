@@ -3,11 +3,30 @@ import './login.css';
 import BrandDell from '../../assets/BrandDell';
 import GoogleIcon from '../../assets/GoogleIcon';
 import { Link } from 'react-router-dom';
-
+import api from "../../api";
 
 function Login() {
   const [count, setCount] = useState(0)
+  const loginOk = async () => {
+    // TODO Fazer as validações de login -> Sugestão utilizar talz react forms
 
+    await api
+      .post("/login", { email: inputEmail, password: inputPassword })
+      .catch((res) => {
+        setStateError(true);
+
+        setTimeout(() => {
+          setStateError(false);
+        }, 3000);
+      })
+      .then((res) => {
+        api.defaults.headers.Authorization = `Bearer ${res.data.token}`;
+        sessionStorage.setItem("token", res.data.token);
+        sessionStorage.setItem("user", JSON.stringify(res.data.user));
+
+        return navigate("/Dell/AllProject");
+      });
+  };
   return (
     <div className="body">
 
@@ -22,7 +41,7 @@ function Login() {
       <div className='emailPassword'>
         <div className="email">
           <p className='emailText'>Your email address: </p>
-          <input type="text" className="inputEmail" />
+          <input type="text" className="inputEmail"  />
         </div>
 
         <div className="Password">

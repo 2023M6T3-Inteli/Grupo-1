@@ -7,7 +7,20 @@ import heart from "../../assets/heart.svg"
 import chat from "../../assets/chat.svg"
 import fullHeart from "../../assets/fullHeart.svg"
 
-function Post() {
+function Post(props) {
+    // const[cardLiked,setCardLiked]=useState(false)
+    // const[cardDisliked,setCardDisliked]=useState(true)
+  
+  
+    // function likeCard() {
+    //     setCardLiked(true)
+    //     setCardDisliked(false)
+    // }
+  
+    //   function dislikeCard() {
+    //       setCardLiked(false)
+    //       setCardDisliked(true)
+    //   }
 
     return (
         <div className='post-item'>
@@ -31,10 +44,10 @@ function Post() {
                 <KeyWord></KeyWord>
                 <KeyWord></KeyWord>
                 <KeyWord></KeyWord>
-                <KeyWord></KeyWord>
+               
                 </div>
                 <div className='item-41'>
-                    {/* {props.cardDisliked && 
+                    {props.cardDisliked && 
                         <img 
                         onClick={()=>props.onLike()}
                         src={heart} 
@@ -46,7 +59,7 @@ function Post() {
                         src={fullHeart}
                         alt="like"/>
                     }
-                    <img src={chat} alt="comment"/> */}
+                    <img src={chat} alt="comment"/>
                 </div>
             </div>
             
@@ -55,5 +68,4 @@ function Post() {
         </div>
     );
 };
-
 export default Post;

@@ -60,7 +60,10 @@ function Community() {
       
       {MyPostsPage && (
       <main className='posts'>
-      
+      <Post onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></Post>
       </main>)}
 
       <NavBar></NavBar>

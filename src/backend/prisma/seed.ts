@@ -14,7 +14,7 @@ async function main() {
             job: 'Software Enginer',
             isManager: true,
             idManager: 1,
-            rankPoints:0,
+            rankPoints: 0,
         },
     });
 
@@ -29,17 +29,9 @@ async function main() {
             job: 'Software Enginer',
             isManager: false,
             idManager: 1,
-            rankPoints:0,
+            rankPoints: 0,
         },
     });
-    await prisma.post.create({
-        data: {
-            id: 1,
-            description: "Lorem Ipsum",
-            media: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            tags: "ux",
-        }
-    })
 
     await prisma.tag.create({
         data: {
@@ -47,6 +39,20 @@ async function main() {
             name: 'HTML',
         },
     });
+
+    await prisma.post.create({
+        data: {
+            description: "Lorem Ipsum",
+            media: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        }
+    })
+
+    await prisma.postTag.create({
+        data: {
+            idPost: 1,
+            idTag: 1,
+        }
+    })
 
     await prisma.tag.create({
         data: {

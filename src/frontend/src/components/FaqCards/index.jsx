@@ -3,7 +3,7 @@ import "./style.css"
 
 export default function FaqCard() {
     return (
-      <div className="post-item">
+      <div className="post-item-faq">
         <div className="item-1">
           <div>
             <h3 className="questions">Lorem ipsum dolor sit amet?</h3>

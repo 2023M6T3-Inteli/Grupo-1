@@ -1,0 +1,50 @@
+.body{
+    margin:0;
+    background-color:#F0F0F0 ;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-savproj{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    background: #F0F0F0;
+    z-index:997;
+}
+
+.search-container-savproj{
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.behind-savproj{
+    width: 100%;
+    height: 180px;
+    z-index:996;
+}
+
+.projects-container-savproj{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+    flex-direction: column;
+    align-items: center;
+    z-index:995;
+}
+
+.likedButton-savproj{
+    display: flex;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+}

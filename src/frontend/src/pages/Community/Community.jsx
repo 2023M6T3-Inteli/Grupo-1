@@ -5,6 +5,7 @@ import TopBar from '../../components/TopBar/TopBar'
 import Search from '../../components/Search/Search';
 import TopNavPosts from '../../components/TopNavPosts/TopNavPosts';
 import { useState } from "react";
+import LikedComp from '../../assets/LikedComp/LikedComp';
 
 function Community() {
     const[allPostsPage, setAllPostsPage] = useState(true);
@@ -37,14 +38,18 @@ function Community() {
   
   return (
     <div className='body'>
-      <TopBar title={"Community"}></TopBar>
-      <TopNavPosts 
-        onChangeToAll={changeToAllPosts}
-        onChangeToMy={changeToMyPosts}
-        MyPostsPage={MyPostsPage}
-        allPostsPage={allPostsPage}/>
+      <div className='header-com'>
+        <TopBar title={"Community"}></TopBar>
+          <div>
+          <TopNavPosts 
+          onChangeToAll={changeToAllPosts}
+          onChangeToMy={changeToMyPosts}
+          MyPostsPage={MyPostsPage}
+          allPostsPage={allPostsPage}/>
+          </div>
+          <div className='search-div'><Search></Search></div>
+      </div>
       
-      <Search></Search>
 
       {allPostsPage && (
       <main className='posts'>
@@ -56,6 +61,19 @@ function Community() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
+        <Post onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></Post>
+       <Post onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></Post>
+        <Post onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></Post>
+       
       
       </main>)}
       
@@ -67,8 +85,10 @@ function Community() {
                 cardDisliked={cardDisliked}></Post>
 
       </main>)}
-
-      <NavBar></NavBar>
+      <div className='likedButton'>
+        <LikedComp></LikedComp>
+      </div>
+      <div><NavBar></NavBar></div>
     </div>
   );
 };

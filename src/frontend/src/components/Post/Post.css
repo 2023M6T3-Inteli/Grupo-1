@@ -13,6 +13,7 @@
     height: 21%;
     width: 75%;
     gap: 5px;
+    position: relative;
 }
 
 .item-1{

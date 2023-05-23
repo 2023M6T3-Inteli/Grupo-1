@@ -1,5 +1,5 @@
 import Ranking from "../../components/Ranking/index";
-import TopBar from "../../components/TopBarRank/index";
+import TopBar from "../../components/TopBar/TopBar";
 import NavBar from "../../components/NavBar/NavBar"
 import "./style.css"
 import silverTrophy from "../../assets/award-trophy 2.svg"
@@ -9,7 +9,7 @@ import bronzeTrophy from "../../assets/award-trophy 4.svg"
 export default function RankingPage() {
     return (
         <div className="body">
-            <TopBar />
+            <TopBar title={"Ranking"}></TopBar>
             <div className="blueRow">
                 <div className="trophyContainer">
                     <div className="divSilverTrophy">

@@ -8,6 +8,7 @@ import Login from './pages/login/login.jsx';
 import StartPage from './pages/StartPage/StartPage.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
 import Profile from './pages/Profile/profile.jsx';
+import AuxPage from "./pages/AuxPage/index.jsx";
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/Profile",
     element: <Profile />
-  }
+  },
+  {
+    path:"/AuxPage",
+    element:<AuxPage/>
+  },
 
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

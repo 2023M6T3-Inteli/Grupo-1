@@ -1,0 +1,48 @@
+
+
+.backgroundOwnerOptions{
+    background-color:rgba(49, 49, 49, 0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top:0;
+    display: flex;
+}
+
+.ownerOptionsCont{
+    height: 11%;
+    width: 29%;
+    background-color: #fff;
+    border-radius: 20px;
+    position:fixed;
+    z-index:999;
+    right:1px;
+}
+
+.ownerOptionsCont hr{
+    color: #000;
+    stroke-width: 1px;
+}
+
+#manageAplications{
+    width: 100%;
+    height: 60%;
+    border-radius: 20px 20px 0px 0px;
+    border:0;
+    border-color: #000;
+    border: 1px;
+    border-bottom: 1px solid;
+    border-width: 1px;
+    background-color: #fff;
+}
+
+#deleteProject{
+    width: 100%;
+    height: 39%;
+    border-radius: 0px 0px 20px 20px;
+    border:0;
+    background-color: #fff;
+}
+

@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Route, Link, Routes, useLocation } from "react-router-dom";
 
-import AllProjects from "../../pages/AllProjects/index";
-import RankingPage from "../../pages/Community/Community";
-import Community from "../../pages/Ranking/index";
-
-import Modal from "../CreateProject/CreateProject";
+import CreateNav from "../CreateNav/CreateNav";
+import Modal from "../../components/CreateProject/CreateProject.jsx"
+import ManageApply from "../../components/ManageApply/ManageApply.jsx"
 
 import CarryCase from "../../assets/CarryCase";
 import People from "../../assets/UserGroup";
@@ -21,6 +19,12 @@ function NavBar() {
   const [projectModal, setProjectModal] = useState(false);
   const router = useLocation();
   const currentPath = router.pathname;
+  const [createNavOpen, setCreateNavOpen] = useState(false);
+  const[createProjectOpen,setCreateProjectOpen]=useState(false)
+
+  function showCreateNav() {
+    setCreateNavOpen((prevState) => !prevState);
+  }
 
   const toggleProjectModal = () => {
     setProjectModal((prevState) => !prevState);
@@ -34,26 +38,29 @@ function NavBar() {
 
   const [tags, setTags] = useState([]);
 
-  function handleKeyDown(e) {
-    if (e.key !== "Enter") return;
-    const value = e.target.value;
-    if (!value.trim()) return;
-    setTags([...tags, value]);
-    e.target.value = "";
-  }
+  // function handleKeyDown(e) {
+  //   if (e.key !== "Enter") return;
+  //   const value = e.target.value;
+  //   if (!value.trim()) return;
+  //   setTags([...tags, value]);
+  //   e.target.value = "";
+  // }
 
   function removeTag(index) {
     setTags(tags.filter((el, i) => i !== index));
   }
 
-
+  function showCreateProject(){
+    setCreateProjectOpen((prevState)=>!prevState)
+    setCreateNavOpen((prevState) => !prevState);
+  }
 
   return (
     <>
       <div className="nav-toda">
         <div className="nav-bar">
           <div className="nav-item">
-            <CarryCase  />
+            <CarryCase />
             <a href="/Projects">Projects</a>
           </div>
           <div className="nav-item">
@@ -69,7 +76,7 @@ function NavBar() {
                   : toggleProjectModal
               }
             >
-              <Create/>
+              <Create onShowCreateNav={showCreateNav} />
             </button>
           </div>
           <div className="nav-item">
@@ -82,12 +89,17 @@ function NavBar() {
           </div>
         </div>
       </div>
-      {projectModal && (
-        <Modal
-          toggleModal={toggleProjectModal}
-          tags={tags}
-          handleKeyDown={handleKeyDown}
-        />
+      {createNavOpen && (
+        <>
+          <CreateNav 
+          onShowCreateNav={showCreateNav}
+          onShowCreateProject={showCreateProject} />
+        </>
+      )}
+      {createProjectOpen&& (
+        <>
+          <Modal/>
+        </>
       )}
     </>
   );

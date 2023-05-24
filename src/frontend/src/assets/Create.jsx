@@ -1,7 +1,7 @@
 import React from "react";
 import './Icons.css';
 
-function Create() {
+function Create(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ function Create() {
       height="64"
       fill="none"
       viewBox="0 0 65 64"
+      onClick={()=>props.onShowCreateNav()}
     >
       <g filter="url(#filter0_d_485_1013)">
         <ellipse cx="32.5" cy="31" fill="#fff" rx="28.5" ry="28"></ellipse>

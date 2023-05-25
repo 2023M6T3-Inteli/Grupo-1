@@ -57,28 +57,15 @@ function Community() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
-       <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-        <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-       <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-        <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-       
       
       </main>)}
       
       {MyPostsPage && (
       <main className='posts'>
+      <Post onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></Post>
       <Post onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}

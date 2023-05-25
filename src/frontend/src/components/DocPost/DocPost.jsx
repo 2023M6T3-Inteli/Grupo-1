@@ -1,10 +1,19 @@
 import './DocPost.css'
 
-function DocPost() {
+function DocPost(urlDoc) {
+
+    //URL CODE
+  const handleClick = () => {
+    window.open(urlDoc, '_blank'); // Abre a URL em uma nova aba
+    // window.location.href= urlDoc; 
+    };
 
     return (
-        <div className='doc-item'>
-            <p>Listen to podcast</p>
+        <div>
+            <button onClick={handleClick}
+                            className='doc-item' >
+                                go to content
+                            </button>
         </div>
     );
 };

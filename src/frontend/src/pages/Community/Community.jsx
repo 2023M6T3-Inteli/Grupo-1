@@ -6,6 +6,7 @@ import Search from '../../components/Search/Search';
 import TopNavPosts from '../../components/TopNavPosts/TopNavPosts';
 import { useState } from "react";
 import LikedComp from '../../assets/LikedComp/LikedComp';
+import OwnedPost from '../../components/OwnedPost/OwnedPost'
 
 function Community() {
     const[allPostsPage, setAllPostsPage] = useState(true);
@@ -57,32 +58,19 @@ function Community() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}></Post>
-       <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-        <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-       <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-        <Post onLike={likeCard}
-                onDisLike={dislikeCard}
-                cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
-       
       
       </main>)}
       
       {MyPostsPage && (
       <main className='posts'>
-      <Post onLike={likeCard}
+      <OwnedPost onLike={likeCard}
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
-                cardDisliked={cardDisliked}></Post>
+                cardDisliked={cardDisliked}></OwnedPost>
+      <OwnedPost onLike={likeCard}
+                onDisLike={dislikeCard}
+                cardLiked={cardLiked}
+                cardDisliked={cardDisliked}></OwnedPost>
 
       </main>)}
       <div className='likedButton'>

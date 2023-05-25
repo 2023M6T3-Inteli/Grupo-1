@@ -1,6 +1,7 @@
-import './Post.css';
+import './OwndedPost.css';
 import Person from '../../assets/UserCir'
 import Alert from '../../assets/AlertNotice'
+import Trash from '../../assets/Trash'
 import KeyWord from '../KeyWord/KeyWord';
 import heart from "../../assets/heart.svg"
 import chat from "../../assets/chat.svg"
@@ -12,7 +13,7 @@ import axios from 'axios';
 
 
 
-function Post(props) {
+function OwnedPost(props) {
     // const[cardLiked,setCardLiked]=useState(false)
     // const[cardDisliked,setCardDisliked]=useState(true)
   
@@ -51,33 +52,34 @@ function Post(props) {
 
 
     return (
-        <ul className="post-ul">
+        <ul className="owned-post-ul">
             {dadosInvertidos.map(item => (
-                    <div className='post-item' key={item.id}>
-                        <div className='item-1' >
-                            <div className='parte-11'>
+                    <div className='owned-post-item' key={item.id}>
+                        <div className='owned-item-1' >
+                            <div className='owned-parte-11'>
                                 <div><Person></Person></div>
-                                <div><h3 className='userName' key={item.id}>{item.fullName}</h3></div>
+                                <div><h3 className='owned-userName' key={item.id}>{item.fullName}</h3></div>
                             </div>
-                            <div className='parte-12'>
+                            <div className='owned-parte-12'>
+                                <div><Trash></Trash></div>
                                 <div><Alert></Alert></div>
                             </div>
                         </div>
-                        <div className='item-2'>
+                        <div className='owned-item-2'>
                             <p>{item.description}</p>
                         </div>
-                        <div className='item-3'>
+                        <div className='owned-item-3'>
                         </div>
                         <div>
                         <DocPost urlDoc={item.media}></DocPost>
                         </div>
-                        <div className='item-4'>
-                            <div className='item-keys'>
+                        <div className='owned-item-4'>
+                            <div className='owned-item-keys'>
                                 <KeyWord></KeyWord>
                                 <KeyWord></KeyWord>
                             </div>
                             
-                            <div className='item-41'>
+                            <div className='owned-item-41'>
                                 {props.cardDisliked && 
                                     <img 
                                     onClick={()=>props.onLike()}
@@ -101,4 +103,4 @@ function Post(props) {
         </ul>
     );
 };
-export default Post;
+export default OwnedPost;

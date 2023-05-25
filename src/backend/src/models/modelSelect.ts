@@ -639,12 +639,32 @@ export class ModelSelect {
 
     async getUserByEmail(email: string) {
         try {
-            const result = await this.prisma.user.findMany({
+            const result = await this.prisma.user.findUnique({
+                where: {
+                    email:email
+                    
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+    async getPassByEmail(email: string) {
+        try {
+            const result = await this.prisma.user.findUnique({
                 where: {
                     email: email,
                 },
+                select:{password:true}
             });
-
+        
             return result;
         } catch (error) {
             throw new HttpException(

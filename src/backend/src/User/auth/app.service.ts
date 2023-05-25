@@ -9,24 +9,36 @@ export class AuthServices {
         private readonly jwtServices: JwtService,
     ) {}
 
-    async login(user) {
-        const payload = { sub: user.id };
+    async login(email: string, password: string) {
+        // console.log('email:', email, 'password:', password);
+        const user = await this.validate(email, password);
+        // console.log(user);
+        if (!user) {
+            throw new Error('Invalid email or password');
+        }
+        const payload = { email,password };
+
+        const tokens = this.jwtServices.sign(payload);
+        console.log(tokens)
 
         return {
             user: user,
-            token: this.jwtServices.sign(payload),
+            tokens:tokens
         };
     }
 
-    async validate(email) {
-        let user;
+    async validate(email: string, password: string) {
+        const user = await this.modelSelect.getUserByEmail(email);
+        const pass = await this.modelSelect.getPassByEmail(email);
+        //console.log(pass)
 
-        try {
-            user = await this.modelSelect.getUserByEmail(email);
-        } catch (error) {
+
+        if (pass.password != password) {
+            console.log(email);
             return null;
         }
 
+            
         return user;
     }
 }

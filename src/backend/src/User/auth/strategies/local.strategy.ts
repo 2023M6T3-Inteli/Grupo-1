@@ -9,9 +9,10 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
         super({ usernameField: 'email', passwordField:'password' });
     }
 
-    async validate(email: string,password:string) {
+    async validate(email: string, password: string) {
+        
         const user = await this.authServices.validate(email,password);
-
+        console.log('email:', email, 'password:', password);
 
         if (!user) {
             throw new UnauthorizedException("You doesn't have a permission");

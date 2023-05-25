@@ -6,11 +6,13 @@ import { AuthServices } from '../app.service';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
     constructor(private readonly authServices: AuthServices) {
-        super({ usernameField: 'email' });
+        super({ usernameField: 'email', passwordField:'password' });
     }
 
-    async validate(email: string) {
-        const user = await this.authServices.validate(email);
+    async validate(email: string, password: string) {
+        
+        const user = await this.authServices.validate(email,password);
+        console.log('email:', email, 'password:', password);
 
         if (!user) {
             throw new UnauthorizedException("You doesn't have a permission");

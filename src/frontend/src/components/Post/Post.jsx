@@ -50,11 +50,10 @@ function Post(props) {
     
 
     return (
-        <ul>
+        <ul className="post-ul">
             {dados .map(item => (
-                <div key={item.id}>
-                    <div className='post-item'>
-                        <div className='item-1'>
+                    <div className='post-item' key={item.id}>
+                        <div className='item-1' >
                             <div className='parte-11'>
                                 <div><Person></Person></div>
                                 <div><h3 className='userName' key={item.id}>{item.fullName}</h3></div>
@@ -98,7 +97,6 @@ function Post(props) {
 
                     
                     </div>
-                </div>
             ))}
         </ul>
     );

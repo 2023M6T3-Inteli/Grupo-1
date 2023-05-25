@@ -4,7 +4,8 @@ function DocPost(urlDoc) {
 
     //URL CODE
   const handleClick = () => {
-    window.open(urlDoc, '_blank', 'noopener,noreferrer'); // Abre a URL em uma nova aba
+    window.open(urlDoc, '_blank'); // Abre a URL em uma nova aba
+    // window.location.href= urlDoc; 
     };
 
     return (

@@ -5,6 +5,11 @@ body{
     margin:0;
 }
 
+p{
+    margin:0;
+}
+
+
 
 .TopBar{
     width: 100%;
@@ -15,6 +20,7 @@ body{
     align-items: center;
     border-radius: 0px 0px 50px 50px;
     flex-direction: column;
+    /* position:fixed; */
 }
 
 .faq{
@@ -35,3 +41,9 @@ body{
     font-size: 1rem;
 }
 
+.TopBar p{
+    color:#F0F0F0;
+    font-family:'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+}

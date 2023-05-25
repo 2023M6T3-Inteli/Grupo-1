@@ -87,18 +87,18 @@ export default function Modal(props) {
                   </div>
                   <label for="tags">Keywords:</label>
                   <div className="tags-input-container">
-                    {/*<div className="tag-item">
+                    {/* {<div className="tag-item">
                       <span className="text">hello</span>
                       <span className="close">&times;</span>
-                    </div> */  }
+                    </div>   } */}
 
-                    { props.tags.map((tag, index) => (
+                    {/* { props.tags.map((tag, index) => (
                       <div className="tag-item" key={index} >
                         <span className="text">{tag}</span>
                         <span className="close" onClick={() => removeTag(index)}>&times;</span>
                       </div>
                       
-                      )) }
+                      )) } */}
                     <input onKeyDown={props.handleKeyDown}  type="text" className="tags-input" placeholder="Type something" />
                   </div>
                   <div className="submit">

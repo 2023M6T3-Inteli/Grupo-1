@@ -2,9 +2,12 @@
 
 
 .body {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     height: 100%;
     font-family:'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .posts{
@@ -12,4 +15,35 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* gap: 20px; */
+    position:relative;
+    margin-top: 220px;
+    /* margin-bottom: 100px; */
+}
+
+.likedButton{
+    display: flex;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+}
+
+.header-com{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: fixed;
+    z-index: 900;
+    background-color: #F0F0F0;
+}
+
+.search-div{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-posts{
+    display: flex;
+    z-index: 900;
 }

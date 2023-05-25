@@ -11,17 +11,17 @@ export default function Ranking() {
                     <div className="rankingLine">
                         <img src={goldTrophy} alt="goldTrophy"></img>
                         <div>João</div>
-                        <div>100 xp</div>
+                        <div className="dell-points"> 100 xp</div>
                     </div>
                     <div className="rankingLine1">
                         <img clasname="itemSilverTrophy" src={silverTrophy} alt="silverTrophy"></img>
                         <div>Thiago</div>
-                        <div>95 xp</div>
+                        <div className="dell-points">95 xp</div>
                     </div>
                     <div className="rankingLine1">
                         <img src={bronzeTrophy} alt="bronzeTrophy"></img>
                         <div>Vitoria</div>
-                        <div>75 xp</div>
+                        <div className="dell-points">75 xp</div>
                     </div>
                     <div className="ellipsis">
                         <div>...</div>
@@ -29,7 +29,7 @@ export default function Ranking() {
                     <div className="user">
                         <p className="you">You</p>
                         <div>Seu Nome</div>
-                        <div>35 xp</div>
+                        <div className="dell-points">35 xp</div>
                     </div>
                 </div>
             </div>

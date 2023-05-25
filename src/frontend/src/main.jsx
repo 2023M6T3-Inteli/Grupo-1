@@ -9,7 +9,9 @@ import StartPage from './pages/StartPage/StartPage.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
 import FaqPage from './pages/Faq';
 import Profile from './pages/Profile/profile.jsx';
-
+import SavedPosts from './pages/SavedPosts/SavedPosts';
+import SavedProjects from './pages/SavedProjects/SavedProjects';
+import AuxPage from "./pages/AuxPage/index.jsx";
 
 
 const router = createBrowserRouter([
@@ -45,7 +47,21 @@ const router = createBrowserRouter([
   {
     path: "/Profile",
     element: <Profile />
-  }
+  },
+
+  {
+    path: "/SavedPosts",
+    element: <SavedPosts />
+  },
+
+  {
+    path: "/SavedProjects",
+    element: <SavedProjects />
+  },
+  {
+    path:"/AuxPage",
+    element:<AuxPage/>
+  },
 
 
 ]);

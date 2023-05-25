@@ -7,6 +7,7 @@ import Community from './pages/Community/Community.jsx';
 import Login from './pages/login/login.jsx';
 import StartPage from './pages/StartPage/StartPage.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
+import AuxPage from './pages/AuxPage/AuxPage';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/Notifications",
     element: <Notifications />
+  },
+  {
+    path: "/AuxPage",
+    element: <AuxPage/>
   },
 
 ]);

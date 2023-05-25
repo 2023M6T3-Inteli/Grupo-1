@@ -13,6 +13,6 @@ function CardNotification() {
             <div className="not-item"><CheckBox></CheckBox></div> 
         </div>
     );
-};
+}
 
 export default CardNotification;

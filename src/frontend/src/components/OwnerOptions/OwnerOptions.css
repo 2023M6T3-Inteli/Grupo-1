@@ -1,0 +1,28 @@
+.top-button{
+    width: 110px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px 1px 1px 0px;
+    border-color: black;
+}
+
+.bottom-button{
+    width: 110px;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px 1px 1px 1px;
+    border-top: 5px;
+    border-color: black;
+}
+
+.top-button:hover{
+    background-color: lightgray;
+}
+
+.bottom-button:hover{
+    background-color: lightgray;
+}

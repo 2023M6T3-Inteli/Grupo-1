@@ -1,0 +1,82 @@
+.top-button{
+    width: 110px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px 1px 1px 0px;
+    border-color: black;
+}
+
+.bottom-button{
+    width: 110px;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px 1px 1px 1px;
+    border-top: 5px;
+    border-color: black;
+}
+
+.top-button:hover{
+    background-color: lightgray;
+}
+
+.bottom-button:hover{
+    background-color: lightgray;
+}
+
+.container{
+    border-radius: 20px;
+    width: 275px;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    border: 1px solid gray; 
+}
+
+.delete-button{
+    background-color: #0672CB;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #0672CB;
+    padding: 5px 20px 5px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.delete-button:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid #0672CB;
+}
+
+.cancel-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.cancel-button:hover{
+    color: red;
+}
+
+
+h3{
+    padding-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;  
+    font-size: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

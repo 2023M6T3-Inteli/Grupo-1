@@ -76,6 +76,7 @@ export default function AllProjects() {
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
                 />
+                
                 <CardProject
                 onLike={likeCard}
                 onDisLike={dislikeCard}
@@ -93,7 +94,7 @@ export default function AllProjects() {
                 onDisLike={dislikeCard}
                 cardLiked={cardLiked}
                 cardDisliked={cardDisliked}
-                />
+                />  
             </main>
             
         )}

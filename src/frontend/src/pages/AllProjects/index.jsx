@@ -51,7 +51,7 @@ export default function AllProjects() {
   
 
   return (
-    <>
+    <div className="body-proj">
       <div className="header">
         <TopBar title={"Projects"}/>
         <TopNavBar
@@ -176,8 +176,9 @@ export default function AllProjects() {
             </main>
             
         ) }
-        <NavBar/>
+        <div className="nav-proj"><NavBar/></div>
         
-      </>
+        
+      </div>
   );
 }

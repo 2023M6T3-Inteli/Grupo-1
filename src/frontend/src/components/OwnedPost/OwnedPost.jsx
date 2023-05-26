@@ -31,9 +31,10 @@ function OwnedPost(props) {
     
     //GET All Posts
     const [dados, setDados] = useState(null);
+    const userId = 1; // ID desejado
 
   useEffect(() => {
-    axios.get('http://localhost:3000/getPost')
+    axios.get(`http://localhost:3000/getPostByUserId/${userId}`)
       .then(response => {
         // Armazena os dados da resposta no estado
         setDados(response.data);
@@ -41,7 +42,7 @@ function OwnedPost(props) {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [userId]);
 
   if (dados === null) {
     return <div>Loading...</div>;
@@ -58,8 +59,8 @@ function OwnedPost(props) {
                         <div className='owned-item-1' >
                             <div className='owned-parte-11'>
                                 <div><Person></Person></div>
-                                {/* <div><h3 className='owned-userName' key={item.id}>{item.fullName}</h3></div> */}
-                            </div>
+                                <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
+                                 </div>
                             <div className='owned-parte-12'>
                                 <div><Trash></Trash></div>
                                 <div><Alert></Alert></div>
@@ -75,7 +76,6 @@ function OwnedPost(props) {
                         </div>
                         <div className='owned-item-4'>
                             <div className='owned-item-keys'>
-                                <KeyWord></KeyWord>
                                 <KeyWord></KeyWord>
                             </div>
                             

@@ -15,8 +15,6 @@ body{
     display: flex;
     justify-content: center;
     z-index: 998;
-    
-   
 }
 
 .cardCreateContainer{

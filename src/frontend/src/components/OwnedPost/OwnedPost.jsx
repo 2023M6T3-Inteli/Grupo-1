@@ -10,6 +10,7 @@ import { useState } from "react";
 import DocPost from '../DocPost/DocPost';
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import KeepUserId from '../KeepUserId/KeepUserId';
 
 
 
@@ -29,9 +30,10 @@ function OwnedPost(props) {
     //   }
 
     
+    
     //GET All Posts
     const [dados, setDados] = useState(null);
-    const userId = 1; // ID desejado
+    const userId = KeepUserId(); // ID desejado
 
   useEffect(() => {
     axios.get(`http://localhost:3000/getPostByUserId/${userId}`)
@@ -43,6 +45,11 @@ function OwnedPost(props) {
         console.error(error);
       });
   }, [userId]);
+
+
+  if (!userId) {
+    return <p>Usuário não está logado.</p>;
+  }
 
   if (dados === null) {
     return <div>Loading...</div>;

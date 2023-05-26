@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from "react";
 
-function KeyWord(keyContent) {
+function KeyWord({title}) {
 
     return (
         <div className='key-item'>
-            <p>{keyContent.title}</p>
+            <p>{title}</p>
         </div>
     );
 };

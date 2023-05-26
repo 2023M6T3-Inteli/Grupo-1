@@ -57,7 +57,8 @@ function Post(props) {
                         <div className='item-1' >
                             <div className='parte-11'>
                                 <div><Person></Person></div>
-                                <div><h3 className='userName'>{item.User.fullName}</h3></div>
+                                {/* <div><h3 className='userName'>{item.User.fullName}</h3></div> */}
+                                <div><h3 className='userName'>nome</h3></div>
                             </div>
                             <div className='parte-12'>
                                 <div><Alert></Alert></div>

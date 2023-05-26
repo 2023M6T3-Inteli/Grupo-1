@@ -35,7 +35,7 @@ function Login() {
   };
 
   return (
-    <div className="body">
+    <div className="body-login">
       <header className="headerl">
         <div className="vetor">
           <div className="logotipo">

@@ -10,6 +10,8 @@ function Login() {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const navigate = useNavigate()
+  const [error, setStateError] = useState(false); // Variável de estado para controlar a exibição da mensagem de erro
+  
 
   const loginOk = async () => {
     // TODO: Fazer as validações de login -> Sugestão utilizar talz react forms
@@ -27,10 +29,15 @@ function Login() {
     } catch (error) {
       console.error(error);
       setStateError(true);
+      
+
+
 
       setTimeout(() => {
         setStateError(false);
       }, 3000);
+
+
     }
   };
 
@@ -48,21 +55,24 @@ function Login() {
         <div className="email">
           <p className="emailText">Your email address: </p>
           <input
-            type="text"
+            type="email"
             className="inputEmail"
-            onChange={(e) => setInputEmail(e.target.value)}
+            onChange={(e) => setInputEmail(e.target.value)} required
           />
         </div>
 
         <div className="Password">
           <p className="passwordText">Choose password:</p>
           <input
-            type="text"
+            type="password"
             className="inputPassword"
-            onChange={(e) => setInputPassword(e.target.value)}
+            onChange={(e) => setInputPassword(e.target.value)} required
           />
         </div>
       </div>
+
+      {error && <p className="errorMessage">Login failed. Please check your credentials.</p>}
+
 
       <div className="buttons">
         <button className="button" onClick={loginOk}>

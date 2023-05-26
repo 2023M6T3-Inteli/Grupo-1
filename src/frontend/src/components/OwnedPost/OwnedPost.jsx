@@ -58,7 +58,7 @@ function OwnedPost(props) {
                         <div className='owned-item-1' >
                             <div className='owned-parte-11'>
                                 <div><Person></Person></div>
-                                <div><h3 className='owned-userName' key={item.id}>{item.fullName}</h3></div>
+                                {/* <div><h3 className='owned-userName' key={item.id}>{item.fullName}</h3></div> */}
                             </div>
                             <div className='owned-parte-12'>
                                 <div><Trash></Trash></div>

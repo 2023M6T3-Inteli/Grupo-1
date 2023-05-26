@@ -33,7 +33,7 @@ function OwnedPost(props) {
     
     //GET All Posts
     const [dados, setDados] = useState(null);
-    const userId = KeepUserId(); // ID desejado
+    const userId = 1; // ID desejado
 
   useEffect(() => {
     axios.get(`http://localhost:3000/getPostByUserId/${userId}`)
@@ -82,8 +82,13 @@ function OwnedPost(props) {
                         <DocPost urlDoc={item.media}></DocPost>
                         </div>
                         <div className='owned-item-4'>
-                            <div className='owned-item-keys'>
-                                <KeyWord></KeyWord>
+                        <div className='owned-item-keys'>
+                                
+
+                                {(item.postTag).map((subItem,index) => (
+                                    <KeyWord key={index}  title={subItem.Tag.name}></KeyWord>
+                                ))}
+                                
                             </div>
                             
                             <div className='owned-item-41'>

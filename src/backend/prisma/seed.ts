@@ -46,6 +46,7 @@ async function main() {
         data: {
             description: "Lorem Ipsum",
             media: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            idUser: 2
         }
     })
 
@@ -160,6 +161,60 @@ async function main() {
             name: 'Back-end',
         },
     });
+    await prisma.post.create({
+        data: {
+
+            description: "Aprenda Python",
+            media: "https://youtu.be/4p7axLXXBGU",
+            idUser: 1
+        },
+    });
+    await prisma.postTag.create({
+        data: {
+            idPost: 2,
+            idTag: 5,
+        }
+    })
+    await prisma.postTag.create({
+        data: {
+            idPost: 2,
+            idTag: 8,
+        }
+    })
+    await prisma.post.create({
+        data: {
+
+            description: "Qual a diferença entre HTML e React?",
+            media: "https://www.youtube.com/watch?v=idv0Bcdwo6I",
+            idUser: 1
+        },
+    });
+    await prisma.postTag.create({
+        data: {
+            idPost: 3,
+            idTag: 1,
+        }
+    })
+    await prisma.postTag.create({
+        data: {
+            idPost: 3,
+            idTag: 11,
+        }
+    })
+    await prisma.post.create({
+        data: {
+
+            description: "SQLite e suas vantagens?",
+            media: "https://youtu.be/LaoIlFhULvY",
+            idUser: 2
+        },
+    });
+    await prisma.postTag.create({
+        data: {
+            idPost: 4,
+            idTag: 1,
+        }
+    })
 }
 
 main()

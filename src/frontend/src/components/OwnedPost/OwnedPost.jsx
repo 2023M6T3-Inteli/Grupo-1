@@ -10,6 +10,7 @@ import { useState } from "react";
 import DocPost from '../DocPost/DocPost';
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import KeepUserId from '../KeepUserId/KeepUserId';
 
 
 
@@ -29,11 +30,13 @@ function OwnedPost(props) {
     //   }
 
     
+    
     //GET All Posts
     const [dados, setDados] = useState(null);
+    const userId = 1; // ID desejado
 
   useEffect(() => {
-    axios.get('http://localhost:3000/getPost')
+    axios.get(`http://localhost:3000/getPostByUserId/${userId}`)
       .then(response => {
         // Armazena os dados da resposta no estado
         setDados(response.data);
@@ -41,7 +44,12 @@ function OwnedPost(props) {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [userId]);
+
+
+  if (!userId) {
+    return <p>Usuário não está logado.</p>;
+  }
 
   if (dados === null) {
     return <div>Loading...</div>;
@@ -58,8 +66,8 @@ function OwnedPost(props) {
                         <div className='owned-item-1' >
                             <div className='owned-parte-11'>
                                 <div><Person></Person></div>
-                                <div><h3 className='owned-userName' key={item.id}>{item.fullName}</h3></div>
-                            </div>
+                                <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
+                                 </div>
                             <div className='owned-parte-12'>
                                 <div><Trash></Trash></div>
                                 <div><Alert></Alert></div>
@@ -74,9 +82,13 @@ function OwnedPost(props) {
                         <DocPost urlDoc={item.media}></DocPost>
                         </div>
                         <div className='owned-item-4'>
-                            <div className='owned-item-keys'>
-                                <KeyWord></KeyWord>
-                                <KeyWord></KeyWord>
+                        <div className='owned-item-keys'>
+                                
+
+                                {(item.postTag).map((subItem,index) => (
+                                    <KeyWord key={index}  title={subItem.Tag.name}></KeyWord>
+                                ))}
+                                
                             </div>
                             
                             <div className='owned-item-41'>

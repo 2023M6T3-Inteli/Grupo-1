@@ -48,6 +48,8 @@ function Post(props) {
 
   //to revert the data ordem on the feed
   const dadosInvertidos = [...dados].reverse();
+  console.log(dados.media);
+//   const dataName = dados.User.fullName
 
 
     return (
@@ -57,7 +59,8 @@ function Post(props) {
                         <div className='item-1' >
                             <div className='parte-11'>
                                 <div><Person></Person></div>
-                                <div><h3 className='userName'>{item.User.fullName}</h3></div>
+                                <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
+                                {/* <div><h3 className='userName'>nome</h3></div> */}
                             </div>
                             <div className='parte-12'>
                                 <div><Alert></Alert></div>
@@ -69,12 +72,17 @@ function Post(props) {
                         <div className='item-3'>
                         </div>
                         <div>
-                        <DocPost urlDoc={item.media}></DocPost>
+                        <DocPost title={item.media}></DocPost>
+                        
                         </div>
                         <div className='item-4'>
                             <div className='item-keys'>
-                                <KeyWord></KeyWord>
-                                <KeyWord></KeyWord>
+                                
+
+                                {(item.postTag).map((subItem,index) => (
+                                    <KeyWord key={index}  title={subItem.Tag.name}></KeyWord>
+                                ))}
+                                
                             </div>
                             
                             <div className='item-41'>

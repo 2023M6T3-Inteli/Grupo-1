@@ -1,10 +1,13 @@
 import './KeyWord.css'
+import React, { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from "react";
 
-function KeyWord() {
+function KeyWord({title}) {
 
     return (
         <div className='key-item'>
-            <p>Front-end</p>
+            <p>{title}</p>
         </div>
     );
 };

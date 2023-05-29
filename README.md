@@ -29,7 +29,9 @@ O dataset teve como sua base o banco de dados público apresentado pelo professo
 Existem três colunas nesse arquivo csv:
 
 **userId**: a identificação do usuario dentro da plataforma;
+
 **Itemid**: a identificação do item (post) dentro da plataforma;
+
 **classification**: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5. Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra o gráfico.
 
 As três classificações mais comum no dataset são:

@@ -24,6 +24,8 @@ Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenhar
 
 # Descrição da Base de Dados
 
+https://colab.research.google.com/drive/1FdvSvlbacaz18tHySr30VuI_z_hbGDrB#scrollTo=rIlB2YClZFc6
+
 O dataset teve como sua base o banco de dados público apresentado pelo professor neste link "https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset", usamos a tabela "ratings.csv" para extrairmos os dados.
 
 Existem três colunas nesse arquivo csv:
@@ -57,6 +59,7 @@ As três classificações mais comum no dataset são:
 - 0.5 com 1370
 
 Com isso podemos ver que na coluna classification (nossa coluna alvo) não possue discrepâncias.
+
 
 # Documentação
 

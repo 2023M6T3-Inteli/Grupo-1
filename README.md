@@ -16,11 +16,45 @@ Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenhar
 
 # Projeto: *APP Dispositivo Móvel*
 
-# Grupo: *Nome_do_seu_Grupo*
+# Grupo: *Dell Genius*
 
 # Descrição
 
 *Descrição_resumida_do_projeto*
+
+# Descrição da Base de Dados
+
+O dataset teve como sua base o banco de dados público apresentado pelo professor neste link "https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset", usamos a tabela "ratings.csv" para extrairmos os dados.
+
+Existem três colunas nesse arquivo csv:
+
+**userId**: a identificação do usuario dentro da plataforma;
+**Itemid**: a identificação do item (post) dentro da plataforma;
+**classification**: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5. Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra o gráfico.
+
+As três classificações mais comum no dataset são:
+
+- **4.0 com 26818**
+
+- **3.0 com 20047**
+
+- **5.0 com 13211**
+
+- 3.5 com 13136
+
+- 4.5 com 8551
+
+- 2.0 com 7551
+
+- 2.5 com 5550
+
+- 1.0 com 2811
+
+- 1.5 com 1791
+
+- 0.5 com 1370
+
+Com isso podemos ver que na coluna classification (nossa coluna alvo) não possue discrepâncias.
 
 # Documentação
 

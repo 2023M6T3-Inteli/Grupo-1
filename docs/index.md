@@ -507,6 +507,97 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 
 <img src="./img/modelologico.jpg">
 
+# Pipeline de dados
+
+Uma pipeline de dados é um conjunto de etapas interconectadas e automatizadas para processar, transformar e mover dados de uma fonte para um destino específico. É um conceito comum em ciência de dados, engenharia de dados e análise de dados.
+
+Uma pipeline de dados geralmente consiste em várias etapas sequenciais que permitem a coleta, o processamento, a transformação e a carga dos dados em um formato útil para análise, armazenamento ou visualização. Essas etapas podem incluir a extração de dados de várias fontes, a limpeza e transformação dos dados, a aplicação de algoritmos de análise, a integração com outros sistemas e, finalmente, a entrega dos dados em um destino desejado.
+
+![Arquitetura da pipeline](https://github.com/2023M6T3-Inteli/Grupo-1/assets/99257595/22ca5114-5686-41c3-b5b7-bc9e6cc24fe2)
+
+## Fonte de dados
+
+Base de dados em formato CSV: Utilizaremos uma base de dados criada no formato CSV. O CSV (Comma-Separated Values) é um formato de arquivo comumente usado para armazenar dados tabulares, onde cada linha representa um registro e os valores são separados por vírgulas. Com ele, é possível  importar facilmente os dados do arquivo CSV para a pipeline. A frequência de atualização dessa fonte de dados dependerá das suas necessidades e do ritmo de atualização dos dados na base. O volume de dados será determinado pelo tamanho do arquivo CSV e pelo número de registros presentes nele.
+
+Amazon MSK (Managed Streaming for Apache Kafka): Utilizaremos dados provenientes do Amazon MSK, que é um serviço gerenciado da Amazon Web Services para Apache Kafka, uma plataforma de streaming distribuído. O Apache Kafka é usado para processamento em tempo real de fluxos de dados. A frequência de atualização dependerá da taxa de produção de eventos no tópico do Kafka e da configuração da pipeline para consumir esses eventos. O volume de dados dependerá da quantidade de eventos produzidos no tópico do Kafka.
+
+## Extração, Transformação e Carregamento
+
+Como estamos construindo nossa pipeline no formato ETL (Extração, Transformação e Carregamento), o serviço que utilizaremos é o AWS Glue. O AWS Glue é um serviço totalmente gerenciado que facilita a preparação e a carga de dados para análise. 
+
+Vale ressaltar que o método que usaremos para a extração dos dados é da extração completa, pois nesse método, todos os dados da fonte de dados são extraídos em cada execução do processo de ETL, garantindo que todos os dados estejam atualizados e não ocorram inconsistências.  Soma-se, ainda, o fato de que a estratégia de carga escolhida é a de substituição completa, visto que todos os dados existentes no destino são substituídos pelos novos dados extraídos, sendo muito útil quando precisamos garantir que os dados no destino estejam sempre sincronizados com a fonte.
+
+
+1. Base de dados em formato CSV:
+
+A - Configuração da conexão: No AWS Glue, precisa-se configurar uma conexão com a base de dados em formato CSV. Isso envolve fornecer detalhes como o local do arquivo CSV, as credenciais de acesso (caso seja necessário) e outras configurações relevantes.
+
+B - Definição do crawler: Um crawler é uma função do AWS Glue que analisa a fonte de dados e cria um catálogo de metadados para ela. Em um arquivo CSV, o crawler irá inspecionar o arquivo, inferir a estrutura dos dados e criar tabelas virtuais correspondentes aos dados no catálogo do AWS Glue.
+
+C - Execução do crawler: O próximo passo é executar o crawler para que ele analise o arquivo CSV e crie o catálogo de metadados. Durante esse processo, o crawler pode detectar automaticamente o esquema dos dados, os tipos de dados, delimitadores e outros detalhes relevantes.
+
+D - Mapeamento dos dados: Após o crawler criar o catálogo de metadados, é possível mapear os dados extraídos para o formato desejado. Isso pode envolver transformações de dados, como renomear colunas, converter tipos de dados, filtrar registros, adicionar colunas derivadas, etc.
+
+E - Criação do job de transformação: Com o mapeamento dos dados definido, deve-se criar um job no AWS Glue para executar a transformação dos dados extraídos do CSV. O job especifica a origem (tabela virtual criada pelo crawler) e o destino dos dados, como um bucket do Amazon S3, uma base de dados do Amazon Redshift ou outro destino compatível.
+
+F - Configuração das transformações: Dentro do job, configura-se às transformações a serem aplicadas aos dados. O AWS Glue oferece um ambiente visual e orientado ao fluxo de trabalho para definir as transformações usando operações pré-definidas, como filtro, mapeamento, agregação, classificação, união, entre outras. Também é possível escrever código em Python ou Scala para transformações mais avançadas.
+
+G - Execução do job de transformação: Após configurar as transformações, pode-se executar o job no AWS Glue. Durante a execução, o AWS Glue distribui o processamento dos dados de forma escalável, lidando com a divisão de tarefas e otimizando o desempenho.
+
+H - Monitoramento e validação: Durante a execução do job, consegue-se monitorar seu progresso e verificar se os dados transformados estão corretos. O AWS Glue oferece recursos de monitoramento, logging e alertas para acompanhar a execução do job e identificar problemas, se houver.
+
+I - Carregamento dos dados transformados: Uma vez que o job de transformação seja concluído com sucesso, os dados transformados podem ser carregados no destino especificado, como um bucket do Amazon S3, uma base de dados do Amazon Redshift ou outro destino compatível.
+
+
+2. Amazon MSK:
+
+A - Configuração do conector do MSK: No AWS Glue, precisa-se configurar um conector para o Amazon MSK. Isso envolve fornecer detalhes como os pontos de extremidade do cluster do MSK, o tópico a ser consumido e as credenciais de acesso necessárias.
+
+B - Definição do crawler: É necessário definir um crawler no AWS Glue para criar o catálogo de metadados para os dados provenientes do MSK. O crawler analisa o tópico especificado e cria tabelas virtuais correspondentes no catálogo do AWS Glue.
+
+C - Configuração do catálogo do Glue para o MSK: Após definir o crawler, é preciso configurar o catálogo do Glue para interagir com o Amazon MSK, fornecendo informações como os detalhes de conexão do MSK, como ponto de extremidade, porta, tópico, grupo de consumo, etc.
+
+D - Mapeamento dos dados: Após o crawler criar o catálogo de metadados, pode-se mapear os dados extraídos para o formato desejado. Essa etapa inclui transformações de dados, como renomear colunas, converter tipos de dados, filtrar registros, adicionar colunas derivadas, entre outras operações.
+
+E - Criação do job de transformação: Com o mapeamento dos dados definido, cria-se um job no AWS Glue para executar a transformação dos dados provenientes do MSK. O job especifica a origem (tabela virtual criada pelo crawler) e o destino dos dados, como um bucket do Amazon S3, uma base de dados do Amazon Redshift ou outro destino compatível.
+
+F - Configuração das transformações: Dentro do job, configura-se às transformações a serem aplicadas aos dados. O AWS Glue oferece um ambiente visual e orientado ao fluxo de trabalho para definir as transformações usando operações pré-definidas, como filtro, mapeamento, agregação, classificação, união, entre outras. Também é possível escrever código em Python ou Scala para transformações mais avançadas.
+
+G - Execução do job de transformação: Após configurar as transformações, pode-se executar o job no AWS Glue. Durante a execução, o AWS Glue distribui o processamento dos dados de forma escalável, lidando com a divisão de tarefas e otimizando o desempenho.
+
+H - Monitoramento e validação: Durante a execução do job, é possível monitorar o progresso e verificar se os dados transformados estão corretos. O AWS Glue oferece recursos de monitoramento, logging e alertas para acompanhar a execução do job e identificar problemas, se houver.
+
+I - Carregamento dos dados transformados: Uma vez que o job de transformação seja concluído com sucesso, os dados transformados podem ser carregados no destino especificado, como um bucket do Amazon S3, uma base de dados do Amazon Redshift ou outro destino compatível.
+
+
+## Segurança
+
+Para garantir a segurança dos dados e a conformidade com os regulamentos e políticas de privacidade, o AWS Glue e a arquitetura da pipeline de dados ETL oferecem várias medidas de segurança. Dentre elas, destacam-se as seguintes:
+
+Criptografia de dados: O AWS Glue suporta a criptografia de dados em trânsito e em repouso. Os dados são criptografados durante a transferência entre os componentes da pipeline, como o MSK, o AWS Glue e o destino final. Além disso, o AWS Glue pode armazenar os metadados criptografados para proteger informações sensíveis.
+
+Gerenciamento de acesso e identidade: O AWS Glue integra-se com o AWS Identity and Access Management (IAM), permitindo o controle granular de permissões de acesso aos recursos do AWS Glue. Isso garante que apenas usuários autorizados possam executar operações de extração, transformação e carregamento de dados. As políticas do IAM podem ser definidas para restringir o acesso a funções específicas dentro do AWS Glue.
+
+Controle de acesso a dados: O AWS Glue oferece recursos para definir permissões de acesso aos dados armazenados em diferentes destinos, como o Amazon S3 ou o Amazon Redshift. É possível configurar políticas de controle de acesso para garantir que apenas usuários autorizados possam ler, gravar ou modificar os dados durante o processo de ETL.
+
+Monitoramento e logging: O AWS Glue fornece recursos de monitoramento e logging para registrar atividades, auditoria e detecção de possíveis problemas de segurança. É possível configurar logs de acesso e uso do AWS Glue, bem como integrar com serviços de monitoramento, como o Amazon CloudWatch, para acompanhar o desempenho e identificar eventos suspeitos.
+
+Conformidade com regulamentações: O AWS Glue é projetado para ajudar na conformidade com regulamentações e políticas de privacidade, como o GDPR (Regulamento Geral de Proteção de Dados). A infraestrutura da AWS, incluindo o AWS Glue, é construída de acordo com as melhores práticas de segurança, com recursos que suportam a privacidade, integridade e disponibilidade dos dados.
+
+## Escalabilidade e Desempenho
+
+A arquitetura da pipeline de dados ETL usando o AWS Glue é projetada para lidar com a escalabilidade e o desempenho à medida que o volume de dados e a demanda por processamento aumentam. Algumas maneiras pelas quais o AWS Glue aborda esses aspectos estão descritas abaixo:
+
+Elasticidade horizontal: O AWS Glue possui a capacidade de dimensionar horizontalmente, permitindo aumentar ou diminuir a capacidade de processamento de acordo com a demanda. Ele pode distribuir automaticamente o processamento em várias instâncias e clusters para lidar com cargas de trabalho maiores. Isso garante que a pipeline de dados ETL possa lidar com volumes crescentes de dados sem comprometer o desempenho.
+
+Processamento paralelo: O AWS Glue executa tarefas de ETL em paralelo, dividindo o trabalho em várias unidades de processamento. Isso permite que diferentes partes da pipeline sejam executadas simultaneamente em instâncias ou clusters separados. O processamento paralelo ajuda a acelerar o tempo de processamento, garantindo que o desempenho não seja afetado mesmo com grandes volumes de dados.
+
+Otimizações de desempenho: O AWS Glue oferece recursos para otimizar o desempenho da pipeline de ETL. Ele permite o particionamento de dados, o que ajuda a dividir grandes conjuntos de dados em partes menores com base em critérios como data, região ou outra coluna relevante. Isso melhora a eficiência das operações de ETL, permitindo que apenas as partes relevantes dos dados sejam processadas. Além disso, o AWS Glue também oferece recursos para cache de metadados e resultados de transformações, minimizando a necessidade de processamento repetitivo e melhorando o desempenho geral da pipeline.
+
+
+
+
+
 # Testes de Software
 
 

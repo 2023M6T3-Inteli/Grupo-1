@@ -445,6 +445,16 @@ link do design da arquitetura da nuvem em PDF: https://github.com/2023M6T3-Intel
 Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMRQR27k=/?share_link_id=321002910734
 </center>
 
+## Arquitetura - Versão 3
+Na terceira versão, adicionamos o serviços AWS Glue e AWS Redshift.
+
+![arquitetura versão 3 (1)](https://github.com/2023M6T3-Inteli/Grupo-1/assets/99257595/d431dc29-c4d7-4d85-9c71-4e53bf4430f8)
+
+Link do design da arquitetura da nuvem no Miro: https://miro.com/app/board/uXjVMDmTIZ0=/
+
+
+
+
 ## Arquitetura do sistema de mensageria
 <img src="./img/arqmensageria.png">
 canvas: https://www.canva.com/design/DAFi8xkYJf4/D-8njrz19fpwz4vlDU8BCQ/edit?utm_content=DAFi8xkYJf4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton

@@ -35,6 +35,7 @@ function Post(props) {
     axios.get('http://localhost:3000/getPost')
       .then(response => {
         // Armazena os dados da resposta no estado
+      
         setDados(response.data);
       })
       .catch(error => {

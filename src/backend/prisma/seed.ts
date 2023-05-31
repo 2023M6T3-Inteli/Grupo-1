@@ -15,7 +15,7 @@ async function main() {
             job: 'Software Enginer',
             isManager: true,
             idManager: 1,
-            rankPoints: 0,
+            rankPoints: 500,
         },
     });
 
@@ -31,10 +31,39 @@ async function main() {
             job: 'Software Enginer',
             isManager: false,
             idManager: 1,
-            rankPoints: 0,
+            rankPoints: 1000,
         },
     });
-
+    await prisma.user.create({
+        data: {
+            id: 3,
+            fullName: 'Fabricio Alcantara',
+            email: 'fabricioalcantara@dell.com',
+            password: '123456789',
+            phoneNumber: 123456789,
+            mobileNumber: 1123,
+            location: 'Remote Employee - Brazil, Rio Grande do Sul',
+            job: 'Software Enginer',
+            isManager: false,
+            idManager: 1,
+            rankPoints: 750,
+        },
+    });
+    await prisma.user.create({
+        data: {
+            id: 4,
+            fullName: 'Daniel Cunha',
+            email: 'danielcunha@dell.com',
+            password: '987654321',
+            phoneNumber: 123456789,
+            mobileNumber: 1124,
+            location: 'Remote Employee - Brazil, Rio Grande do Sul',
+            job: 'Software Enginer',
+            isManager: true,
+            idManager: 2,
+            rankPoints: 1500,
+        },
+    });
     await prisma.tag.create({
         data: {
             id: 1,

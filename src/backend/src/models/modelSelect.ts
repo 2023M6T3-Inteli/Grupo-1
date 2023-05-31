@@ -6,6 +6,7 @@ import {
 } from '@nestjs/common';
 
 import { PrismaService } from '../prismaServices/prisma.service';
+import { use } from 'passport';
 
 @Injectable()
 export class ModelSelect {
@@ -101,7 +102,7 @@ export class ModelSelect {
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },
-                    postTag: { select: { Tag:{select:{name:true}} } },
+                    postTag: { select: { Tag: { select: { name: true } } } },
                 },
             });
             return result;
@@ -115,7 +116,51 @@ export class ModelSelect {
             );
         }
     }
-
+    async getRank() {
+        try {
+            const result = await this.prisma.user.findMany({
+                select: {
+                    fullName: true,
+                    rankPoints: true,
+                },
+                orderBy: {
+                    rankPoints: 'desc',
+                },
+                take: 3,
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+    async getRankUser(userId:number) {
+        try {
+            const result = await this.prisma.user.findUnique({
+                where: {
+                    id:userId
+                },
+                select: {
+                    fullName: true,
+                    rankPoints: true,
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
     async findProjectById(projectId: number) {
         try {
             const result = await this.prisma.project.findUnique({
@@ -663,8 +708,7 @@ export class ModelSelect {
         try {
             const result = await this.prisma.user.findUnique({
                 where: {
-                    email:email
-                    
+                    email: email,
                 },
             });
             return result;
@@ -684,9 +728,9 @@ export class ModelSelect {
                 where: {
                     email: email,
                 },
-                select:{password:true}
+                select: { password: true },
             });
-        
+
             return result;
         } catch (error) {
             throw new HttpException(

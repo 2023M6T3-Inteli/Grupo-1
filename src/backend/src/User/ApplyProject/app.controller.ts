@@ -1,6 +1,6 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 
-import { DTOBodyApplyProject } from 'src/User/ApplyProject/DTO/DTOApplyProject';
+import { DTOBodyApplyProject } from './DTO/DTOApplyProject';
 import { ServiceApplyProject } from './app.service';
 import { ApiOperation, ApiTags, ApiResponse } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
@@ -9,7 +9,7 @@ import { AuthGuard } from '@nestjs/passport';
 @ApiTags('User')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerApplyProject {
-    constructor(private readonly serviceApplyProject: ServiceApplyProject) {}
+    constructor(private readonly serviceApplyProject: ServiceApplyProject) { }
 
     @Post('applyProject')
     @ApiOperation({ summary: 'Apply for a project' })

@@ -35,6 +35,38 @@ async function main() {
         },
     });
 
+    await prisma.user.create({
+        data: {
+            id: 3,
+            fullName: 'bonitao',
+            email: 'bonitao@dell.com',
+            password: '123456',
+            phoneNumber: 123456789,
+            mobileNumber: 1211,
+            location: 'Remote Employee - Brazil, praia',
+            job: 'Ser Bonito',
+            isManager: false,
+            idManager: 1,
+            rankPoints: 0,
+        },
+    });
+
+    await prisma.user.create({
+        data: {
+            id: 4,
+            fullName: 'Usuario 4',
+            email: 'usuario4@dell.com',
+            password: '123',
+            phoneNumber: 123456789,
+            mobileNumber: 1111,
+            location: 'Remote Employee - Brazil, Rio Grande do Sul',
+            job: 'Software Enginer',
+            isManager: true,
+            idManager: 1,
+            rankPoints: 0,
+        },
+    });
+
     await prisma.tag.create({
         data: {
             id: 1,
@@ -189,18 +221,21 @@ async function main() {
             idUser: 1
         },
     });
+
     await prisma.postTag.create({
         data: {
             idPost: 3,
             idTag: 1,
         }
-    })
+    });
+
     await prisma.postTag.create({
         data: {
             idPost: 3,
             idTag: 11,
         }
-    })
+    });
+
     await prisma.post.create({
         data: {
 
@@ -209,12 +244,65 @@ async function main() {
             idUser: 2
         },
     });
+
     await prisma.postTag.create({
         data: {
             idPost: 4,
             idTag: 1,
         }
+    });
+
+    await prisma.project.create({
+        data: {
+            name: "projeto teste123",
+            description: "pewoeoewpofeofjefpew",
+            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
+            duration: "15",
+            status: "Fechado",
+            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            isApproved: null,
+            idUser: 1,
+            idManager: 2
+        }
+    });
+
+    await prisma.projectRole.create({
+        data: {
+            idRole: 1,
+            idProject: 1
+        }
+    });
+
+    await prisma.userApplyProject.create({
+        data: {
+            idUser: 3,
+            idProject: 1,
+            idRole: 1
+        }
+    });
+
+    await prisma.project.create({
+        data: {
+            name: "projeto 2",
+            description: "pewoeoewpofeofjefpew",
+            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
+            duration: "15",
+            status: "Fechado",
+            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            isApproved: true,
+            idUser: 1,
+            idManager: 2
+        }
+    });
+
+    await prisma.userApplyProject.create({
+        data: {
+            idProject: 2,
+            idUser: 3,
+            idRole: 1
+        }
     })
+
 }
 
 main()

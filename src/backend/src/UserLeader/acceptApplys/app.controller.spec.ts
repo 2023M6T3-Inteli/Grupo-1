@@ -12,7 +12,7 @@ describe('accept applys from user', () => {
     let modelSelect: ModelSelect
     let serviceAcceptApplyUser: ServiceAcceptApplyUser
     let controllerAcceptApply: ControllerAcceptApply
-    let body: DTOBodyAcceptUser = { idOwnerProject: 3, idProject: 3, idUsers: [2] }
+    let body: DTOBodyAcceptUser = { idOwnerProject: 1, idProject: 2, idUsers: [3] }
 
     beforeEach(() => {
         prisma = new PrismaService()

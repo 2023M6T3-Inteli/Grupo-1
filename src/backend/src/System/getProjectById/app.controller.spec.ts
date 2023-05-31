@@ -9,7 +9,7 @@ describe(' get project by idUser', () => {
     let modelSelect: ModelSelect
     let serviceGetProjectsByUserId: ServiceGetProjectsByUserId
     let controllerGetProjectById: ControllerGetProjectById
-    let body: DTOBodyGetProjectByUserId = { idUser: 2 }
+    let body: DTOBodyGetProjectByUserId = { id: 2 }
 
     beforeEach(() => {
         prisma = new PrismaService()

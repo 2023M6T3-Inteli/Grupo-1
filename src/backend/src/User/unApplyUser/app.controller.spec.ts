@@ -10,7 +10,7 @@ describe('user unapply project', () => {
     let modelDelete: ModelDelete
     let servicesDeleteApplyUser: ServicesDeleteApplyUser
     let controllerUnapplyUser: ControllerUnApplyUser
-    let body: DTOBodyunApplyUser = { idProject: 3, idUser: 4, idRole: 2 }
+    let body: DTOBodyunApplyUser = { idProject: 1, idUser: 3, idRole: 1 }
 
     beforeEach(() => {
         prisma = new PrismaService()
@@ -22,9 +22,9 @@ describe('user unapply project', () => {
     describe('user unapply project', () => {
         it('user unapplied project', async () => {
             expect(await controllerUnapplyUser.deleteAplly(body)).toEqual({
-                "idProject": 3,
-                "idUser": 4,
-                "idRole": 2
+                "idProject": 1,
+                "idUser": 3,
+                "idRole": 1
             })
         })
     })

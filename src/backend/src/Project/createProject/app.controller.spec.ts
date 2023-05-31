@@ -50,7 +50,7 @@ describe('create project', () => {
         it('returne project created', async () => {
             expect(await controllerCreateProject.createProject(body)).toEqual({
 
-                "id": 6,
+                "id": 3,
                 "name": "projeto teste",
                 "description": "pewoeoewpofeofjefpew",
                 "aplicationDeadLine": new Date("2019-12-21T23:00:00.000Z"),

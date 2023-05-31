@@ -63,7 +63,7 @@ async function main() {
             idManager: 2,
             rankPoints: 1500,
         },
-    });
+
     await prisma.tag.create({
         data: {
             id: 1,
@@ -218,18 +218,21 @@ async function main() {
             idUser: 1
         },
     });
+
     await prisma.postTag.create({
         data: {
             idPost: 3,
             idTag: 1,
         }
-    })
+    });
+
     await prisma.postTag.create({
         data: {
             idPost: 3,
             idTag: 11,
         }
-    })
+    });
+
     await prisma.post.create({
         data: {
 
@@ -238,12 +241,65 @@ async function main() {
             idUser: 2
         },
     });
+
     await prisma.postTag.create({
         data: {
             idPost: 4,
             idTag: 1,
         }
+    });
+
+    await prisma.project.create({
+        data: {
+            name: "projeto teste123",
+            description: "pewoeoewpofeofjefpew",
+            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
+            duration: "15",
+            status: "Fechado",
+            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            isApproved: null,
+            idUser: 1,
+            idManager: 2
+        }
+    });
+
+    await prisma.projectRole.create({
+        data: {
+            idRole: 1,
+            idProject: 1
+        }
+    });
+
+    await prisma.userApplyProject.create({
+        data: {
+            idUser: 3,
+            idProject: 1,
+            idRole: 1
+        }
+    });
+
+    await prisma.project.create({
+        data: {
+            name: "projeto 2",
+            description: "pewoeoewpofeofjefpew",
+            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
+            duration: "15",
+            status: "Fechado",
+            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            isApproved: true,
+            idUser: 1,
+            idManager: 2
+        }
+    });
+
+    await prisma.userApplyProject.create({
+        data: {
+            idProject: 2,
+            idUser: 3,
+            idRole: 1
+        }
     })
+
 }
 
 main()

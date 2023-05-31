@@ -10,7 +10,7 @@ describe('get applied user', () => {
     let modelSelect: ModelSelect
     let serviceGetApplayedUser: ServiceGetApplayedUser
     let controllerGetApplayedUser: ControllerGetApplayedUser
-    let body: DtoBodyApployed = { idProject: 1 }
+    let body: DtoBodyApployed = { idProject: 2 }
 
     beforeEach(() => {
         prisma = new PrismaService()
@@ -21,39 +21,18 @@ describe('get applied user', () => {
 
     describe('catch the applied users', () => {
         it('return applieds user for this project', async () => {
-            expect(await controllerGetApplayedUser.getApplayed(body)).toEqual([
-                {
-                    "id": 1,
-                    "user": {
-                        "email": "gustavolion@dell.com",
-                        "fullName": "Gustavo lion"
-                    },
-                    "role": {
-                        "name": "Design UX"
-                    }
-                },
-                {
-                    "id": 2,
-                    "user": {
-                        "email": "laurasilva@dell.com",
-                        "fullName": "laura silva"
-                    },
-                    "role": {
-                        "name": "Design UI"
-                    }
-                },
-                {
+            expect(await controllerGetApplayedUser.getApplayed(body)).toEqual(
+                [{
                     "id": 3,
-                    "user": {
-                        "email": "diegosouza@dell.com",
-                        "fullName": "Diego souza"
-                    },
                     "role": {
-                        "name": "Tech leader"
-                    }
-                }
-            ])
-
+                        "name": "Design UX",
+                    },
+                    "user": {
+                        "email": "bonitao@dell.com",
+                        "fullName": "bonitao",
+                    },
+                },]
+            )
         })
     })
 })

@@ -11,7 +11,7 @@ describe('approval project', () => {
     let modelUpdate: ModelUpdate
     let serviceUpdateApprovalProject: ServiceUpdateApprovalProject
     let controllerApprovalProject: ControllerApprovalProject
-    let body: DTOBodyApprovalProject = { idManager: 1, idProject: 4, isApproved: true }
+    let body: DTOBodyApprovalProject = { idManager: 2, idProject: 1, isApproved: true }
 
     beforeEach(() => {
         prisma = new PrismaService()
@@ -23,18 +23,19 @@ describe('approval project', () => {
 
     describe('test approval projects', () => {
         it('returne approved or rejected project', async () => {
-            expect(await controllerApprovalProject.approvalProject(body)).toEqual({
-                "id": 4,
-                "name": "projeto 4",
-                "description": "lorem lorem lorem lorem lorem lorem lorem",
-                "aplicationDeadLine": new Date('2023-08-19T03:00:00.000Z'),
-                "duration": "10 semanas",
-                "status": "",
-                "dateStart": new Date("2023-08-27T03:00:00.000Z"),
-                "isApproved": true,
-                "idUser": 3,
-                "idManager": 1
-            })
+            expect(await controllerApprovalProject.approvalProject(body)).toEqual(
+                {
+                    "id": 1,
+                    "name": "projeto teste123",
+                    "description": "pewoeoewpofeofjefpew",
+                    "aplicationDeadLine": new Date("2019-12-21T23:00:00.000Z"),
+                    "duration": "15",
+                    "status": "Fechado",
+                    "dateStart": new Date("2019-12-20T17:48:00.000Z"),
+                    "isApproved": true,
+                    "idUser": 1,
+                    "idManager": 2
+                })
         })
     })
 })

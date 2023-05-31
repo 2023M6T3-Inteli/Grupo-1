@@ -9,7 +9,7 @@ describe('update status for a project', () => {
     let modelUpdate: ModelUpdate
     let serviceUpdateProjectStatus: ServiceUpdateProjectStatus
     let controllerUpdateStatusProject: ControllerUpdateStatusProject
-    let body: DTOBodyUpdateProjectStatus = { idLeader: 1, idProject: 5, progress: "Aberto" }
+    let body: DTOBodyUpdateProjectStatus = { idLeader: 1, idProject: 1, progress: "Aberto" }
 
     beforeEach(() => {
         prisma = new PrismaService()

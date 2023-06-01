@@ -63,7 +63,7 @@ async function main() {
             idManager: 2,
             rankPoints: 1500,
         },
-
+    });
     await prisma.tag.create({
         data: {
             id: 1,

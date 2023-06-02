@@ -161,6 +161,37 @@ export class ModelSelect {
             );
         }
     }
+
+    async getNotifications(userId:number) {
+        try {
+            const result = await this.prisma.notifications.findMany({
+                where: {
+                    idUser:userId
+                },
+                select: {
+                    id:true,
+                    name: true,
+                    description:true,
+                },
+            });
+            const jsonResult = result.map((item) => {
+                return {
+                    id: item.id,
+                    title: item.name,
+                    description: item.description,
+                };
+            });
+            return jsonResult
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
     async findProjectById(projectId: number) {
         try {
             const result = await this.prisma.project.findUnique({

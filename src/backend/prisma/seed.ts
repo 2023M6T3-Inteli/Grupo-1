@@ -78,6 +78,14 @@ async function main() {
             idUser: 2
         }
     })
+    await prisma.notifications.create({
+        data: {
+            id:1,
+            name:"New comment",
+            description: "Daniel commented in your post",
+            idUser:1,
+        },
+    });
 
     await prisma.postTag.create({
         data: {

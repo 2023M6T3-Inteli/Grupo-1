@@ -10,10 +10,25 @@ export default function FaqPage() {
       <div className="body">
         <TopBar title={"FAQ"} subtitle={"Frequently Asked Questions"}></TopBar>
         <div className="componentFaq">
-          <Search/>  
-          <FaqCard />
-          <FaqCard />
-          <FaqCard />
+          <Search />
+          <FaqCard
+            question={"Lorem ipsum dolor?"}
+            answer={
+              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+            }
+          />
+          <FaqCard
+            question={"Lorem ipsum dolor?"}
+            answer={
+              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+            }
+          />
+          <FaqCard
+            question={"Lorem ipsum dolor?"}
+            answer={
+              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+            }
+          />
         </div>
         <div className="navBar">
           <NavBar />

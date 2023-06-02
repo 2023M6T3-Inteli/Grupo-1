@@ -3,7 +3,6 @@ import silverTrophy from "../../assets/award-trophy 2.svg";
 import goldTrophy from "../../assets/award-trophy 3.svg";
 import bronzeTrophy from "../../assets/award-trophy 4.svg";
 import { useId, useState } from "react";
-import DocPost from "../DocPost/DocPost";
 import React, { useEffect } from "react";
 import axios from "../../../api";
 

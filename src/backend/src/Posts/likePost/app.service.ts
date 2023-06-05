@@ -1,15 +1,17 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { ModelCreate } from "../../models/modelCreate";
 import { ModelSelect } from "../../models/modelSelect";
+import { ModelUpdate } from "src/models/modelsUpdate";
 
 @Injectable()
 export class ServiceLikePost {
-    constructor(private readonly modelCreate: ModelCreate, private readonly modelSelect: ModelSelect) { }
+    constructor(private readonly modelCreate: ModelCreate, private readonly modelSelect: ModelSelect, private readonly modelUpdate:ModelUpdate) { }
 
     async execute(idPost: number, idUser: number) {
         const checkPost = await this.modelSelect.findPostById(idPost)
         const checkUser = await this.modelSelect.getCheckExistentUsers(idUser)
         const getUsersAndPostId = await this.modelSelect.getExistUserAndPostInPostLike(idPost, idUser)
+        
 
         if (!checkPost) {
             throw new HttpException(
@@ -40,7 +42,7 @@ export class ServiceLikePost {
                 HttpStatus.AMBIGUOUS,
             );
         }
-
+        const rankPoints = await this.modelUpdate.updateLikeRankPoints(idPost);
         const result = await this.modelCreate.likePost(idPost, idUser);
         return result;
     }

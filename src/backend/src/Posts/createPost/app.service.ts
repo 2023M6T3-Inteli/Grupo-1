@@ -1,7 +1,8 @@
 import { ModelSelect } from '../../models/modelSelect';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-
+import { modelModule } from 'src/models/app.module';
 import { Tpost } from './types/TmodelCreate';
+import { ModelUpdate } from 'src/models/modelsUpdate';
 
 import { ModelCreate } from '../../models/modelCreate';
 
@@ -10,6 +11,7 @@ export class ServiceCreatePost {
     constructor(
         private readonly modelCreate: ModelCreate,
         private readonly modelSelect: ModelSelect,
+        private readonly modelUpdate:ModelUpdate,
     ) { }
 
     async execute(data: Tpost) {
@@ -35,7 +37,7 @@ export class ServiceCreatePost {
 
         try {
             const firstStepPost = await this.modelCreate.createPost(data);
-
+            const rankPoints = await this.modelUpdate.updatePostRankPoints(data);
             if (firstStepPost) {
                 const { id } = firstStepPost;
 

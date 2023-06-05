@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.body {
+    min-height: 100vh;
+    height: 100%;
+    font-family:'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posts-saved{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position:relative;
+    margin-top: 220px;
+    margin-bottom: 100px;
+}
+
+.likedButton-saved{
+    display: flex;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+}
+
+.header-saved{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    position: fixed;
+    z-index: 900;
+    background-color: #F0F0F0;
+}
+
+.search-div-saved{
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.nav-posts-saved{
+    display: flex;
+    z-index: 900;
+}

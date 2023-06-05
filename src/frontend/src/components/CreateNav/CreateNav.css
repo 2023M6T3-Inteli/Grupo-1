@@ -1,0 +1,53 @@
+body{
+    border: 0;
+}
+
+.backgroundCreate{
+    background-color:rgba(49, 49, 49, 0.8);
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom:0;
+    border:0;
+    display: flex;
+    justify-content: center;
+    z-index: 998;
+}
+
+.cardCreateContainer{
+    width: 70%;
+    height: 11%;
+    background-color: #fff;
+    border-radius: 20px;
+    display:flex;
+    position: fixed;
+    bottom: 11%;
+    z-index: 999;
+    left: 14.5%;
+    
+}
+
+
+.createOption{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:none;
+}
+
+#createProject{
+    border-radius: 20px 0px 0px 20px;
+}
+
+#createPost{
+    border-radius: 0px 20px 20px 0px;
+}
+
+.createOption label{
+    margin-bottom: 8px;
+}

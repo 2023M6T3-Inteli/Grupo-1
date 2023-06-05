@@ -139,11 +139,11 @@ export class ModelSelect {
             );
         }
     }
-    async getRankUser(userId:number) {
+    async getRankUser(userId: number) {
         try {
             const result = await this.prisma.user.findUnique({
                 where: {
-                    id:userId
+                    id: userId,
                 },
                 select: {
                     fullName: true,
@@ -162,26 +162,54 @@ export class ModelSelect {
         }
     }
 
-    async getNotifications(userId:number) {
+    async getNewNotifications(userId: number) {
         try {
             const result = await this.prisma.notifications.findMany({
                 where: {
-                    idUser:userId
+                    idUser: userId,
+                    newNotification: true,
                 },
                 select: {
-                    id:true,
-                    name: true,
-                    description:true,
+                    id: true,
+                    description: true,
                 },
             });
             const jsonResult = result.map((item) => {
                 return {
                     id: item.id,
-                    title: item.name,
                     description: item.description,
                 };
             });
-            return jsonResult
+            return jsonResult;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
+    async getAllNotifications(userId: number) {
+        try {
+            const result = await this.prisma.notifications.findMany({
+                where: {
+                    idUser: userId,
+                },
+                select: {
+                    id: true,
+                    description: true,
+                },
+            });
+            const jsonResult = result.map((item) => {
+                return {
+                    id: item.id,
+                    description: item.description,
+                };
+            });
+            return jsonResult;
         } catch (error) {
             throw new HttpException(
                 {
@@ -233,7 +261,7 @@ export class ModelSelect {
     }
     async findPostById(postId: number) {
         try {
-            const result = await this.prisma.project.findUnique({
+            const result = await this.prisma.post.findUnique({
                 where: {
                     id: postId,
                 },

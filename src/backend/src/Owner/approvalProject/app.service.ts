@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 import { ModelUpdate } from '../../models/modelsUpdate';
 import { ModelSelect } from '../../models/modelSelect';
+import { ModelCreate } from 'src/models/modelCreate';
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -19,9 +20,12 @@ export class ServiceUpdateApprovalProject {
     constructor(
         private modelUpdate: ModelUpdate,
         private modelSelect: ModelSelect,
+        private readonly modelCreate: ModelCreate,
     ) {}
 
     async execute(idManager: number, idProject: number, isApproved: boolean) {
+        const projectExist =
+            await this.modelSelect.findUserApplyProjectExistProject(idProject);
         const result = await this.modelUpdate.updateApprovalProject(
             isApproved,
             idProject,
@@ -42,6 +46,12 @@ export class ServiceUpdateApprovalProject {
         });
 
         if (isApproved == true) {
+            const description = `O projeto ${projectExist[0].name} `;
+            const notification =
+                await this.modelCreate.createProjectNotification(
+                    idProject,
+                    description,
+                );
             const messageApproved = {
                 from: '"SkyWeb Developers - Dell Heroes" <inteliskyweb@gmail.com>', // sender address
                 to: email, // list of receivers

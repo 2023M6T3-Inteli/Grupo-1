@@ -4,12 +4,14 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Tproject } from './types/TmodelCreate';
 
 import { ModelCreate } from '../../models/modelCreate';
+import { ModelUpdate } from 'src/models/modelsUpdate';
 
 @Injectable()
 export class ServiceCreateProject {
     constructor(
         private readonly modelCreate: ModelCreate,
         private readonly modelSelect: ModelSelect,
+        private readonly modelUpdate: ModelUpdate,
     ) { }
 
     async execute(data: Tproject) {
@@ -66,7 +68,7 @@ export class ServiceCreateProject {
 
         try {
             const firstStepProject = await this.modelCreate.createProject(data);
-
+            const rank = await this.modelUpdate.updateProjectRankPoints(data);
             if (firstStepProject) {
                 const { id } = firstStepProject;
 

@@ -7,7 +7,7 @@ import { PrismaService } from '../prismaServices/prisma.service';
 
 @Injectable()
 export class ModelCreate {
-    constructor(private readonly prisma: PrismaService) { }
+    constructor(private readonly prisma: PrismaService) {}
 
     async createProject(data: Tproject) {
         const {
@@ -71,13 +71,64 @@ export class ModelCreate {
         }
     }
     async createComment(idUser: number, idPost: number, comment: string) {
-
         try {
             const result = await this.prisma.comments.create({
                 data: {
                     idUser: idUser,
                     idPost: idPost,
-                    comment: comment
+                    comment: comment,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
+    async createProjectNotification(idProject: number, description: string) {
+        try {
+            const user = await this.prisma.project.findUnique({
+                where: { id: idProject },
+                select: { User: true },
+            });
+            const result = await this.prisma.notifications.create({
+                data: {
+                    idUser: user.User.id,
+                    description: description,
+                    newNotification: true,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
+    async createPostNotification(idPost: number, description: string) {
+        try {
+            const user = await this.prisma.post.findUnique({
+                where: { id: idPost },
+                select: { User: true },
+            });
+            const result = await this.prisma.notifications.create({
+                data: {
+                    idUser: user.User.id,
+                    description: description,
+                    newNotification: true,
                 },
             });
 

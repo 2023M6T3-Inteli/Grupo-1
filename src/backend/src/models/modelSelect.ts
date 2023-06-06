@@ -613,6 +613,27 @@ export class ModelSelect {
             );
         }
     }
+    async getLikedPost(idUser: number) {
+        try {
+            const result = await this.prisma.postLike.findMany({
+                where: {
+                    idUser: idUser,
+                },
+                select: {
+                    Post: true,
+                },
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
 
     async findUserApplyProjectByIdUserAndIdProject(
         idProject: number,

@@ -11,7 +11,7 @@ function CheckBox() {
 
   return (
     <div>
-      <input id="checkbox-id"  type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />
+      <input className="checkbox-id"  type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />
       {/* <div className="checkbox-icon">
         <CheckIcon></CheckIcon>
       </div> */}

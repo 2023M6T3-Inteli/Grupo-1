@@ -4,6 +4,7 @@ import { Route, Link, Routes, useLocation } from "react-router-dom";
 import CreateNav from "../CreateNav/CreateNav";
 import Modal from "../../components/CreateProject/CreateProject.jsx"
 import ManageApply from "../../components/ManageApply/ManageApply.jsx"
+import ModalCreatePost from "../ModalCreatePost/ModalCreatePost";
 
 import CarryCase from "../../assets/CarryCase";
 import People from "../../assets/UserGroup";
@@ -17,10 +18,12 @@ import "./NavBar.css";
 
 function NavBar() {
   const [projectModal, setProjectModal] = useState(false);
+  const [postModal, setPostModal] = useState(false);
   const router = useLocation();
   const currentPath = router.pathname;
   const [createNavOpen, setCreateNavOpen] = useState(false);
-  const[createProjectOpen,setCreateProjectOpen]=useState(false)
+  const[createProjectOpen,setCreateProjectOpen]=useState(false);
+  const[createPostOpen,setCreatePostOpen]=useState(false)
 
   function showCreateNav() {
     setCreateNavOpen((prevState) => !prevState);
@@ -28,6 +31,10 @@ function NavBar() {
 
   const toggleProjectModal = () => {
     setProjectModal((prevState) => !prevState);
+  };
+
+  const togglePostModal = () => {
+    setPostModal((prevState) => !prevState);
   };
 
   if (projectModal) {
@@ -55,6 +62,10 @@ function NavBar() {
     setCreateNavOpen((prevState) => !prevState);
   }
 
+  function showCreatePost(){
+    setCreatePostOpen((prevState)=>!prevState)
+    setCreateNavOpen((prevState) => !prevState);
+  }
   return (
     <>
       <div className="nav-toda">
@@ -93,12 +104,20 @@ function NavBar() {
         <>
           <CreateNav 
           onShowCreateNav={showCreateNav}
-          onShowCreateProject={showCreateProject} />
+          onShowCreateProject={showCreateProject}
+          onShowCreatePost={showCreatePost} 
+          
+          />
         </>
       )}
       {createProjectOpen&& (
         <>
           <Modal/>
+        </>
+      )}
+      {createPostOpen&& (
+        <>
+          <ModalCreatePost/>
         </>
       )}
     </>

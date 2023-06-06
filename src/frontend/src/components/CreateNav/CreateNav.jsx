@@ -17,7 +17,10 @@ function CreateNav (props){
                         <CarryCase/>
                     </button>
                     <hr></hr>
-                    <button className="createOption" id="createPost">
+                    <button 
+                    onClick={()=>props.onShowCreatePost()}
+                    className="createOption" id="createPost">
+
                     <label>Create <span style={{ color: '#0672CB' }}>Post</span></label>
                         <UserGroup/>
                     </button>

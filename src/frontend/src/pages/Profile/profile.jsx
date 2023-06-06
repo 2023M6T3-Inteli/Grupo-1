@@ -3,11 +3,14 @@ import TopBar from '../../components/TopBar/TopBar';
 import './profile.css';
 import Picture from '../../assets/Picture.jsx'
 
+
 function Profile() {
+
   return (
   <>
-  <TopBar title={'Profile'}></TopBar>
   <div className='bodyP'>
+  <TopBar title={'Profile'}></TopBar>
+  
     <div className='FirstContainer'>
 
       <div className='Picture'>
@@ -16,11 +19,6 @@ function Profile() {
 
       <div className='Name'>
         <p>Ana Clara</p>
-      
-      <div className='FullName'>
-      <p>Ana Clara</p>
-      </div>
-
       <div className='Occupation'>
       <p>Front-End Developer</p>
       </div>
@@ -39,19 +37,28 @@ function Profile() {
     </div>
 
     <div className='SecondContainer'>
-      <div className='Technologies'>
-      <div className='TextTechnologies'>
-      <p>Technologies</p>   
-      </div>
-      </div>
-      <div className='Experience'>  
-      <div className='TextExperience'>
-      <p>Experience</p>
-      </div>
-      </div> 
+        <div className='TextAbout'>
+        <div className='TextExperience'>
+        <p>Experience</p>
+        </div>
+        <div className='TextExperience2'>
+        <h1>30px</h1>
+        </div>
+        </div>
     </div>
 
     <div className='ThirdContainer'>
+      <div className='TextSkils'>
+      <p>Skils</p>
+      </div>
+      <div className='Skils'>
+        <div className='NameSkils'>
+        <p>Web development</p>
+        </div>
+      </div>
+    </div>
+
+    <div className='FourContainer'>
       <div className='TextProjects'>
       <p>Projects</p>
       </div>
@@ -61,6 +68,8 @@ function Profile() {
         </div>
       </div>
     </div>
+
+    
   </div>
   <NavBar></NavBar>
   </>

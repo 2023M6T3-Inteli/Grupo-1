@@ -3,18 +3,16 @@ import TopBar from '../../components/TopBar/TopBar';
 import Tags from '../../components/Tags/Tags'
 import './profile.css';
 import Picture from '../../assets/Picture.jsx'
-import {useState} from "react"
+import {useState,useEffect} from "react"
 
 
 function Profile() {
 
   //const [loading, setLoading] = useState(true);
   const userData = JSON.parse(sessionStorage.getItem("user"));
-  const[userExp,setUserExp]=useState([])
+  console.log(userData)
 
-  function showUserSkills(){
-    setUserExp(userData.user.projects)
-  }
+
 
   return (
   <>
@@ -56,16 +54,14 @@ function Profile() {
 
     <div className='ThirdContainer'>
       <div className='TextSkils'>
-      <p>Skils</p>
+        <p>Skils</p>
       </div>
-      {/* <div className='Skils'>
-        <div className='NameSkils'>
-        <p>Web development</p>
-        </div>
-      </div> */}
-      {userExp.map(item=>(
-        <Tags  description={item.skill}></Tags>
-      ))}
+       <div className="skillContent">
+      
+        {userData.user.userSkills.map(item=>(
+          <Tags  skill={item.Tag.name}></Tags>
+        ))}
+       </div>
     </div>
 
     <div className='FourContainer'>

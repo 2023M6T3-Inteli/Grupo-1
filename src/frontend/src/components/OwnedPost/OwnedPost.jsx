@@ -15,7 +15,7 @@ import axios from "../../../api";
 
 
 
-function OwnedPost(props) {
+function OwnedPost (props)  {
     // const[cardLiked,setCardLiked]=useState(false)
     // const[cardDisliked,setCardDisliked]=useState(true)
   
@@ -29,16 +29,34 @@ function OwnedPost(props) {
     //       setCardLiked(false)
     //       setCardDisliked(true)
     //   }
+    
+    const [dados, setDados] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
+    // DELETE a post
 
+    useEffect(() => {
+        const idPost = (dados.id)
+        // DELETE a post
+        const handleClick = () => {
+          const id = dados.id;
+          axios.delete(`/deletePost/${idPost}`)
+            .then(response => {
+              console.log('Requisição DELETE bem-sucedida!');
+              // Faça algo com a resposta, se necessário
+            })
+            .catch(error => {
+              console.error('Erro na requisição DELETE:', error);
+              // Trate o erro, se necessário
+            });
+        }
+    }, []);
 
     //GET All Posts
 
-    const [dados, setDados] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
     const userId = JSON.parse(sessionStorage.getItem("user"));
-
     axios
         .get(`/getPostByUserId/${userId.user.id}`)
         .then((response) => {
@@ -59,7 +77,6 @@ function OwnedPost(props) {
   //to revert the data ordem on the feed
   const dadosInvertidos = [...dados].reverse();
 
-
     return (
         <ul className="owned-post-ul">
             {dadosInvertidos.map(item => (
@@ -70,7 +87,8 @@ function OwnedPost(props) {
                                 <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
                                  </div>
                             <div className='owned-parte-12'>
-                                <div><Trash></Trash></div>
+                                    <button onClick={this.handleClick}><Trash></Trash></button>
+                                
                                 <div><Alert></Alert></div>
                             </div>
                         </div>

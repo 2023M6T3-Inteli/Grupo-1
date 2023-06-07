@@ -5,41 +5,56 @@ import Select from 'react-select';
 
 export default function ModalCreatePost(props) {
 
-  const [formData, setFormData] = useState({
-    name: '',
+  const userId = JSON.parse(sessionStorage.getItem("user"));
+
+  const [dados, setDados] = useState({
     description: '',
-    idUser: 1
+    media: '',
+    idTag: [],
+    idUser: userId.user.id
   });
 
-  const handleInputChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setDados(prevDados => ({
+      ...prevDados,
+      [name]: value
+    }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = event => {
+    // evita que o formulário seja enviado de forma padrão, o que faria a página recarregar. 
+    // Em vez disso, tratamos a submissão manualmente na função handleSubmit.
     event.preventDefault();
 
-    try {
-      const response = await axios.post('http://localhost:3000/createPost', formData);
-      console.log(response.data);
-      // Faça algo com a resposta do servidor, se necessário
-    } catch (error) {
-      console.error(error);
-    }
+    const selectedValues = selectedOptions.map(option => option.value);
+    const updatedDados = {
+    ...dados,
+    idTag: selectedValues
+    };
+
+    axios.post('http://localhost:3000/createPost', updatedDados)
+      .then(response => {
+        console.log('POST realizado com sucesso!');
+        // Realizar alguma ação após o sucesso do POST
+      })
+      .catch(error => {
+        console.error('Erro ao realizar POST:', error);
+        // Tratar o erro caso ocorra
+      });
   };
 
   // para selecionar as tags
   const optionsTagPost = [
-    { value: 'opcao1', label: 'Opção 1' },
-    { value: 'opcao2', label: 'Opção 2' },
-    { value: 'opcao3', label: 'Opção 3' },
+    { value: 1, label: 'Opção 1' },
+    { value: 2, label: 'Opção 2' },
+    { value: 3, label: 'Opção 3' },
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  const handleChange = (selected) => {
+  const handleChangeTag = (selected) => {
     setSelectedOptions(selected);
   };
 
@@ -51,12 +66,20 @@ export default function ModalCreatePost(props) {
           <h2 className="button-create-post">Create Post</h2>
         </div>
         <div className="line-create-post"></div>
-        <form className="form-create-post">
+        <form 
+        onSubmit={handleSubmit}
+        className="form-create-post">
           <fieldset>
             <div className="details-create-post">
               <div>
-                <label className="label-post" for="description-post">Description:
+                {/* <label className="label-post" for="description-post">Description:
                   <input className="description-create-post" name="description-post" rows="4" cols="2" value={formData.description} onChange={handleInputChange}></input>
+                </label> */}
+                <label className="label-post" for="description">Description:
+                  <input 
+                    className="description-create-post" 
+                    type="text"
+                    rows="4" cols="2" name="description" value={dados.description} onChange={handleChange}></input>
                 </label>
               </div>
               <div>
@@ -65,19 +88,25 @@ export default function ModalCreatePost(props) {
                 </label> */}
               </div>
               <div>
-                <label className="input-media-post" for="input-media-post">Enter media url:
+                {/* <label className="input-media-post" for="input-media-post">Enter media url:
                   <input className="description-create-post" name="input-media-post" rows="3" cols="1" value={formData.description} onChange={handleInputChange}></input>
+                </label> */}
+                <label className="input-media-post" for="media">Enter media url:
+                  <input 
+                    className="description-create-post" 
+                    name="media" rows="3" cols="1" value={dados.media} onChange={handleChange}></input>
                 </label>
               </div>
               
               <div>
-              <label for="tags-create-post">Keywords:</label>
+              <label for="idTag">Keywords:</label>
                 <Select 
                 className="keys-create-post" 
+                name={selectedOptions}
                 options={optionsTagPost}
                 isMulti
                 value={selectedOptions}
-                onChange={handleChange}
+                onChange={handleChangeTag}
                 ></Select>
               </div>
               
@@ -87,14 +116,14 @@ export default function ModalCreatePost(props) {
               </div> */}
 
               <div className="submit-create-post">
-                <button className="submit-btn-create-post" type="submit" onClick={handleSubmit}>Create Post</button>
+                <button className="submit-btn-create-post" type="submit" onClick={()=>props.onShowCreatePost()}>Create Post</button>
               </div>
 
             </div>
           </fieldset>
         </form>
 
-        <button className="close-modal-create-post" onClick={props.toggleModal}>
+        <button className="close-modal-create-post" onClick={()=> {props.onShowCreatePost(); props.onShowCreateNav()}}>
           <span className="close-modal-text-create-post"> X </span>
         </button>
       </div>

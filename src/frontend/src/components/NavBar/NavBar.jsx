@@ -112,12 +112,17 @@ function NavBar() {
       )}
       {createProjectOpen&& (
         <>
-          <Modal/>
+          <Modal
+            onShowCreateProject={showCreateProject}
+          />
         </>
       )}
       {createPostOpen&& (
         <>
-          <ModalCreatePost/>
+          <ModalCreatePost
+          onShowCreatePost={showCreatePost} 
+          onShowCreateNav={showCreateNav}
+          />
         </>
       )}
     </>

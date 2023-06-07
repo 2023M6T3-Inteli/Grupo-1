@@ -12,21 +12,27 @@ export default function FaqPage() {
         <div className="componentFaq">
           <Search />
           <FaqCard
-            question={"Lorem ipsum dolor?"}
+            question={"What is the purpose of Dell Genius?"}
             answer={
-              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+              "Dell Genius is designed as a collaborative platform for employees to create, share, and communicate ideas, projects, and posts with their colleagues."
             }
           />
           <FaqCard
-            question={"Lorem ipsum dolor?"}
+            question={"How do I create a new project on the website?"}
             answer={
-              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+              "Navigate to the 'Projects' section from the dashboard. Fill in the necessary details such as the project title, description, and roles, then click on 'Submit'."
             }
           />
           <FaqCard
-            question={"Lorem ipsum dolor?"}
+            question={"How do I post on the website?"}
             answer={
-              "Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met Lorem ipsum dolor asit met."
+              "To make a post, go to the 'Community' section, write your post, add relevant tags, link the content you want to share, and then click on 'Publish'."
+            }
+          />
+          <FaqCard
+            question={"How can I collaborate with my colleagues on a project?"}
+            answer={
+              "You have the option to express interest in a project that appeals to you. The project leader is responsible for member selection and will inform you regarding your approval status."
             }
           />
         </div>

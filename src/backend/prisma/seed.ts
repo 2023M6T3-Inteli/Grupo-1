@@ -73,17 +73,17 @@ async function main() {
 
     await prisma.post.create({
         data: {
-            description: "Lorem Ipsum",
-            media: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            idUser: 2
-        }
-    })
+            description: 'Lorem Ipsum',
+            media: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+            idUser: 2,
+        },
+    });
     await prisma.notifications.create({
         data: {
-            id:1,
-            description: "Daniel commented in your post",
+            id: 1,
+            description: 'Daniel commented in your post',
             idUser: 1,
-            newNotification:true
+            newNotification: true,
         },
     });
 
@@ -91,8 +91,8 @@ async function main() {
         data: {
             idPost: 1,
             idTag: 1,
-        }
-    })
+        },
+    });
 
     await prisma.tag.create({
         data: {
@@ -200,30 +200,28 @@ async function main() {
     });
     await prisma.post.create({
         data: {
-
-            description: "Aprenda Python",
-            media: "https://youtu.be/4p7axLXXBGU",
-            idUser: 1
+            description: 'Aprenda Python',
+            media: 'https://youtu.be/4p7axLXXBGU',
+            idUser: 1,
         },
     });
     await prisma.postTag.create({
         data: {
             idPost: 2,
             idTag: 5,
-        }
-    })
+        },
+    });
     await prisma.postTag.create({
         data: {
             idPost: 2,
             idTag: 8,
-        }
-    })
+        },
+    });
     await prisma.post.create({
         data: {
-
-            description: "Qual a diferença entre HTML e React?",
-            media: "https://www.youtube.com/watch?v=idv0Bcdwo6I",
-            idUser: 1
+            description: 'Qual a diferença entre HTML e React?',
+            media: 'https://www.youtube.com/watch?v=idv0Bcdwo6I',
+            idUser: 1,
         },
     });
 
@@ -231,22 +229,21 @@ async function main() {
         data: {
             idPost: 3,
             idTag: 1,
-        }
+        },
     });
 
     await prisma.postTag.create({
         data: {
             idPost: 3,
             idTag: 11,
-        }
+        },
     });
 
     await prisma.post.create({
         data: {
-
-            description: "SQLite e suas vantagens?",
-            media: "https://youtu.be/LaoIlFhULvY",
-            idUser: 2
+            description: 'SQLite e suas vantagens?',
+            media: 'https://youtu.be/LaoIlFhULvY',
+            idUser: 2,
         },
     });
 
@@ -254,60 +251,148 @@ async function main() {
         data: {
             idPost: 4,
             idTag: 1,
-        }
+        },
     });
 
+    await prisma.userSkills.create({
+        data: {
+            idUser: 1,
+            idTag: 1,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 1,
+            idTag: 2,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 1,
+            idTag: 3,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 2,
+            idTag: 3,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 1,
+            idTag: 5,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 1,
+            idTag: 6,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 2,
+            idTag: 7,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 3,
+            idTag: 5,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 3,
+            idTag: 6,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 3,
+            idTag: 9,
+        },
+    });
+    await prisma.userSkills.create({
+        data: {
+            idUser: 4,
+            idTag: 3,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 4,
+            idTag: 5,
+        },
+    });
+
+    await prisma.userSkills.create({
+        data: {
+            idUser: 4,
+            idTag: 8,
+        },
+    });
     await prisma.project.create({
         data: {
-            name: "projeto teste123",
-            description: "pewoeoewpofeofjefpew",
-            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
-            duration: "15",
-            status: "Fechado",
-            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            name: 'projeto teste123',
+            description: 'pewoeoewpofeofjefpew',
+            aplicationDeadLine: new Date('2019-12-21T23:00:00.000Z'),
+            duration: '15',
+            status: 'Fechado',
+            dateStart: new Date('2019-12-20T17:48:00.000Z'),
             isApproved: null,
             idUser: 1,
-            idManager: 2
-        }
+            idManager: 2,
+        },
     });
 
     await prisma.projectRole.create({
         data: {
             idRole: 1,
-            idProject: 1
-        }
+            idProject: 1,
+        },
     });
 
     await prisma.userApplyProject.create({
         data: {
             idUser: 3,
             idProject: 1,
-            idRole: 1
-        }
+            idRole: 1,
+        },
     });
 
     await prisma.project.create({
         data: {
-            name: "projeto 2",
-            description: "pewoeoewpofeofjefpew",
-            aplicationDeadLine: new Date("2019-12-21T23:00:00.000Z"),
-            duration: "15",
-            status: "Fechado",
-            dateStart: new Date("2019-12-20T17:48:00.000Z"),
+            name: 'projeto 2',
+            description: 'pewoeoewpofeofjefpew',
+            aplicationDeadLine: new Date('2019-12-21T23:00:00.000Z'),
+            duration: '15',
+            status: 'Fechado',
+            dateStart: new Date('2019-12-20T17:48:00.000Z'),
             isApproved: true,
             idUser: 1,
-            idManager: 2
-        }
+            idManager: 2,
+        },
     });
 
     await prisma.userApplyProject.create({
         data: {
             idProject: 2,
             idUser: 3,
-            idRole: 1
-        }
-    })
-
+            idRole: 1,
+        },
+    });
 }
 
 main()

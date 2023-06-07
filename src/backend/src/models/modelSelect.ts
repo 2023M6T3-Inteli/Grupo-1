@@ -790,6 +790,28 @@ export class ModelSelect {
                 where: {
                     email: email,
                 },
+                select: {
+                    id: true,
+                    fullName: true,
+                    email: true,
+                    idManager: true,
+                    isManager: true,
+                    job: true,
+                    phoneNumber: true,
+                    rankPoints: true,
+                    location: true,
+                    mobileNumber:true,
+                    userSkills: {
+                        select: {
+                            Tag: {
+                                select: {
+                                    name:true
+                                }
+                            }
+                        }
+                    },
+                    
+                }
             });
             return result;
         } catch (error) {

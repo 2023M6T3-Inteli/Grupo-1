@@ -11,7 +11,6 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 
-
 function Post(props) {
     // const[cardLiked,setCardLiked]=useState(false)
     // const[cardDisliked,setCardDisliked]=useState(true)
@@ -70,10 +69,15 @@ function Post(props) {
                         <div className='item-2'>
                             <p>{item.description}</p>
                         </div>
-                        <div className='item-3'>
-                        </div>
+                        <div className='item-3'></div>
+                        {/* <div >
+                            <iframe width="300" height="200" 
+                            src={item.media}
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div> */}
                         <div>
-                        <DocPost title={item.media}></DocPost>
+                            <DocPost title={item.media}></DocPost>
                         
                         </div>
                         <div className='item-4'>

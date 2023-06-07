@@ -35,23 +35,24 @@ function OwnedPost (props)  {
     
     // DELETE a post
 
-    useEffect(() => {
-        const idPost = (dados.id)
-        // DELETE a post
-        const handleClick = () => {
-          const id = dados.id;
-          axios.delete(`/deletePost/${idPost}`)
-            .then(response => {
-              console.log('Requisição DELETE bem-sucedida!');
-              // Faça algo com a resposta, se necessário
-            })
-            .catch(error => {
-              console.error('Erro na requisição DELETE:', error);
-              // Trate o erro, se necessário
-            });
-        }
-    }, []);
+    // useEffect(() => {
+    //     const idPost = (dados.id)
+    //     // DELETE a post
+    //     const handleClick = () => {
+    //       const id = dados.id;
+    //       axios.delete(`/deletePost/${idPost}`)
+    //         .then(response => {
+    //           console.log('Requisição DELETE bem-sucedida!');
+    //           // Faça algo com a resposta, se necessário
+    //         })
+    //         .catch(error => {
+    //           console.error('Erro na requisição DELETE:', error);
+    //           // Trate o erro, se necessário
+    //         });
+    //     }
+    // }, []);
 
+    
     //GET All Posts
 
 
@@ -87,7 +88,7 @@ function OwnedPost (props)  {
                                 <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
                                  </div>
                             <div className='owned-parte-12'>
-                                    <button onClick={this.handleClick}><Trash></Trash></button>
+                                    {/* <button onClick={this.handleClick}><Trash></Trash></button> */}
                                 
                                 <div><Alert></Alert></div>
                             </div>

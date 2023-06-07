@@ -23,20 +23,39 @@ export default function ModalCreatePost(props) {
     }));
   };
 
-  const handleSubmit = event => {
-    // evita que o formulário seja enviado de forma padrão, o que faria a página recarregar. 
-    // Em vez disso, tratamos a submissão manualmente na função handleSubmit.
-    event.preventDefault();
+  // const handleSubmit = event => {
+  //   // evita que o formulário seja enviado de forma padrão, o que faria a página recarregar. 
+  //   // Em vez disso, tratamos a submissão manualmente na função handleSubmit.
+  //   event.preventDefault();
 
+  //   const selectedValues = selectedOptions.map(option => option.value);
+  //   const updatedDados = {
+  //   ...dados,
+  //   idTag: selectedValues
+  //   };
+
+  //   axios.post('http://localhost:3000/createPost', updatedDados)
+  //     .then(response => {
+  //       console.log('POST realizado com sucesso!');
+  //       // Realizar alguma ação após o sucesso do POST
+  //     })
+  //     .catch(error => {
+  //       console.error('Erro ao realizar POST:', error);
+  //       // Tratar o erro caso ocorra
+  //     });
+  // };
+
+  const handleSubmit = event => {
+    event.preventDefault();
     const selectedValues = selectedOptions.map(option => option.value);
     const updatedDados = {
     ...dados,
     idTag: selectedValues
     };
-
     axios.post('http://localhost:3000/createPost', updatedDados)
       .then(response => {
         console.log('POST realizado com sucesso!');
+        props.onShowCreatePost();  // Move the call here
         // Realizar alguma ação após o sucesso do POST
       })
       .catch(error => {
@@ -45,11 +64,20 @@ export default function ModalCreatePost(props) {
       });
   };
 
+
   // para selecionar as tags
   const optionsTagPost = [
-    { value: 1, label: 'Opção 1' },
-    { value: 2, label: 'Opção 2' },
-    { value: 3, label: 'Opção 3' },
+    { value: 1, label: 'HTML' },
+    { value: 2, label: 'CSS' },
+    { value: 3, label: 'JavaScript' },
+    { value: 4, label: 'Bootstrap' },
+    { value: 5, label: 'SQL' },
+    { value: 6, label: 'Java' },
+    { value: 7, label: 'C#' },
+    { value: 8, label: 'Python' },
+    { value: 9, label: 'Node.js' },
+    { value: 10, label: 'MongoDB' },
+    { value: 11, label: 'React' },
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -116,7 +144,7 @@ export default function ModalCreatePost(props) {
               </div> */}
 
               <div className="submit-create-post">
-                <button className="submit-btn-create-post" type="submit" onClick={()=>props.onShowCreatePost()}>Create Post</button>
+                <button className="submit-btn-create-post" type="submit" onClick={()=> props.onShowCreateNav()}>Create Post</button>
               </div>
 
             </div>

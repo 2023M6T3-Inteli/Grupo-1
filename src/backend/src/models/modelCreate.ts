@@ -1,5 +1,5 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-
+import { parseISO } from 'date-fns';
 import { Tproject } from '../Project/createProject/types/TmodelCreate';
 import { Tpost } from '../Posts/createPost/types/TmodelCreate';
 
@@ -10,34 +10,42 @@ export class ModelCreate {
     constructor(private readonly prisma: PrismaService) { }
 
     async createProject(data: Tproject) {
-        const {
-            name,
-            description,
-            aplicationDeadLine,
-            dateStart,
-            duration,
-            status,
-            idUser,
-            idManager,
-        } = data;
+
+        // const {
+        //     name,
+        //     description,
+        //     aplicationDeadLine,
+        //     dateStart,
+        //     duration,
+        //     status,
+        //     idUser,
+        //     idManager,
+        // } = data;
 
         try {
+
+            console.log(data)
+
+            const deadlineTime = data.aplicationDeadLine
+            const dateStartTime = data.dateStart
+
             const result = await this.prisma.project.create({
                 data: {
-                    name: name,
-                    description: description,
-                    aplicationDeadLine: new Date(aplicationDeadLine),
-                    dateStart: new Date(dateStart),
-                    duration: duration,
-                    status: status,
+                    name: data.name,
+                    description: data.description,
+                    aplicationDeadLine: new Date(),
+                    dateStart: new Date(),
+                    duration: data.duration,
+                    status: data.status,
 
-                    idUser: idUser,
-                    idManager: idManager,
+                    idUser: data.idUser,
+                    idManager: data.idManager,
                 },
             });
 
             return result;
         } catch (error) {
+            console.log(error)
             throw new HttpException(
                 {
                     status: HttpStatus.BAD_REQUEST,

@@ -4,7 +4,7 @@
 
 body.active-modal {
     overflow-y: hidden;
-   
+
 }
 
 .btn-modal {
@@ -23,9 +23,9 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
-    z-index:998;
-    display:flex;
-     background: rgba(49, 49, 49, 0.8);
+    z-index: 998;
+    display: flex;
+    background: rgba(49, 49, 49, 0.8);
 
 }
 
@@ -45,7 +45,7 @@ body.active-modal {
     margin-top: 10px;
     height: calc(100vh - 100px);
     overflow: scroll;
-    z-index:999;
+    z-index: 999;
 }
 
 .modal-content h2 {
@@ -116,8 +116,21 @@ label {
     font-family: "Roboto", sans-serif;
 }
 
-.area {
-    width: 100%;
+.duration {
+    width: 80px;
+    height: 15px;
+    margin-top: 0;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.start-date,
+.application-deadline {
+    width: 85px;
+    /* Ajuste a largura conforme necessário */
     height: 15px;
     margin-top: 0;
     padding: 0.5rem;
@@ -144,7 +157,7 @@ label {
     margin-bottom: 20px;
     display: flex;
     font-family: "Roboto", sans-serif;
-    color:#000;
+    color: #000;
 }
 
 .people {

@@ -183,9 +183,8 @@
 
     .ThirdContainer{
         width: 80%; 
-        height: 150px; 
         margin: 20px auto;
-        padding: 15px;
+        flex-wrap:nowrap;
         
         
         background-color: #FFFFFF;
@@ -202,8 +201,10 @@
 
         .TextSkils{
             display: flex;
-            position: absolute;
+            
             top: 20px; 
+            align-items: center;
+            flex-direction: column;
             
             font-style: normal;
             font-weight: 400;
@@ -211,36 +212,12 @@
             line-height: 20px;
 
             color: #636363
+            
+            
               
         }
 
-        .Skils{
-            display: flex;
-            position: absolute;
-            border: 1px solid #0672CB;
-            background-color: #FFFFFF;
-            color: #0672CB;
-            border-radius: 50px;
-            width: 40%;
-            height: 60px;
-            top: 50px;
-            left: 20px;
-
-            .NameSkils{
-                color: #0672CB;
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 20px;
-                
-                text-align: center;
-                line-height: 1;
-                justify-content: center;
-                display: flex;
-                align-items: center;           
-                
-            }
-        }
+        
         
     }
 
@@ -301,4 +278,12 @@
     }
 
     
+}
+
+.skillContent{
+    display:flex;
+    align-items: row;
+    margin-top: 12px;
+    gap:8px;
+    flex-wrap: nowrap;
 }

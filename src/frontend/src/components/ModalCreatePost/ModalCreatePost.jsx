@@ -30,11 +30,18 @@ export default function ModalCreatePost(props) {
     }
   };
 
+  // para selecionar as tags
   const optionsTagPost = [
     { value: 'opcao1', label: 'Opção 1' },
     { value: 'opcao2', label: 'Opção 2' },
     { value: 'opcao3', label: 'Opção 3' },
   ];
+
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleChange = (selected) => {
+    setSelectedOptions(selected);
+  };
 
   return (
     <div className="modal-create-post">
@@ -47,13 +54,31 @@ export default function ModalCreatePost(props) {
         <form className="form-create-post">
           <fieldset>
             <div className="details-create-post">
-              <label className="label-post" for="description-post">Description:
-                <input className="description-create-post" name="description-post" rows="4" cols="2" value={formData.description} onChange={handleInputChange}></input>
-              </label>
-
-              <label for="tags-create-post">Keywords:</label>
               <div>
-                <Select className="keys-create-post" options={optionsTagPost}></Select>
+                <label className="label-post" for="description-post">Description:
+                  <input className="description-create-post" name="description-post" rows="4" cols="2" value={formData.description} onChange={handleInputChange}></input>
+                </label>
+              </div>
+              <div>
+                {/* <label className="label-post" for="description-post">What type of file do you want to embed?
+                  <input className="description-create-post" name="description-post" rows="4" cols="2" value={formData.description} onChange={handleInputChange}></input>
+                </label> */}
+              </div>
+              <div>
+                <label className="input-media-post" for="input-media-post">Enter media url:
+                  <input className="description-create-post" name="input-media-post" rows="3" cols="1" value={formData.description} onChange={handleInputChange}></input>
+                </label>
+              </div>
+              
+              <div>
+              <label for="tags-create-post">Keywords:</label>
+                <Select 
+                className="keys-create-post" 
+                options={optionsTagPost}
+                isMulti
+                value={selectedOptions}
+                onChange={handleChange}
+                ></Select>
               </div>
               
               {/* 

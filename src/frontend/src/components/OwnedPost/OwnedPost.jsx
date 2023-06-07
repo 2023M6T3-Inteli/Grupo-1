@@ -9,8 +9,9 @@ import fullHeart from "../../assets/fullHeart.svg"
 import { useState } from "react";
 import DocPost from '../DocPost/DocPost';
 import React, { useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import KeepUserId from '../KeepUserId/KeepUserId';
+import axios from "../../../api";
 
 
 
@@ -29,31 +30,31 @@ function OwnedPost(props) {
     //       setCardDisliked(true)
     //   }
 
-    
-    
+
     //GET All Posts
-    const [dados, setDados] = useState(null);
-    const userId = 1; // ID desejado
 
-  useEffect(() => {
-    axios.get(`http://localhost:3000/getPostByUserId/${userId}`)
-      .then(response => {
-        // Armazena os dados da resposta no estado
+    const [dados, setDados] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    const userId = JSON.parse(sessionStorage.getItem("user"));
+
+    axios
+        .get(`/getPostByUserId/${userId.user.id}`)
+        .then((response) => {
         setDados(response.data);
-      })
-      .catch(error => {
+        setLoading(false); // set loading to false once data is fetched
+        })
+        .catch((error) => {
         console.error(error);
-      });
-  }, [userId]);
+        });
+    }, []);
 
+    console.log(dados); // Log state here
 
-  if (!userId) {
-    return <p>Usuário não está logado.</p>;
-  }
-
-  if (dados === null) {
+    if (loading) {
     return <div>Loading...</div>;
-  }
+    }
 
   //to revert the data ordem on the feed
   const dadosInvertidos = [...dados].reverse();

@@ -96,7 +96,13 @@ fieldset {
     font-weight: 400;
 }
 
-
+.input-media-post{
+    /* display: block; */
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
 
 .description-create-post {
     width: 100%;

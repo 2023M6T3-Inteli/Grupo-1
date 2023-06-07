@@ -1,0 +1,304 @@
+.bodyP{
+    min-height: 130vh;
+    height: 100%;
+    background-color: #f0f0f0;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    .FirstContainer{
+        width: 80%; 
+        height: 300px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        color: black;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .Picture{
+            display: flex;
+            position: absolute;
+            top: 20px;
+            background-Repeat: no-repeat;
+            background-Size: 80%;
+            background-Position: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0px 0px 8px 0px #C5C5C5;
+            width: 110px;
+            height: 110px;
+        }
+
+        .Name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-size: 32px;
+            font-weight: 300;
+            color: #0672CB;
+            font-style: normal;
+
+            .Occupation{
+                display: flex;
+                position: absolute;
+                top: 65px;
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                color: #636363
+            }
+
+            .Area{
+                display: flex;
+                position: absolute;
+                top: 85px;
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                color: #636363
+            }
+        }
+
+        .ButtonsP{
+            display: grid;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+
+            .DellCurriculum{
+                margin-bottom: -180%;
+                width: 130px;
+                height: 30px;
+                border: 1px solid #0672CB;
+                background-color: #0672CB;
+                color: #FFFFFF;
+                border-radius: 50px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+                line-height: 1;
+            }
+
+            .Teams{
+                margin-bottom: -180%;
+                width: 130px;
+                height: 30px;
+                border: 1px solid #0672CB;
+                background-color: #0672CB;
+                color: #FFFFFF;
+                border-radius: 50px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+                line-height: 1;
+            }
+
+        }
+    }
+
+    .SecondContainer{
+        width: 80%; 
+        height: 100px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        color: black;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+
+        .TextAbout{
+            display: contents;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .TextExperience{
+                display: flex;
+                position: absolute;
+                top: 15px;
+
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 20px;
+
+                color: #636363
+            } 
+            
+            .TextExperience2{
+                display: flex;
+                position: absolute;
+                top: 30px;
+
+                
+                font-style: normal;
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 20px;
+
+                color: #0672CB         
+            }
+        }
+    }
+
+    .ThirdContainer{
+        width: 80%; 
+        height: 150px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .TextSkils{
+            display: flex;
+            position: absolute;
+            top: 20px; 
+            
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 20px;
+
+            color: #636363
+              
+        }
+
+        .Skils{
+            display: flex;
+            position: absolute;
+            border: 1px solid #0672CB;
+            background-color: #FFFFFF;
+            color: #0672CB;
+            border-radius: 50px;
+            width: 40%;
+            height: 60px;
+            top: 50px;
+            left: 20px;
+
+            .NameSkils{
+                color: #0672CB;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                
+                text-align: center;
+                line-height: 1;
+                justify-content: center;
+                display: flex;
+                align-items: center;           
+                
+            }
+        }
+        
+    }
+
+    .FourContainer{
+        width: 80%; 
+        height: 150px; 
+        margin: 20px auto;
+        padding: 15px;
+        
+        
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        flex-direction: column;
+        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+        font-family: 'Roboto', sans-serif;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .TextProjects{
+            display: flex;
+            position: absolute;
+            top: 20px; 
+            
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 20px;
+
+            color: #636363
+              
+        }
+
+        .Projects{
+            background-color: #0672CB;
+            border-radius: 50px;
+            width: 80%;
+            height: 45px;
+            top: 50px;
+            left: 20px;
+
+            .NameProject{
+                color: #FFFFFF;
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                
+                text-align: center;
+                line-height: 2;
+                
+            }
+        }
+        
+    }
+
+    
+}

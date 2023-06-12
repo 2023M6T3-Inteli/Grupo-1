@@ -638,7 +638,7 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 
 # Documentação da API
 Para acessar a api do projeto basta entrar pelo terminal na pasta "src" apos entrar nessa pasta deve se entrar na pasta "backend" e dar o comando "npm run start:dev", apos recber a confirmacao de backend esta rodando entre no navegador de sua preferencia e busque por "http://localhost:3000/api"
-<img src="swagger_grupo1.png">
+<img src="docs/img/swagger_grupo1.png">
 
 # Manual do Usuário
 

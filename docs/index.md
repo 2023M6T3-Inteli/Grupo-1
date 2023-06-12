@@ -605,10 +605,11 @@ Configuração do cluster: Podemos configurar o tamanho e o tipo de instância d
 
 
 ## Teste Unitário
+Seguem os testes unitarios de cada rota disponivel na aplicacao, duas delas estao contendo erros e os erros receberam solucoes na Sprint 5
+<img src="./img/Captura de tela 1.png">
+<img src="./img/Captura de tela 2.png">
+<img src="./img/Captura de tela 3.png">
 
-<img src="./img/captura de tela 1.png">
-<img src="./img/captura de tela 2.png">
-<img src="./img/captura de tela 3.png">
 
 ## Teste de Integração
 
@@ -636,9 +637,8 @@ Link ou imagem da tabela com dados organizados dos testes realizados.
 
 
 # Documentação da API
-
-Apresentar a documentação no formato Swagger ou aplicação equivalente com todas as requisições dos endpoints desenvolvidos e funcionando.
-
+Para acessar a api do projeto basta entrar pelo terminal na pasta "src" apos entrar nessa pasta deve se entrar na pasta "backend" e dar o comando "npm run start:dev", apos recber a confirmacao de backend esta rodando entre no navegador de sua preferencia e busque por "http://localhost:3000/api"
+<img src="swagger_grupo1.png">
 
 # Manual do Usuário
 

@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 import { ModelUpdate } from '../../models/modelsUpdate';
 import { ModelSelect } from '../../models/modelSelect';
-import { ModelCreate } from 'src/models/modelCreate';
+import { ModelCreate } from '../../models/modelCreate';
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -21,7 +21,7 @@ export class ServiceUpdateApprovalProject {
         private modelUpdate: ModelUpdate,
         private modelSelect: ModelSelect,
         private readonly modelCreate: ModelCreate,
-    ) {}
+    ) { }
 
     async execute(idManager: number, idProject: number, isApproved: boolean) {
         const projectExist =

@@ -1,5 +1,6 @@
 import { ModelCreate } from "../../models/modelCreate"
 import { ModelSelect } from "../../models/modelSelect"
+import { ModelUpdate } from "../../models/modelsUpdate"
 import { PrismaService } from "../../prismaServices/prisma.service"
 import { ServiceApplyProject } from './app.service'
 import { ControllerApplyProject } from "./app.controller"
@@ -10,6 +11,7 @@ describe(' user apply for a project', () => {
     let prisma: PrismaService
     let modelCreate: ModelCreate
     let modelSelect: ModelSelect
+    let modelUpdate: ModelUpdate
     let serviceApplyProject: ServiceApplyProject
     let controllerApplyProject: ControllerApplyProject
     let body: DTOBodyApplyProject = { idProject: 1, idUser: 4, idRole: 1 }
@@ -18,7 +20,7 @@ describe(' user apply for a project', () => {
         prisma = new PrismaService()
         modelSelect = new ModelSelect(prisma)
         modelCreate = new ModelCreate(prisma)
-        serviceApplyProject = new ServiceApplyProject(modelCreate, modelSelect)
+        serviceApplyProject = new ServiceApplyProject(modelCreate, modelSelect, modelUpdate)
         controllerApplyProject = new ControllerApplyProject(serviceApplyProject)
     })
 

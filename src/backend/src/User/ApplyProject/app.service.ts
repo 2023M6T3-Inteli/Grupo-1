@@ -1,7 +1,7 @@
 import { ModelCreate } from '../../models/modelCreate';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ModelSelect } from '../../models/modelSelect';
-import { ModelUpdate } from 'src/models/modelsUpdate';
+import { ModelUpdate } from '../../models/modelsUpdate';
 
 @Injectable()
 export class ServiceApplyProject {

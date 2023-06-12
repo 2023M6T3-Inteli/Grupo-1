@@ -13,6 +13,7 @@ export default function Modal(props) {
     duration: '',
     dateStart: '',
     status: '',
+    isAproved: true,
     idUser: 1,
     idManager: 2,
     idRole: [1],

@@ -28,8 +28,8 @@ describe('get applied user', () => {
                         "name": "Design UX",
                     },
                     "user": {
-                        "email": "bonitao@dell.com",
-                        "fullName": "bonitao",
+                        "email": "fabricioalcantara@dell.com",
+                        "fullName": "Fabricio Alcantara",
                     },
                 },]
             )

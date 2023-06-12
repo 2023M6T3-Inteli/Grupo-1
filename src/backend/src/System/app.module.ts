@@ -4,7 +4,7 @@ import { GetProjectByIdModule } from './getProjectById/app.module';
 import { GetProjectForTagModule } from './getProjectForTag/app.module';
 import { GetRankingModule } from './getRanking/app.module';
 import { GetRankingUserModule } from './getRankById/app.module';
-import { HealthModule } from './helth/app.module';
+import { HealthModule } from './health/app.module';
 
 @Module({
     imports: [
@@ -24,4 +24,4 @@ import { HealthModule } from './helth/app.module';
         GetRankingUserModule
     ],
 })
-export class SystemModule {}
+export class SystemModule { }

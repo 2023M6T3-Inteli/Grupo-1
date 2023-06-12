@@ -3,7 +3,7 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 
 
 import { ModelCreate } from '../../models/modelCreate';
-import { ModelUpdate } from 'src/models/modelsUpdate';
+import { ModelUpdate } from '../../models/modelsUpdate';
 
 @Injectable()
 export class ServiceCreateComment {
@@ -11,13 +11,13 @@ export class ServiceCreateComment {
         private readonly modelCreate: ModelCreate,
         private readonly modelSelect: ModelSelect,
         private readonly modelUpdate: ModelUpdate,
-    ) {}
-    
+    ) { }
 
-    async execute(idUser:number,idPost:number,comment:string) {
+
+    async execute(idUser: number, idPost: number, comment: string) {
         const checkPost = await this.modelSelect.findPostById(idPost);
         const checkUser = await this.modelSelect.getCheckExistentUsers(idUser);
-        
+
         try {
             if (!checkPost) {
                 throw new HttpException(
@@ -39,9 +39,9 @@ export class ServiceCreateComment {
                 );
             }
             const description = `O usuário ${checkUser.fullName} comentou no seu post ${checkPost.id}`;
-            const notification = await this.modelCreate.createPostNotification(idPost,description,);
+            const notification = await this.modelCreate.createPostNotification(idPost, description,);
             const rankPoints = await this.modelUpdate.updateCommentRankPoints(idPost);
-            const createComment = await this.modelCreate.createComment(idUser,idPost,comment);
+            const createComment = await this.modelCreate.createComment(idUser, idPost, comment);
             return createComment;
         } catch (error) {
             throw new HttpException(

@@ -3,6 +3,7 @@ CREATE TABLE "user" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "fullName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
     "phoneNumber" INTEGER NOT NULL,
     "mobileNumber" INTEGER NOT NULL,
     "location" TEXT NOT NULL,
@@ -17,7 +18,6 @@ CREATE TABLE "post" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "media" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "tags" TEXT NOT NULL,
     "idUser" INTEGER,
     CONSTRAINT "post_idUser_fkey" FOREIGN KEY ("idUser") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -63,9 +63,9 @@ CREATE TABLE "postComplaint" (
 -- CreateTable
 CREATE TABLE "notifications" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "idUser" INTEGER,
+    "newNotification" BOOLEAN NOT NULL,
     CONSTRAINT "notifications_idUser_fkey" FOREIGN KEY ("idUser") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -126,6 +126,16 @@ CREATE TABLE "saveProject" (
 CREATE TABLE "tag" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "userSkills" (
+    "idUser" INTEGER NOT NULL,
+    "idTag" INTEGER NOT NULL,
+
+    PRIMARY KEY ("idUser", "idTag"),
+    CONSTRAINT "userSkills_idUser_fkey" FOREIGN KEY ("idUser") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "userSkills_idTag_fkey" FOREIGN KEY ("idTag") REFERENCES "tag" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateTable

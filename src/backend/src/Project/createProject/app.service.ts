@@ -4,7 +4,7 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Tproject } from './types/TmodelCreate';
 
 import { ModelCreate } from '../../models/modelCreate';
-import { ModelUpdate } from 'src/models/modelsUpdate';
+import { ModelUpdate } from '../../models/modelsUpdate';
 
 @Injectable()
 export class ServiceCreateProject {

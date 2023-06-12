@@ -1,0 +1,10 @@
+.userSkills{
+    color:#0672CB;
+    padding:8px;
+    border:1px solid #0672CB;
+    border-radius: 48px;
+}
+
+.fatherSkills{
+    display:flex;
+}

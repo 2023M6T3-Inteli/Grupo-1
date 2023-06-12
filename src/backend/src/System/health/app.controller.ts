@@ -2,10 +2,10 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller()
-@ApiTags('System')
+@ApiTags('Health')
 export class ControllerHelth {
     @Get('/')
     async hello() {
-        return 'Hello Project 6 APi';
+        return 'Project 6 API is working';
     }
 }

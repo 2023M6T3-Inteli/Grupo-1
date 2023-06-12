@@ -28,6 +28,7 @@ model user {
   postLike         postLike[]
   postComplaint    postComplaint[]
   notifications    notifications[]
+  userSkills  userSkills[]
 }
 
 model post {
@@ -83,9 +84,9 @@ model postComplaint {
 
 model notifications {
   id          Int    @id @default(autoincrement())
-  name        String
   description String
   idUser      Int?
+  newNotification    Boolean
 
   User user? @relation(fields: [idUser], references: [id], onDelete: Cascade)
 }
@@ -155,6 +156,17 @@ model tag {
   name       String
   projectTag projectTag[]
   postTag    postTag[]
+  userSkills userSkills[]
+}
+
+model userSkills {
+  idUser Int
+  idTag  Int
+
+  User user @relation(fields: [idUser], references: [id], onDelete: Cascade)
+  Tag  tag  @relation(fields: [idTag], references: [id], onDelete: Cascade)
+
+  @@id([idUser, idTag])
 }
 
 model postTag {

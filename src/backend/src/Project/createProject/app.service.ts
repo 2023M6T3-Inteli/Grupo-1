@@ -4,12 +4,14 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Tproject } from './types/TmodelCreate';
 
 import { ModelCreate } from '../../models/modelCreate';
+import { ModelUpdate } from '../../models/modelsUpdate';
 
 @Injectable()
 export class ServiceCreateProject {
     constructor(
         private readonly modelCreate: ModelCreate,
         private readonly modelSelect: ModelSelect,
+        private readonly modelUpdate: ModelUpdate,
     ) { }
 
     async execute(data: Tproject) {
@@ -27,6 +29,15 @@ export class ServiceCreateProject {
             return item.id;
         });
 
+        if (!idTag || idTag.length === 0) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: 'idTag is required',
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
         let validateTags = idTag.every((item) => alltagsIds.includes(item));
         let validateRoles = idRole.every((item) => allrolesIds.includes(item));
 
@@ -46,7 +57,7 @@ export class ServiceCreateProject {
             throw new HttpException(
                 {
                     status: HttpStatus.NOT_FOUND,
-                    error: `does not exist tags with this id's`,
+                    error: `Tags with the provided IDs do not exist`,
                 },
                 HttpStatus.NOT_FOUND,
             );
@@ -56,17 +67,15 @@ export class ServiceCreateProject {
             throw new HttpException(
                 {
                     status: HttpStatus.NOT_FOUND,
-                    error: `does not exist roles with this id's`,
+                    error: `Roles with the provided IDs do not exist`,
                 },
                 HttpStatus.NOT_FOUND,
             );
         }
 
-        // TODO verificar se o tempo de aplicationDeadLine não é o mesmo
-
         try {
             const firstStepProject = await this.modelCreate.createProject(data);
-
+            const rank = await this.modelUpdate.updateProjectRankPoints(data);
             if (firstStepProject) {
                 const { id } = firstStepProject;
 
@@ -86,20 +95,20 @@ export class ServiceCreateProject {
                 throw new HttpException(
                     {
                         status: HttpStatus.BAD_REQUEST,
-                        error: 'Failed create project, try again ',
+                        error: 'Failed to create project, please try again',
                     },
                     HttpStatus.BAD_REQUEST,
                 );
             }
         } catch (error) {
+            console.error('Error in creating project:', error);
             throw new HttpException(
                 {
-                    status: HttpStatus.BAD_REQUEST,
-                    error: error,
+                    status: HttpStatus.INTERNAL_SERVER_ERROR,
+                    error: 'Internal Server Error',
                 },
-                HttpStatus.BAD_REQUEST,
+                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }
 }
-

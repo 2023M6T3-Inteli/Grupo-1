@@ -13,6 +13,7 @@ import { UserModule } from './User/app.module';
 import { PostModule } from './Posts/app.module';
 import { CommentsModule } from './Comments/app.module';
 import { GetNotificationsModule } from './User/getNotifications/app.module';
+import { GetAllNotificationsModule } from './User/getAllNotifications/app.module';
 
 @Module({
     imports: [
@@ -23,7 +24,8 @@ import { GetNotificationsModule } from './User/getNotifications/app.module';
         UserModule,
         SystemModule,
         OwnerModule,
-        GetNotificationsModule
+        GetNotificationsModule,
+        GetAllNotificationsModule
     ],
 })
 export class AppModule {}

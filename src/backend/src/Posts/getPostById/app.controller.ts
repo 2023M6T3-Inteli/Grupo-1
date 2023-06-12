@@ -10,14 +10,14 @@ import { AuthGuard } from '@nestjs/passport';
 export class ControllerGetPostById {
     constructor(
         private serviceGetPostsByUserId: ServiceGetPostsByUserId,
-    ) {}
+    ) { }
 
     @Get('getPostByUserId/:id')
     @ApiOperation({ summary: 'Get infos project by id leader' })
     // TODO fazer Api response para sucess e faild
-    async getPostByUserId(@Param() id: { id: number }) {
+    async getPostByUserId(@Param() id: { idUser: number }) {
         const result = await this.serviceGetPostsByUserId.execute(
-            Number(id.id),
+            Number(id.idUser),
         );
         return result;
     }

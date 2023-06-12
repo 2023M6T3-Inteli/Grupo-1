@@ -7,6 +7,6 @@ export class ServiceGetNotifications {
     constructor(private modelSelect: ModelSelect) {}
 
     async execute(idUser:number) {
-        return await this.modelSelect.getNotifications(idUser);
+        return await this.modelSelect.getNewNotifications(idUser);
     }
 }

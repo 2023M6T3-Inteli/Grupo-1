@@ -3,7 +3,7 @@
     color: red;
   } */
 
- input{
+  .checkbox-id{
     appearance: none;
     border: 1px solid #0672CB;
     border-radius: 5px;

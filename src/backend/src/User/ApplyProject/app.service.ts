@@ -1,12 +1,14 @@
 import { ModelCreate } from '../../models/modelCreate';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ModelSelect } from '../../models/modelSelect';
+import { ModelUpdate } from '../../models/modelsUpdate';
 
 @Injectable()
 export class ServiceApplyProject {
     constructor(
         private readonly modelCreate: ModelCreate,
         private readonly modelSelect: ModelSelect,
+        private readonly modelUpdate: ModelUpdate
     ) { }
 
     async execute(_idProject: number, _idUser: number, _idRole: number) {
@@ -79,7 +81,9 @@ export class ServiceApplyProject {
                 HttpStatus.NOT_FOUND,
             );
         }
-
+        const description = `O usuário ${userExist[0].fullName} se inscreveu no seu projeto ${projectExist[0].name}`;
+        const notification = await this.modelCreate.createProjectNotification(_idProject, description);
+        const rankPoints = await this.modelUpdate.updateApplyProjectRankPoints(_idProject);
         const result = this.modelCreate.applyProject(
             _idProject,
             _idUser,

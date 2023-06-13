@@ -3,37 +3,37 @@
 .ranking {
     /* display: flex; */
     background-color: #FFFFFF;
-    width: 300px;
-    height: 278px;
+    width: 78%;
     border-radius: 20px;
     filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
 }
 
+.ranking-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 96px;
+}
 .rankingTable {
-    /* display: flex; */
     align-items: center;
-    /* flex-direction: column;
-    justify-content: space-around; */
 }
 
 .rankingLine {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding-top: 29px;
     padding-left: 5px;
     padding-right: 5px;
     font-family: 'Roboto', sans-serif
 }
-
-.rankingLine1 {
-    display: flex;
-    justify-content: space-around;
+.trophyDiv{
+    justify-content: center;
     align-items: center;
-    padding-top: 25px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Roboto', sans-serif
+    align-self: start;
+    margin-left: 8px;
+   
 }
 
 .ellipsis {
@@ -49,8 +49,10 @@
 
 .user {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding-bottom: 29px;
     padding-left: 5px;
     padding-right: 5px;
     font-family: 'Roboto', sans-serif
@@ -65,9 +67,30 @@
     align-items: center;
     justify-content: center;
     font-size: 12px;
+    margin-left: 8px;
 }
 
 .dell-points{
     color:#0672CB ;
     font-weight: 500;
+    margin-right: 8px;
+}
+
+.goldTrophy{
+    height: 40px;
+    width: 40px;
+}
+.silverTrophy{
+    height: 40px;
+    width: 40px;
+}
+
+.bronzeTrophy{
+    height: 40px;
+    width: 40px;
+}
+
+.postionRankng{
+    display: flex;
+    align-self: center;
 }

@@ -45,7 +45,7 @@ function CardProject(props) {
                     <div className="cardHeader">
                         <label className="cardTitle" >{item.name}</label>
                         <div className="iconsHeader">
-                            <label >{item.description}</label>
+                            <label >+ info</label>
                             <img src={alert} alt="report" />
                         </div>
                     </div>

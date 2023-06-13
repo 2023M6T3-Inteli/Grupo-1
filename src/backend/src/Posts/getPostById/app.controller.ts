@@ -12,10 +12,11 @@ export class ControllerGetPostById {
         private serviceGetPostsByUserId: ServiceGetPostsByUserId,
     ) { }
 
-    @Get('getPostByUserId/:id')
+    @Get('getPostByUserId/:idUser')
     @ApiOperation({ summary: 'Get infos project by id leader' })
     // TODO fazer Api response para sucess e faild
     async getPostByUserId(@Param() id: { idUser: number }) {
+        console.log(id.idUser)
         const result = await this.serviceGetPostsByUserId.execute(
             Number(id.idUser),
         );

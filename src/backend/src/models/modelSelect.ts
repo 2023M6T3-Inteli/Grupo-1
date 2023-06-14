@@ -99,10 +99,12 @@ export class ModelSelect {
         try {
             const result = await this.prisma.post.findMany({
                 select: {
+                    id:true,
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },
                     postTag: { select: { Tag: { select: { name: true } } } },
+                    postLike:{select:{idUser:true}}
                 },
             });
             return result;
@@ -435,10 +437,12 @@ export class ModelSelect {
             const result = await this.prisma.post.findMany({
                 where: { idUser: idUser },
                 select: {
+                    id:true,
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },
                     postTag: { select: { Tag: { select: { name: true } } } },
+                    postLike:{select:{idUser:true}}
                 },
             });
             return result;

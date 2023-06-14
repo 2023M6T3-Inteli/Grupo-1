@@ -47,6 +47,31 @@ export class ModelDelete {
         }
     }
 
+    async deleteLikedPost(body: { idUser: number; idPost: number }) {
+        try {
+        
+
+            const result = await this.prisma.postLike.delete({
+                where: {
+                    idUser_idPost: {
+                        idUser: body.idUser,
+                        idPost: body.idPost,
+                    },
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_GATEWAY,
+                    error: error,
+                },
+
+                HttpStatus.BAD_GATEWAY,
+            );
+        }
+    }
     async deleteApplayUser(idProject: number, idRole: number, idUser: number) {
         try {
             return await this.prisma.userApplyProject.delete({

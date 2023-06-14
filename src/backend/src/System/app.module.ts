@@ -5,6 +5,7 @@ import { GetProjectForTagModule } from './getProjectForTag/app.module';
 import { GetRankingModule } from './getRanking/app.module';
 import { GetRankingUserModule } from './getRankById/app.module';
 import { HealthModule } from './health/app.module';
+import { GetAllTagsModule } from './getAllTags/app.module';
 
 @Module({
     imports: [
@@ -13,7 +14,8 @@ import { HealthModule } from './health/app.module';
         GetAllProjectModule,
         HealthModule,
         GetRankingModule,
-        GetRankingUserModule
+        GetRankingUserModule,
+        GetAllTagsModule,
     ],
     exports: [
         GetProjectForTagModule,
@@ -21,7 +23,8 @@ import { HealthModule } from './health/app.module';
         GetAllProjectModule,
         HealthModule,
         GetRankingModule,
-        GetRankingUserModule
+        GetRankingUserModule,
+        GetAllTagsModule,
     ],
 })
-export class SystemModule { }
+export class SystemModule {}

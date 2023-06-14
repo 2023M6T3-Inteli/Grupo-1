@@ -27,13 +27,17 @@ Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenhar
 https://colab.research.google.com/drive/1npUzERwxbg_BF3yKIJqTGyTCdvzlhhj3?usp=sharing#scrollTo=rIlB2YClZFc6
 
 
-Esse dataset teve como sua base o banco de dados público apresentado pelo professor neste link "https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset", usamos a tabela "ratings.csv" para extrairmos os dados e analisá-los.
+Esse dataset teve como sua base o banco de dados público apresentado pelo professor neste link (https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset), usamos a tabela "ratings.csv" para extrairmos os dados e analisá-los.
 
 Existem três colunas nesse arquivo csv (https://docs.google.com/spreadsheets/d/1MxirctwS0bSZLEa1V-GccaWkCSS9p6QDZQjOMd3-FqQ/edit?usp=sharing):
 
+
 userId: a identificação do usuario dentro da plataforma;
+
 Itemid: a identificação do item (post) dentro da plataforma;
+
 classification: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5.
+
 Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra os dois gráficos presente no notebbok. As três classificações mais comum no dataset são:
 
 - **4.0 com 26818**
@@ -66,7 +70,7 @@ Esse arquivo (https://docs.google.com/spreadsheets/d/1c6wHiD2ZODKa7ZFZ1h17kUdKJc
 
 Por último nessa sprint 4 temos a parte de comunicação assíncrona, no momento usaremos o MQTT, que utiliza o mesmo paradigma publish-subscribe do Kafka. Com auxilio desse site (https://www.hivemq.com/demos/websocket-client/) para mostrar a comunicação da IA com a web.
 
-<img  src="C:\Users\Inteli\Documents\GitHub\Modulo6 - DELL\Grupo-1\docs\img\colabrecomendacao.png">
+<img  src="./img/colabrecomendacao.png">
 
 
 

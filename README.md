@@ -24,41 +24,51 @@ Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenhar
 
 # Descrição da Base de Dados
 
-https://colab.research.google.com/drive/1FdvSvlbacaz18tHySr30VuI_z_hbGDrB#scrollTo=rIlB2YClZFc6
+https://colab.research.google.com/drive/1npUzERwxbg_BF3yKIJqTGyTCdvzlhhj3?usp=sharing#scrollTo=rIlB2YClZFc6
 
-O dataset teve como sua base o banco de dados público apresentado pelo professor neste link "https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset", usamos a tabela "ratings.csv" para extrairmos os dados.
+Descrição da Base de Dados
 
-Existem três colunas nesse arquivo csv:
+Esse dataset teve como sua base o banco de dados público apresentado pelo professor neste link "https://www.kaggle.com/datasets/shubhammehta21/movie-lens-small-latest-dataset", usamos a tabela "ratings.csv" para extrairmos os dados e analisá-los.
 
-**userId**: a identificação do usuario dentro da plataforma;
+Existem três colunas nesse arquivo csv (https://docs.google.com/spreadsheets/d/1MxirctwS0bSZLEa1V-GccaWkCSS9p6QDZQjOMd3-FqQ/edit?usp=sharing):
 
-**Itemid**: a identificação do item (post) dentro da plataforma;
+userId: a identificação do usuario dentro da plataforma;
+Itemid: a identificação do item (post) dentro da plataforma;
+classification: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5.
+Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra os dois gráficos presente no notebbok. As três classificações mais comum no dataset são:
 
-**classification**: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5. Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra o gráfico.
+4.0 com 26818
 
-As três classificações mais comum no dataset são:
+3.0 com 20047
 
-- **4.0 com 26818**
+5.0 com 13211
 
-- **3.0 com 20047**
+3.5 com 13136
 
-- **5.0 com 13211**
+4.5 com 8551
 
-- 3.5 com 13136
+2.0 com 7551
 
-- 4.5 com 8551
+2.5 com 5550
 
-- 2.0 com 7551
+1.0 com 2811
 
-- 2.5 com 5550
+1.5 com 1791
 
-- 1.0 com 2811
-
-- 1.5 com 1791
-
-- 0.5 com 1370
+0.5 com 1370
 
 Com isso podemos ver que na coluna classification (nossa coluna alvo) não possue discrepâncias.
+
+Depois da analise de dados, precisamos montar o modelo que é o iten-KNN que é um método que encontra itens semelhantes com base em suas características e histórico de preferências de outros usuários. Esse algoritmo é amplamente utilizado em sistemas de recomendação, onde o objetivo é oferecer aos usuários sugestões personalizadas de itens com base em seus interesses e preferências anteriores.
+
+Então para podermos realizar esse método precisamos de outra tabela além de "ratings.csv", precisamos utilizar a tabela "movies.csv", para treinar o modelo.
+
+Esse arquivo (https://docs.google.com/spreadsheets/d/1c6wHiD2ZODKa7ZFZ1h17kUdKJchhmLJ7uwspkDkA24c/edit?usp=sharing) tem duas colunas a primeira é "ItemId" que também tem na "ratings.csv", a segunda é "title" que são os nomes dos filmes. Lembrando que no momento mesmo os dados sendo nomes de filmes isso não tem relevância no momento do projeto, pois podemos trocar esses titulo de filmes por tags que se relacionam com a plataforma.
+
+Por último nessa sprint 4 temos a parte de de comunicação assíncrona, no momento usaremos o MQTT, que utiliza o mesmo paradigma publish-subscribe do Kafka. Com auxilio desse site (https://www.hivemq.com/demos/websocket-client/) para mostrar a comunicação da IA com a web.
+
+
+
 
 
 # Documentação

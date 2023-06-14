@@ -11,14 +11,41 @@ import DocPost from "../DocPost/DocPost";
 import axios from "../../../api";
 
 function OwnedPostItem({ item }) {
-  const [liked, setLiked] = useState(false);
+  const userId = JSON.parse(sessionStorage.getItem("user"));
+  const [liked, setLiked] = useState(
+    item.postLike.some((like) => like.idUser === userId.user.id)
+  );
 
   const handleLike = () => {
     setLiked(true);
+    axios
+      .post("/likePost", {
+        idPost: item.id,
+        idUser: userId.user.id,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleDislike = () => {
     setLiked(false);
+    axios
+      .delete("/deletelikedPost", {
+        data: {
+          idPost: item.id,
+          idUser: userId.user.id,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

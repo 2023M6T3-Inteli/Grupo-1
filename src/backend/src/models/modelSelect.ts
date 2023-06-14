@@ -437,6 +437,7 @@ export class ModelSelect {
             const result = await this.prisma.post.findMany({
                 where: { idUser: idUser },
                 select: {
+                    id:true,
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },

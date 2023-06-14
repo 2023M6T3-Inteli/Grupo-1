@@ -7,18 +7,46 @@ import chat from "../../assets/chat.svg";
 import fullHeart from "../../assets/fullHeart.svg";
 import { useState, useEffect } from "react";
 import DocPost from "../DocPost/DocPost";
-import axios from "axios";
+import axios from "../../../api";
 
 function PostItem({ item }) {
-  const [liked, setLiked] = useState(false);
+  const userId = JSON.parse(sessionStorage.getItem("user"));
+  const [liked, setLiked] = useState(
+    item.postLike.some((like) => like.idUser === userId.user.id)
+  );
 
   const handleLike = () => {
     setLiked(true);
+    axios
+      .post("/likePost", {
+        idPost: item.id,
+        idUser: userId.user.id,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  const handleDislike = () => {
-    setLiked(false);
-  };
+const handleDislike = () => {
+  setLiked(false);
+  axios
+    .delete("/deletelikedPost", {
+      data: {
+        idPost: item.id,
+        idUser: userId.user.id,
+      },
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 
   return (
     <div className="post-item" key={item.id}>
@@ -65,10 +93,9 @@ function PostItem({ item }) {
 function Post() {
   //GET All Posts
   const [dados, setDados] = useState(null);
-
   useEffect(() => {
     axios
-      .get("http://localhost:3000/getPost")
+      .get("/getPost")
       .then((response) => {
         // Store the response data in the state
         setDados(response.data);
@@ -84,7 +111,6 @@ function Post() {
 
   //to revert the data order on the feed
   const dadosInvertidos = [...dados].reverse();
-  console.log(dados.media);
 
   return (
     <ul className="post-ul">

@@ -36,11 +36,11 @@ Itemid: a identificação do item (post) dentro da plataforma;
 classification: a classificação desse item dada pelo o tal usuario, a nota varia de 0 até 5.
 Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra os dois gráficos presente no notebbok. As três classificações mais comum no dataset são:
 
-**- 4.0 com 26818**
+- **4.0 com 26818**
 
-**- 3.0 com 20047**
+- **3.0 com 20047**
 
-**- 5.0 com 13211**
+- **5.0 com 13211**
 
 - 3.5 com 13136
 

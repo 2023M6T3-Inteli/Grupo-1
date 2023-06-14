@@ -64,8 +64,9 @@ Então para podermos realizar esse método precisamos de outra tabela além de "
 
 Esse arquivo (https://docs.google.com/spreadsheets/d/1c6wHiD2ZODKa7ZFZ1h17kUdKJchhmLJ7uwspkDkA24c/edit?usp=sharing) tem duas colunas a primeira é "ItemId" que também tem na "ratings.csv", a segunda é "title" que são os nomes dos filmes. Lembrando que no momento mesmo os dados sendo nomes de filmes isso não tem relevância no momento do projeto, pois podemos trocar esses titulo de filmes por tags que se relacionam com a plataforma.
 
-Por último nessa sprint 4 temos a parte de de comunicação assíncrona, no momento usaremos o MQTT, que utiliza o mesmo paradigma publish-subscribe do Kafka. Com auxilio desse site (https://www.hivemq.com/demos/websocket-client/) para mostrar a comunicação da IA com a web.
+Por último nessa sprint 4 temos a parte de comunicação assíncrona, no momento usaremos o MQTT, que utiliza o mesmo paradigma publish-subscribe do Kafka. Com auxilio desse site (https://www.hivemq.com/demos/websocket-client/) para mostrar a comunicação da IA com a web.
 
+<img src="C:\Users\Inteli\Documents\GitHub\Modulo6 - DELL\Grupo-1\docs\img">
 
 
 

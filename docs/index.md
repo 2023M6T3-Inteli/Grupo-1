@@ -658,7 +658,9 @@ classification: a classificação desse item dada pelo o tal usuario, a nota var
 
 Resumindo são três colunas com 100836 linhas, sem nenhum dado ausente, e esta balanceado e não possuem nenhum dado discrepante conforme mostra os dois gráficos presente no notebbok. 
 
-<img src="./img/graficoum.png">
+<img src="./img/graficodois.png">
+
+
 <img src="./img/graficodois.png">
 
 

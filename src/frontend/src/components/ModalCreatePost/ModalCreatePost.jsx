@@ -65,27 +65,40 @@ export default function ModalCreatePost(props) {
   };
 
 
-  // para selecionar as tags
-  const optionsTagPost = [
-    { value: 1, label: 'HTML' },
-    { value: 2, label: 'CSS' },
-    { value: 3, label: 'JavaScript' },
-    { value: 4, label: 'Bootstrap' },
-    { value: 5, label: 'SQL' },
-    { value: 6, label: 'Java' },
-    { value: 7, label: 'C#' },
-    { value: 8, label: 'Python' },
-    { value: 9, label: 'Node.js' },
-    { value: 10, label: 'MongoDB' },
-    { value: 11, label: 'React' },
-  ];
-
   const [selectedOptions, setSelectedOptions] = useState([]);
-
+  const [optionsTagPost, setOptionsTagPost] = useState([]);
+  // const optionsTagPost = [
+  //   { value: 1, label: 'HTML' },
+  //   { value: 2, label: 'CSS' },
+  //   { value: 3, label: 'JavaScript' },
+  //   { value: 4, label: 'Bootstrap' },
+  //   { value: 5, label: 'SQL' },
+  //   { value: 6, label: 'Java' },
+  //   { value: 7, label: 'C#' },
+  //   { value: 8, label: 'Python' },
+  //   { value: 9, label: 'Node.js' },
+  //   { value: 10, label: 'MongoDB' },
+  //   { value: 11, label: 'React' },
+  // ];
+  useEffect(() => {
+    const fetchOptions = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/getAllTags');
+        const options = response.data.map((option) => ({
+          value: option.id,
+          label: option.name,
+        }));
+        setOptionsTagPost(options);
+      } catch (error) {
+        console.error('Erro ao obter opções:', error);
+      }
+    };
+    fetchOptions();
+  }, []);
   const handleChangeTag = (selected) => {
     setSelectedOptions(selected);
-  };
-
+  }
+  
   return (
     <div className="modal-create-post">
       <div onClick={props.toggleModal} className="overlay-create-post"></div>

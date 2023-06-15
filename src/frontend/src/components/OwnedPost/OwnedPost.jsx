@@ -48,6 +48,17 @@ function OwnedPostItem({ item }) {
       });
   };
 
+  //DELETE post
+  const handleDelete = async (itemId) => {
+    const url = `/deletePost/${itemId}`;
+    try {
+      const response = await axios.delete(url);
+      console.log(response.data); // Você pode fazer algo com os dados da resposta, se necessário
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="owned-post-item" key={item.id}>
       <div className="owned-item-1">
@@ -61,7 +72,12 @@ function OwnedPostItem({ item }) {
             </h3>
           </div>
         </div>
-        <div className="owned-parte-12">
+        <div className="owned-parte-12" key={item.id}>
+          <div key={item.id}>
+            <button key={item.id} onClick={() => handleDelete(item.id)}>
+              <Trash></Trash>
+            </button>
+          </div>
           <div>
             <Alert />
           </div>

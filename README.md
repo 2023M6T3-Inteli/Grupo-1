@@ -70,7 +70,7 @@ Esse arquivo (https://docs.google.com/spreadsheets/d/1c6wHiD2ZODKa7ZFZ1h17kUdKJc
 
 Por último nessa sprint 4 temos a parte de comunicação assíncrona, no momento usaremos o MQTT, que utiliza o mesmo paradigma publish-subscribe do Kafka. Com auxilio desse site (https://www.hivemq.com/demos/websocket-client/) para mostrar a comunicação da IA com a web.
 
-<img  src=".../img/colabrecomendacao.png">
+<img  src="./img/colabrecomendacao.png">
 
 
 

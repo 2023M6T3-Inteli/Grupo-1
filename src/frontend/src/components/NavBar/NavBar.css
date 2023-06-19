@@ -12,6 +12,7 @@
     bottom: 0;
     left: 0;
     font-family: 'Roboto', sans-serif;
+    z-index:997;
 }
 
 .nav-item{

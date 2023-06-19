@@ -42,26 +42,43 @@ export default function Ranking() {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div className="ranking-content">
       <div className="ranking">
         <div className="rankingTable">
           <div className="rankingLine">
-            <img src={goldTrophy} alt="goldTrophy"></img>
-            <div>{dados[0].fullName}</div>
+            <div className="trophyDiv">
+              <img 
+                className="goldTrophy"
+                src={goldTrophy} 
+                alt="goldTrophy"
+              ></img>
+            </div>
+            
+            <div className="postionRankng">{dados[0].fullName}</div>
             <div className="dell-points"> {dados[0].rankPoints} xp</div>
           </div>
-          <div className="rankingLine1">
-            <img
-              className="itemSilverTrophy"
-              src={silverTrophy}
-              alt="silverTrophy"
-            ></img>
-            <div>{dados[1].fullName}</div>
+          <div className="rankingLine">
+            <div className="trophyDiv">
+              <img
+                className="silverTrophy"
+                src={silverTrophy} 
+                alt="silverTrophy"
+              ></img>
+            </div>
+            
+            <div className="postionRankng">{dados[1].fullName}</div>
             <div className="dell-points">{dados[1].rankPoints} xp</div>
           </div>
-          <div className="rankingLine1">
-            <img src={bronzeTrophy} alt="bronzeTrophy"></img>
-            <div>{dados[2].fullName}</div>
+          <div className="rankingLine">
+            <div className="trophyDiv">
+              <img 
+                className="bronzeTrophy"
+                src={bronzeTrophy} 
+                alt="bronzeTrophy"
+                ></img>
+            </div>
+            
+            <div className="postionRankng">{dados[2].fullName}</div>
             <div className="dell-points">{dados[2].rankPoints} xp</div>
           </div>
           <div className="ellipsis">

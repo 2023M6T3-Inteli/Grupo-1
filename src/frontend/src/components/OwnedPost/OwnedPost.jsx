@@ -59,6 +59,14 @@ function OwnedPostItem({ item }) {
     }
   };
 
+  //modal delete post
+    const[deletePost,setDeletePost]=useState(false)
+
+    function showDeletePost(){
+      setDeletePost((prevState)=>!prevState)
+    }
+
+
   return (
     <div className="owned-post-item" key={item.id}>
       <div className="owned-item-1">
@@ -77,6 +85,7 @@ function OwnedPostItem({ item }) {
             <button key={item.id} onClick={() => handleDelete(item.id)}>
               <Trash></Trash>
             </button>
+
           </div>
           <div>
             <Alert />
@@ -102,7 +111,16 @@ function OwnedPostItem({ item }) {
           <img src={chat} alt="comment" />
         </div>
       </div>
+
+      {/* {deletePost && (
+      <div className="div-deletepost">
+          <DeletePost
+          onShowDeletePost={showDeletePost}
+          />
+      </div>
+    )}   */}
     </div>
+   
   );
 }
 

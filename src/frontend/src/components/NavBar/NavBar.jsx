@@ -22,8 +22,8 @@ function NavBar() {
   const router = useLocation();
   const currentPath = router.pathname;
   const [createNavOpen, setCreateNavOpen] = useState(false);
-  const[createProjectOpen,setCreateProjectOpen]=useState(false);
-  const[createPostOpen,setCreatePostOpen]=useState(false)
+  const [createProjectOpen, setCreateProjectOpen] = useState(false);
+  const [createPostOpen, setCreatePostOpen] = useState(false)
 
   function showCreateNav() {
     setCreateNavOpen((prevState) => !prevState);
@@ -57,13 +57,13 @@ function NavBar() {
     setTags(tags.filter((el, i) => i !== index));
   }
 
-  function showCreateProject(){
-    setCreateProjectOpen((prevState)=>!prevState)
+  function showCreateProject() {
+    setCreateProjectOpen((prevState) => !prevState)
     setCreateNavOpen((prevState) => !prevState);
   }
 
-  function showCreatePost(){
-    setCreatePostOpen((prevState)=>!prevState)
+  function showCreatePost() {
+    setCreatePostOpen((prevState) => !prevState)
     setCreateNavOpen((prevState) => !prevState);
   }
   return (
@@ -83,7 +83,7 @@ function NavBar() {
               onClick={
                 currentPath === "/Community"
                   ? () =>
-                      console.log("Coloque sua função de togglePostModal aqui")
+                    console.log("Coloque sua função de togglePostModal aqui")
                   : toggleProjectModal
               }
             >
@@ -102,26 +102,27 @@ function NavBar() {
       </div>
       {createNavOpen && (
         <>
-          <CreateNav 
-          onShowCreateNav={showCreateNav}
-          onShowCreateProject={showCreateProject}
-          onShowCreatePost={showCreatePost} 
-          
+          <CreateNav
+            onShowCreateNav={showCreateNav}
+            onShowCreateProject={showCreateProject}
+            onShowCreatePost={showCreatePost}
+
           />
         </>
       )}
-      {createProjectOpen&& (
+      {createProjectOpen && (
         <>
           <Modal
             onShowCreateProject={showCreateProject}
+            onShowCreateNav2={showCreateNav}
           />
         </>
       )}
-      {createPostOpen&& (
+      {createPostOpen && (
         <>
           <ModalCreatePost
-          onShowCreatePost={showCreatePost} 
-          onShowCreateNav={showCreateNav}
+            onShowCreatePost={showCreatePost}
+            onShowCreateNav={showCreateNav}
           />
         </>
       )}

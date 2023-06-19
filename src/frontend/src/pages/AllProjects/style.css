@@ -20,7 +20,7 @@
     width: 100%;
     position: fixed;
     background: #F0F0F0;
-    z-index:997;
+    z-index:995;
 }
 
 .search-container{
@@ -51,5 +51,5 @@
 
 
 .nav-proj{
-    z-index:997;
+    z-index:994;
 }

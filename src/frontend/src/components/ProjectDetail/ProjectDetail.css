@@ -1,0 +1,23 @@
+.projectDetailBG{
+    background-color:rgba(49, 49, 49, 0.8);
+    width: 100vw;
+    height: 100vh;
+    position:fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    border:0;
+    display: flex;
+    justify-content: center;
+    z-index: 998;
+}
+
+.pdContent{
+    background-color: #f0f0f0;
+    height: 90%;
+    width: 100%;
+    z-index: 998;
+    bottom: 0;
+    position: absolute;
+    border-radius:50px 50px 0px 0px;
+}

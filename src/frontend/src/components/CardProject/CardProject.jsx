@@ -6,13 +6,22 @@ import fullHeart from "../../assets/fullHeart.svg";
 import { useState, useEffect } from "react";
 import Modal from "../../components/ApplyProject/ApplyProject.jsx";
 import axios from 'axios';
-
+import ProjectDetail from "../projectDetail/projectDetail";
 
 function CardProject(props) {
+    
+    const[pdOpen,setPdOpen]=useState(false)
+    
     const [applyProject, setApplyProject] = useState(false)
 
     function showApplyProjects() {
         setApplyProject((prevState) => !prevState)
+    }
+
+    function openClosePD(){
+        setPdOpen(true)
+        console.log("deu certo")
+        console.log(pdOpen)
     }
 
     const [dados, setDados] = useState(null);
@@ -34,7 +43,7 @@ function CardProject(props) {
 
     //to revert the data ordem on the feed
     const dadosInvertidos = [...dados].reverse();
-    console.log(dadosInvertidos);
+    //console.log(dadosInvertidos);
 
 
     return (
@@ -45,7 +54,9 @@ function CardProject(props) {
                     <div className="cardHeader">
                         <label className="cardTitle" >{item.name}</label>
                         <div className="iconsHeader">
-                            <label >+ info</label>
+                            <label
+                            onClick= {()=>openClosePD()}
+                            >+ info</label>
                             <img src={alert} alt="report" />
                         </div>
                     </div>
@@ -86,14 +97,14 @@ function CardProject(props) {
                             <img src={chat} alt="comment" />
                         </div>
                     </div>
-                    {/* <Modal />
-                    {applyProject && (
-                        <>
-                            <Modal />
-                        </>
-                    )} */}
+                    
                 </div>
             ))}
+            {pdOpen && (
+                <div>
+                    <ProjectDetail/>
+                </div>
+            )}
         </div>
     )
 }

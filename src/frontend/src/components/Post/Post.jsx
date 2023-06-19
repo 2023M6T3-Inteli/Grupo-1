@@ -1,43 +1,106 @@
-import './Post.css';
-import Person from '../../assets/UserCir'
-import Alert from '../../assets/AlertNotice'
-import KeyWord from '../KeyWord/KeyWord';
-import heart from "../../assets/heart.svg"
-import chat from "../../assets/chat.svg"
-import fullHeart from "../../assets/fullHeart.svg"
-import { useState } from "react";
-import DocPost from '../DocPost/DocPost';
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import "./Post.css";
+import Person from "../../assets/UserCir";
+import Alert from "../../assets/AlertNotice";
+import KeyWord from "../KeyWord/KeyWord";
+import heart from "../../assets/heart.svg";
+import chat from "../../assets/chat.svg";
+import fullHeart from "../../assets/fullHeart.svg";
+import { useState, useEffect } from "react";
+import DocPost from "../DocPost/DocPost";
+import axios from "../../../api";
+
+function PostItem({ item }) {
+  const userId = JSON.parse(sessionStorage.getItem("user"));
+  const [liked, setLiked] = useState(
+    item.postLike.some((like) => like.idUser === userId.user.id)
+  );
+
+  const handleLike = () => {
+    setLiked(true);
+    axios
+      .post("/likePost", {
+        idPost: item.id,
+        idUser: userId.user.id,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+const handleDislike = () => {
+  setLiked(false);
+  axios
+    .delete("/deletelikedPost", {
+      data: {
+        idPost: item.id,
+        idUser: userId.user.id,
+      },
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 
-function Post(props) {
-    // const[cardLiked,setCardLiked]=useState(false)
-    // const[cardDisliked,setCardDisliked]=useState(true)
-  
-  
-    // function likeCard() {
-    //     setCardLiked(true)
-    //     setCardDisliked(false)
-    // }
-  
-    //   function dislikeCard() {
-    //       setCardLiked(false)
-    //       setCardDisliked(true)
-    //   }
+  return (
+    <div className="post-item" key={item.id}>
+      <div className="item-1">
+        <div className="parte-11">
+          <div>
+            <Person />
+          </div>
+          <div>
+            <h3 className="userName" key={item.id}>
+              {item.User.fullName}
+            </h3>
+          </div>
+        </div>
+        <div className="parte-12">
+          <div>
+            <Alert />
+          </div>
+        </div>
+      </div>
+      <div className="item-2">
+        <p>{item.description}</p>
+      </div>
+      <div className="item-3" />
+      <div>
+        <DocPost title={item.media} />
+      </div>
+      <div className="item-4">
+        <div className="item-keys">
+          {item.postTag.map((subItem, index) => (
+            <KeyWord key={index} title={subItem.Tag.name} />
+          ))}
+        </div>
+        <div className="item-41">
+          {!liked && <img onClick={handleLike} src={heart} alt="like" />}
+          {liked && <img onClick={handleDislike} src={fullHeart} alt="like" />}
+          <img src={chat} alt="comment" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-    
-    //GET All Posts
-    const [dados, setDados] = useState(null);
-
+function Post() {
+  //GET All Posts
+  const [dados, setDados] = useState(null);
   useEffect(() => {
-    axios.get('http://localhost:3000/getPost')
-      .then(response => {
-        // Armazena os dados da resposta no estado
-      
+    axios
+      .get("/getPost")
+      .then((response) => {
+        // Store the response data in the state
         setDados(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }, []);
@@ -46,72 +109,15 @@ function Post(props) {
     return <div>Loading...</div>;
   }
 
-  //to revert the data ordem on the feed
+  //to revert the data order on the feed
   const dadosInvertidos = [...dados].reverse();
-  console.log(dados.media);
-//   const dataName = dados.User.fullName
 
-
-    return (
-        <ul className="post-ul">
-            {dadosInvertidos.map(item => (
-                    <div className='post-item' key={item.id}>
-                        <div className='item-1' >
-                            <div className='parte-11'>
-                                <div><Person></Person></div>
-                                <div><h3 className='userName' key={item.id}>{item.User.fullName}</h3></div>
-                                {/* <div><h3 className='userName'>nome</h3></div> */}
-                            </div>
-                            <div className='parte-12'>
-                                <div><Alert></Alert></div>
-                            </div>
-                        </div>
-                        <div className='item-2'>
-                            <p>{item.description}</p>
-                        </div>
-                        <div className='item-3'></div>
-                        {/* <div >
-                            <iframe width="300" height="200" 
-                            src={item.media}
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div> */}
-                        <div>
-                            <DocPost title={item.media}></DocPost>
-                        
-                        </div>
-                        <div className='item-4'>
-                            <div className='item-keys'>
-                                
-
-                                {(item.postTag).map((subItem,index) => (
-                                    <KeyWord key={index}  title={subItem.Tag.name}></KeyWord>
-                                ))}
-                                
-                            </div>
-                            
-                            <div className='item-41'>
-                                {props.cardDisliked && 
-                                    <img 
-                                    onClick={()=>props.onLike()}
-                                    src={heart} 
-                                    alt="like"/>
-                                }
-                                {props.cardLiked && 
-                                    <img
-                                    onClick={()=> props.onDisLike()}
-                                    src={fullHeart}
-                                    alt="like"/>
-                                }
-                                <img src={chat} alt="comment"/>
-                            </div>
-                        </div>
-                    
-
-                    
-                    </div>
-            ))}
-        </ul>
-    );
-};
+  return (
+    <ul className="post-ul">
+      {dadosInvertidos.map((item) => (
+        <PostItem key={item.id} item={item} />
+      ))}
+    </ul>
+  );
+}
 export default Post;

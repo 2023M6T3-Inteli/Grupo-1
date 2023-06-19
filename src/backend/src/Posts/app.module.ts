@@ -5,12 +5,14 @@ import { LikePostModule } from './likePost/app.module';
 import { GetPostsModule } from './getPost/app.module';
 import { GetPostsByIdModule } from './getPostById/app.module';
 import { GetLikedPost } from './getLikedPost/app.module';
+import { DeleteLikedPost } from './deleteLikedPost/app.module';
 
 @Module({
     imports: [
         CreatePostModule,
         LikePostModule,
         DeletePost,
+        DeleteLikedPost,
         GetPostsModule,
         GetPostsByIdModule,
         GetLikedPost,
@@ -19,6 +21,7 @@ import { GetLikedPost } from './getLikedPost/app.module';
         CreatePostModule,
         LikePostModule,
         DeletePost,
+        DeleteLikedPost,
         GetPostsModule,
         GetPostsByIdModule,
         GetLikedPost,

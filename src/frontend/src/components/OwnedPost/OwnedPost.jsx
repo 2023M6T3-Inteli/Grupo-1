@@ -82,7 +82,7 @@ function OwnedPostItem({ item }) {
         </div>
         <div className="owned-parte-12" key={item.id}>
           <div key={item.id}>
-            <button key={item.id} onClick={() => handleDelete(item.id)}>
+            <button className="button-trash-post" key={item.id} onClick={() => handleDelete(item.id)}>
               <Trash></Trash>
             </button>
 

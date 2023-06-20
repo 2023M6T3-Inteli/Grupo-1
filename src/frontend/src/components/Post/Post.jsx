@@ -95,7 +95,7 @@ function Post() {
   const [dados, setDados] = useState(null);
   useEffect(() => {
     axios
-      .get("/getPost")
+      .get("/getPost?tag=Oi")
       .then((response) => {
         // Store the response data in the state
         setDados(response.data);

@@ -1,13 +1,14 @@
 import { ServiceGetPosts } from './app.service';
-import { Body, Controller, Get, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, UseGuards, Query } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 // import { AuthGuard } from '@nestjs/passport';
+import { publish } from 'src/main';
 
 @Controller()
 @ApiTags('Get')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerGetPosts {
-    constructor(private serviceGetPosts: ServiceGetPosts) { }
+    constructor(private serviceGetPosts: ServiceGetPosts) {}
 
     @Get('getPost')
     @ApiOperation({ summary: 'get Posts' })
@@ -21,8 +22,22 @@ export class ControllerGetPosts {
         description: `Bad Request, Not Found`,
     })
     // TODO fazer Api response para sucess e faild
-    async getPost() {
-        const result = await this.serviceGetPosts.execute();
-        return result;
+    async getPost(@Query('tag') tag: string): Promise<any[]> {
+        const message = tag;
+        const posts = await this.serviceGetPosts.execute();
+
+        const recommendations = await publish(
+            'intelies-grupo1/publish',
+            message,
+        );
+
+        const formatedRecommendations = JSON.parse(recommendations)
+
+
+        posts.forEach((post, index) => {
+            post.description = formatedRecommendations[index]
+        })
+
+        return posts;
     }
 }

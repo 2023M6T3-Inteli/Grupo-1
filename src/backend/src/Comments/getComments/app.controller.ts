@@ -1,6 +1,5 @@
 import { ServiceGetComments } from './app.service';
-import { Body, Controller, Post, UseGuards, Get } from '@nestjs/common';
-import { DTOGetComments } from './DTO/DTOGetComments';
+import { Body, Controller, Post, UseGuards, Get,Param } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
@@ -8,9 +7,9 @@ import { AuthGuard } from '@nestjs/passport';
 @ApiTags('Comment')
 // @UseGuards(AuthGuard('jwt'))
 export class ControllerGetComments {
-    constructor(private serviceGetComments: ServiceGetComments) { }
+    constructor(private serviceGetComments: ServiceGetComments) {}
 
-    @Get('getComment')
+    @Get('getComment/:idPost')
     @ApiOperation({ summary: 'Get comment' })
     @ApiResponse({
         status: 201,
@@ -22,11 +21,9 @@ export class ControllerGetComments {
         description: `Failed to get a comment`,
     })
     // TODO fazer Api response para sucess e faild
-    async getComment(@Body() body: DTOGetComments) {
-        const { idPost } = body;
-        const result = await this.serviceGetComments.execute(
-            idPost
-        );
+    async getComment(@Param() id: { idPost: number }) {
+    
+        const result = await this.serviceGetComments.execute(Number(id.idPost));
         return result;
     }
 }

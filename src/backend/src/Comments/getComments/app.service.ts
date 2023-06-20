@@ -11,6 +11,7 @@ export class ServiceGetComments {
     async execute(idPost: number) {
         try {
             const getComments = await this.modelSelect.findComments(idPost);
+            
             return getComments;
         } catch (error) {
             throw new HttpException(

@@ -8,12 +8,15 @@ import fullHeart from "../../assets/fullHeart.svg";
 import { useState, useEffect } from "react";
 import DocPost from "../DocPost/DocPost";
 import axios from "../../../api";
+import Comments from "../../components/Comments/Comments.jsx"
 
 function PostItem({ item }) {
   const userId = JSON.parse(sessionStorage.getItem("user"));
   const [liked, setLiked] = useState(
     item.postLike.some((like) => like.idUser === userId.user.id)
   );
+
+  const[commentsOpen,setCommentsOpen]=useState(false)
 
   const handleLike = () => {
     setLiked(true);
@@ -30,23 +33,26 @@ function PostItem({ item }) {
       });
   };
 
-const handleDislike = () => {
-  setLiked(false);
-  axios
-    .delete("/deletelikedPost", {
-      data: {
-        idPost: item.id,
-        idUser: userId.user.id,
-      },
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+  const handleDislike = () => {
+    setLiked(false);
+    axios
+      .delete("/deletelikedPost", {
+        data: {
+          idPost: item.id,
+          idUser: userId.user.id,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
+  function showComments(){
+    setCommentsOpen((prevState)=> !prevState)
+  }
 
   return (
     <div className="post-item" key={item.id}>
@@ -83,9 +89,19 @@ const handleDislike = () => {
         <div className="item-41">
           {!liked && <img onClick={handleLike} src={heart} alt="like" />}
           {liked && <img onClick={handleDislike} src={fullHeart} alt="like" />}
-          <img src={chat} alt="comment" />
+          <img 
+          onClick={()=>showComments()}
+          src={chat} alt="comment" />
         </div>
       </div>
+      {commentsOpen && (
+        <div className="item-5">
+          <Comments
+          message="Olha só, está funcionando!!"
+          userName="Robson"
+          />
+        </div>
+      )}
     </div>
   );
 }

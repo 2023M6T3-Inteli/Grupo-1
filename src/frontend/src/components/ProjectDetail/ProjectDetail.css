@@ -11,13 +11,27 @@
     justify-content: center;
     z-index: 998;
 }
-
 .pdContent{
-    background-color: #f0f0f0;
+    background-color: #F0F0F0;
     height: 90%;
     width: 100%;
     z-index: 998;
     bottom: 0;
     position: absolute;
     border-radius:50px 50px 0px 0px;
+}
+.pdHeader{
+    width: 100%;
+    height: 10%;
+    background-color: red;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    align-items: center;
+}
+.closeOption{
+    position: absolute;
+    right: 16px;
+    top:16px;
 }

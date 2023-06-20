@@ -99,3 +99,9 @@
     height: 100vh;
     width: 100vw;
 }
+
+.button-trash-post{
+    border-style: none;
+    background-color: none;
+    background: none;
+}

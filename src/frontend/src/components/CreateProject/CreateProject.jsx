@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./CreateProject.css";
 import axios from 'axios';
 import moment from "moment";
+import Select from 'react-select';
 import { parseISO } from 'date-fns';
-
 
 export default function Modal(props) {
   const [formData, setFormData] = useState({
@@ -13,14 +13,48 @@ export default function Modal(props) {
     duration: '',
     dateStart: '',
     status: '',
-    isAproved: true,
+    isApproved: "true",
     idUser: 1,
     idManager: 2,
-    idRole: [1],
+    idRole: [],
+    idTag: []
   });
 
-  const [idTag, setIdTag] = useState(new Set());
-  const [tagInput, setTagInput] = useState('');
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [optionsTagPost, setOptionsTagPost] = useState([]);
+  const [optionsRole, setOptionsRole] = useState([]);
+  const [selectedRoles, setSelectedRoles] = useState([]);
+
+  useEffect(() => {
+    const fetchTagOptions = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/getAllTags');
+        const options = response.data.map((option) => ({
+          value: option.id,
+          label: option.name,
+        }));
+        setOptionsTagPost(options);
+      } catch (error) {
+        console.error('Erro ao obter opções de tags:', error);
+      }
+    };
+
+    const fetchRoleOptions = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/getAllRoles');
+        const options = response.data.map((option) => ({
+          value: option.id,
+          label: option.name,
+        }));
+        setOptionsRole(options);
+      } catch (error) {
+        console.error('Erro ao obter opções de papéis:', error);
+      }
+    };
+
+    fetchTagOptions();
+    fetchRoleOptions();
+  }, []);
 
   const handleInputChange = (event) => {
     setFormData({
@@ -32,14 +66,16 @@ export default function Modal(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Formate as datas usando moment.js
     const formattedFormData = {
       ...formData,
       aplicationDeadline: moment(formData.aplicationDeadline).format("DD MMMM YYYY HH:mm"),
       dateStart: moment(formData.dateStart).format("DD MMMM YYYY HH:mm"),
-      idTag: Array.from(idTag), // Converte o conjunto para uma array
+      idTag: Array.from(selectedOptions.map(option => option.value)),
+      idRole: Array.from(selectedRoles.map(role => role.value)),
     };
-    console.log(formattedFormData)
+
+    console.log(formattedFormData);
+
     try {
       const response = await axios.post('http://localhost:3000/createProject', formattedFormData);
       console.log(response.data);
@@ -49,13 +85,13 @@ export default function Modal(props) {
     }
   };
 
-  useEffect(() => {
-    const newTag = Number(tagInput.trim()); // Converte o valor para número
-    if (!isNaN(newTag) && newTag !== 0) { // Verifica se é um número válido
-      setIdTag((prevTags) => new Set([...prevTags, newTag]));
-      setTagInput("");
-    }
-  }, [tagInput]);
+  const handleChangeTag = (selected) => {
+    setSelectedOptions(selected);
+  };
+
+  const handleChangeRole = (selected) => {
+    setSelectedRoles(selected);
+  };
 
   return (
     <div className="modal">
@@ -65,7 +101,7 @@ export default function Modal(props) {
           <h2 className="create-project">Create Project</h2>
         </div>
         <div className="line"></div>
-        <form className="form">
+        <form onSubmit={handleSubmit} className="form">
           <fieldset>
             <div className="project-details">
               <label htmlFor="project-name">Project Name:
@@ -99,29 +135,35 @@ export default function Modal(props) {
                   <input type="radio" id="done" name="status" value="done" onChange={handleInputChange} /> Done
                 </div>
               </div>
-              <div className="occupations">
-                <label htmlFor="occupation1">Occupation 1:</label>
-                <input type="text" className="occupation1" name="occupation1" onChange={handleInputChange} />
-                <label htmlFor="occupation2">Occupation 2:</label>
-                <input type="text" className="occupation2" name="occupation2" onChange={handleInputChange} />
+              <div>
+                <label htmlFor="idTag">Keywords:</label>
+                <Select
+                  className="keys-create-post"
+                  name="idTag"
+                  options={optionsTagPost}
+                  isMulti
+                  value={selectedOptions}
+                  onChange={handleChangeTag}
+                />
               </div>
-              <label htmlFor="tags">Keywords:</label>
-              <div className="tags-input-container">
-                <input
-                  type="text"
-                  className="tags-input"
-                  placeholder="Type something"
-                  value={tagInput}
-                  onChange={(event) => setTagInput(event.target.value)}
+              <div>
+                <label htmlFor="idRole">Roles:</label>
+                <Select
+                  className="roles-create-post"
+                  name="idRole"
+                  options={optionsRole}
+                  isMulti
+                  value={selectedRoles}
+                  onChange={handleChangeRole}
                 />
               </div>
               <div className="submit">
-                <button className="submit-btn" type="submit" onClick={handleSubmit}>Create project</button>
+                <button className="submit-btn" type="submit" onClick={() => props.onShowCreateNav2()}>Create project</button>
               </div>
             </div>
           </fieldset>
         </form>
-        <button className="close-modal" onClick={props.toggleModal}>
+        <button className="close-modal" onClick={() => { props.onShowCreateProject(); props.onShowCreateNav2() }}>
           <span className="close-modal-text"> X </span>
         </button>
       </div>

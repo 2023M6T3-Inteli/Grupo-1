@@ -23,15 +23,85 @@
 .pdHeader{
     width: 100%;
     height: 10%;
-    background-color: red;
     border-radius: 50px 50px 0px 0px;
     display: flex;
     justify-content: center;
     font-size: 24px;
     align-items: center;
+    border-bottom: 1px solid #000;
 }
-.closeOption{
-    position: absolute;
-    right: 16px;
-    top:16px;
+
+.pdHeader p{
+    font-weight: 500;
+}
+
+.pdBody{
+    width: 100%;
+    column-gap: 12px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.projectTitle{
+    align-self: flex-start;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 16px;
+    margin-left: 10%;
+
+}
+
+.projectInfos{
+    max-width: 80%;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.pjItem-Value{
+    display:flex;
+    gap:8px;
+    flex-direction: column;
+}
+
+.pjItem{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pjValue{
+    display: flex;
+    font-size:16px;
+    color: #6E6E6E;
+    flex-wrap:wrap;
+}
+.pdButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.pdCloseButton{
+    color:#fff;
+    background-color: #0672CB;
+    border:none;
+    border-radius: 30px;
+    padding: 7px 45px ;
+    
+}
+
+.ownerButtons{
+    display:flex;
+    gap:12px;
+    margin-top: 24px;
+}
+
+.pdEditButton{
+    color:#0672CB;
+    border: 1px solid #0672CB;
+    border-radius: 30px;
+    padding: 7px 45px ;
 }

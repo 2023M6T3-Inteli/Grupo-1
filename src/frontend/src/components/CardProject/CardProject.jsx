@@ -19,9 +19,8 @@ function CardProject(props) {
     }
 
     function openClosePD(){
-        setPdOpen(true)
-        console.log("deu certo")
-        console.log(pdOpen)
+        setPdOpen((prevState) => !prevState)
+
     }
 
     const [dados, setDados] = useState(null);
@@ -102,7 +101,18 @@ function CardProject(props) {
             ))}
             {pdOpen && (
                 <div>
-                    <ProjectDetail/>
+                    <ProjectDetail
+                    onPdOpen={openClosePD}
+                    title="Web Development"
+                    desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
+                    area="Development"
+                    deadLine="09/01/23"
+                    startDate="09/01/23"
+                    endDate="09/01/23"
+                    status="Recruiting"
+                    jobs={3}
+                    ocupation="Front-End Developer"
+                    />
                 </div>
             )}
         </div>

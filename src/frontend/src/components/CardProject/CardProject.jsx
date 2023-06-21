@@ -20,7 +20,6 @@ function CardProject(props) {
 
     function openClosePD(){
         setPdOpen((prevState) => !prevState)
-
     }
 
     const [dados, setDados] = useState(null);

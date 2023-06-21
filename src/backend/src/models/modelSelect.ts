@@ -10,14 +10,11 @@ import { use } from 'passport';
 
 @Injectable()
 export class ModelSelect {
-    constructor(private prisma: PrismaService) {}
+    constructor(private prisma: PrismaService) { }
 
     async getAllProjects() {
         try {
             const result = await this.prisma.project.findMany({
-                where: {
-                    isApproved: true,
-                },
                 select: {
                     id: true,
                     idUser: true,
@@ -41,7 +38,6 @@ export class ModelSelect {
                             },
                         },
                     },
-
                     projectRole: {
                         select: {
                             Role: {
@@ -52,7 +48,6 @@ export class ModelSelect {
                             },
                         },
                     },
-
                     userApplyProject: {
                         select: {
                             idUser: true,
@@ -95,16 +90,17 @@ export class ModelSelect {
             );
         }
     }
+
     async getAllPosts() {
         try {
             const result = await this.prisma.post.findMany({
                 select: {
-                    id:true,
+                    id: true,
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },
                     postTag: { select: { Tag: { select: { name: true } } } },
-                    postLike:{select:{idUser:true}}
+                    postLike: { select: { idUser: true } }
                 },
             });
             return result;
@@ -437,12 +433,12 @@ export class ModelSelect {
             const result = await this.prisma.post.findMany({
                 where: { idUser: idUser },
                 select: {
-                    id:true,
+                    id: true,
                     media: true,
                     description: true,
                     User: { select: { fullName: true } },
                     postTag: { select: { Tag: { select: { name: true } } } },
-                    postLike:{select:{idUser:true}}
+                    postLike: { select: { idUser: true } }
                 },
             });
             return result;
@@ -804,17 +800,17 @@ export class ModelSelect {
                     phoneNumber: true,
                     rankPoints: true,
                     location: true,
-                    mobileNumber:true,
+                    mobileNumber: true,
                     userSkills: {
                         select: {
                             Tag: {
                                 select: {
-                                    name:true
+                                    name: true
                                 }
                             }
                         }
                     },
-                    
+
                 }
             });
             return result;

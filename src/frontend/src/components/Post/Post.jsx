@@ -19,7 +19,30 @@ function PostItem({ item }) {
   );
 
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const [commentText, setCommentText] = useState("");
+  const [comments, setComments] = useState(item.comments);
+  const handleCommentSubmit = () => {
+    axios
+      .post("/createComment", {
+        idPost: item.id,
+        idUser: userId.user.id,
+        comment: commentText,
+      })
+      .then((response) => {
+        console.log(response);
 
+        setCommentText("");
+        const newComment = {
+          ...response.data,
+          User: { fullName: userId.user.fullName },
+        };
+        setComments((prevComments) => [...prevComments, newComment]);
+        console.log(comments)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const handleLike = () => {
     setLiked(true);
     axios
@@ -97,7 +120,7 @@ function PostItem({ item }) {
       {commentsOpen && (
         <div className="item-5">
           <p>Comments</p>
-          {item.comments.map((comment) => (
+          {comments.map((comment) => (
             <Comments
               key={comment.id}
               message={comment.comment}
@@ -107,8 +130,13 @@ function PostItem({ item }) {
         </div>
       )}
       <div className="sendMessage">
-        <input type="text" placeholder="Add a comment" />
-        <img src={ArrowUp} />
+        <input
+          type="text"
+          placeholder="Add a comment"
+          value={commentText}
+          onChange={(e) => setCommentText(e.target.value)}
+        />
+        <img src={ArrowUp} onClick={handleCommentSubmit} />
       </div>
     </div>
   );
@@ -139,7 +167,7 @@ function Post() {
         console.error(error);
       });
   }, []);
-  console.log(dados)
+  console.log(dados);
   if (dados === null) {
     return <div>Loading...</div>;
   }

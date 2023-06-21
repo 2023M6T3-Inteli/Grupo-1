@@ -194,6 +194,30 @@ export class ModelUpdate {
             );
         }
     }
+
+    async updateNotifications(id: number) {
+        try {
+            const result = await this.prisma.notifications.update({
+                data: {
+                    newNotification: false,
+                },
+                where: {
+                    id: id,
+                },
+            });
+
+            return result;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
     async updateCommentRankPoints(idPost: number) {
         try {
             const user = await this.prisma.post.findUnique({

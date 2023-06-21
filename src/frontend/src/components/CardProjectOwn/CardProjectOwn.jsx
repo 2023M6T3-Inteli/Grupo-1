@@ -28,6 +28,7 @@ function CardProjectOwn(props){
     }
 
     return(
+       
         <div className="cardProject">
             <div className="cardHeader">
                 <label className="cardTitle">Web Development</label>
@@ -81,7 +82,7 @@ function CardProjectOwn(props){
                     <img src={chat} alt="comment"/>
                 </div>
             </div>
-            
+        
             {manageModal&&(
                 <>
                     <ManageApply

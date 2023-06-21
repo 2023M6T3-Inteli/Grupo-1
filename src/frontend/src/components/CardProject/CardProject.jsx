@@ -19,7 +19,7 @@ function CardProject(props) {
     }
 
     function openClosePD(){
-        setPdOpen(true)
+        setPdOpen((prevState)=> !prevState)
         console.log("deu certo")
         console.log(pdOpen)
     }
@@ -101,9 +101,7 @@ function CardProject(props) {
                 </div>
             ))}
             {pdOpen && (
-                <div>
-                    <ProjectDetail/>
-                </div>
+                <ProjectDetail/>
             )}
         </div>
     )

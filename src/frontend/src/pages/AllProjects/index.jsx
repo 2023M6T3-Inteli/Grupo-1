@@ -89,7 +89,6 @@ export default function AllProjects() {
       )}
       {createdProjectPage && (
         <main className="projects-container">
-
           <CardProjectOwn
             onLike={likeCard}
             onDisLike={dislikeCard}

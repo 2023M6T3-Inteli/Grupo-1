@@ -245,9 +245,9 @@ export class ModelSelect {
         try {
             const result = await this.prisma.comments.findMany({
                 where: {
-                    id: idPost,
+                    idPost: idPost,
                 },
-                select: { comment: true, User: { select: { fullName: true } } },
+                select: { id:true,comment: true, User: { select: { fullName: true } } },
             });
 
             return result;

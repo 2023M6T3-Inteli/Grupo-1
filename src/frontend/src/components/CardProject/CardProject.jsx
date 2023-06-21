@@ -21,6 +21,7 @@ function CardProject(props) {
             idRole,
         };
 
+
         axios
             .post("http://localhost:3000/applyProject", postData)
             .then((response) => {
@@ -32,6 +33,11 @@ function CardProject(props) {
                 console.error(error);
             });
     };
+
+    function openClosePD(){
+        setPdOpen((prevState) => !prevState)
+    }
+
 
     const [pdOpen, setPdOpen] = useState(false);
     const [dados, setDados] = useState(null);
@@ -95,7 +101,18 @@ function CardProject(props) {
             ))}
             {pdOpen && (
                 <div>
-                    <ProjectDetail />
+                    <ProjectDetail
+                    onPdOpen={openClosePD}
+                    title="Web Development"
+                    desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
+                    area="Development"
+                    deadLine="09/01/23"
+                    startDate="09/01/23"
+                    endDate="09/01/23"
+                    status="Recruiting"
+                    jobs={3}
+                    ocupation="Front-End Developer"
+                    />
                 </div>
             )}
         </div>

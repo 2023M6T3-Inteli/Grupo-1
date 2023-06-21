@@ -9,6 +9,8 @@ import fullHeart from "../../assets/fullHeart.svg";
 import { useState, useEffect } from "react";
 import DocPost from "../DocPost/DocPost";
 import axios from "../../../api";
+import Comments from "../../components/Comments/Comments.jsx";
+import ArrowUp from "../../assets/ArrowUp.svg";
 
 function OwnedPostItem({ item }) {
   const userId = JSON.parse(sessionStorage.getItem("user"));
@@ -16,6 +18,30 @@ function OwnedPostItem({ item }) {
     item.postLike.some((like) => like.idUser === userId.user.id)
   );
 
+  const [commentsOpen, setCommentsOpen] = useState(false);
+  const [commentText, setCommentText] = useState("");
+  const [comments, setComments] = useState(item.comments);
+  const handleCommentSubmit = () => {
+    axios
+      .post("/createComment", {
+        idPost: item.id,
+        idUser: userId.user.id,
+        comment: commentText,
+      })
+      .then((response) => {
+        console.log(response);
+
+        setCommentText("");
+        const newComment = {
+          ...response.data,
+          User: { fullName: userId.user.fullName },
+        };
+        setComments((prevComments) => [...prevComments, newComment]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const handleLike = () => {
     setLiked(true);
     axios
@@ -53,19 +79,22 @@ function OwnedPostItem({ item }) {
     const url = `/deletePost/${itemId}`;
     try {
       const response = await axios.delete(url);
-      console.log(response.data); // Você pode fazer algo com os dados da resposta, se necessário
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
   //modal delete post
-    const[deletePost,setDeletePost]=useState(false)
+  const [deletePost, setDeletePost] = useState(false);
 
-    function showDeletePost(){
-      setDeletePost((prevState)=>!prevState)
-    }
+  function showDeletePost() {
+    setDeletePost((prevState) => !prevState);
+  }
 
+  function showComments() {
+    setCommentsOpen((prevState) => !prevState);
+  }
 
   return (
     <div className="owned-post-item" key={item.id}>
@@ -82,10 +111,13 @@ function OwnedPostItem({ item }) {
         </div>
         <div className="owned-parte-12" key={item.id}>
           <div key={item.id}>
-            <button key={item.id} onClick={() => handleDelete(item.id)}>
+            <button
+              className="button-trash-post"
+              key={item.id}
+              onClick={() => handleDelete(item.id)}
+            >
               <Trash></Trash>
             </button>
-
           </div>
           <div>
             <Alert />
@@ -108,19 +140,31 @@ function OwnedPostItem({ item }) {
         <div className="owned-item-41">
           {!liked && <img onClick={handleLike} src={heart} alt="like" />}
           {liked && <img onClick={handleDislike} src={fullHeart} alt="like" />}
-          <img src={chat} alt="comment" />
+          <img onClick={() => showComments()} src={chat} alt="comment" />
         </div>
       </div>
-
-      {/* {deletePost && (
-      <div className="div-deletepost">
-          <DeletePost
-          onShowDeletePost={showDeletePost}
-          />
+      {commentsOpen && (
+        <div className="item-5">
+          <p>Comments</p>
+          {comments.map((comment) => (
+            <Comments
+              key={comment.id}
+              message={comment.comment}
+              userName={comment.User.fullName}
+            />
+          ))}
+        </div>
+      )}
+      <div className="sendMessage">
+        <input
+          type="text"
+          placeholder="Add a comment"
+          value={commentText}
+          onChange={(e) => setCommentText(e.target.value)}
+        />
+        <img src={ArrowUp} onClick={handleCommentSubmit} />
       </div>
-    )}   */}
     </div>
-   
   );
 }
 
@@ -133,8 +177,19 @@ function OwnedPost() {
     axios
       .get(`/getPostByUserId/${userId.user.id}`)
       .then((response) => {
-        setDados(response.data);
-        setLoading(false);
+        Promise.all(
+          response.data.map((post) => {
+            return axios
+              .get(`/getComment/${post.id}`)
+              .then((commentResponse) => {
+                post.comments = commentResponse.data;
+                return post;
+              });
+          })
+        ).then((updatedPosts) => {
+          setDados(updatedPosts);
+          setLoading(false);
+        });
       })
       .catch((error) => {
         console.error(error);

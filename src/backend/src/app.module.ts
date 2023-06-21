@@ -14,6 +14,7 @@ import { PostModule } from './Posts/app.module';
 import { CommentsModule } from './Comments/app.module';
 import { GetNotificationsModule } from './User/getNotifications/app.module';
 import { GetAllNotificationsModule } from './User/getAllNotifications/app.module';
+import { UpdateNotificationsModule } from './User/updateNotifications/app.module';
 
 @Module({
     imports: [
@@ -25,7 +26,8 @@ import { GetAllNotificationsModule } from './User/getAllNotifications/app.module
         SystemModule,
         OwnerModule,
         GetNotificationsModule,
-        GetAllNotificationsModule
+        GetAllNotificationsModule,
+        UpdateNotificationsModule
     ],
 })
 export class AppModule {}

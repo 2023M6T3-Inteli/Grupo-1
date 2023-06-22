@@ -183,13 +183,11 @@ function Post() {
   );
   const dadosInvertidos = [...filteredPosts].reverse();
   return (
-    <div>
       <ul className="post-ul">
         {dadosInvertidos.map((item) => (
           <PostItem key={item.id} item={item} />
         ))}
       </ul>
-    </div>
   );
 }
 

@@ -74,7 +74,6 @@ function OwnedPostItem({ item }) {
       });
   };
 
-  //DELETE post
   const handleDelete = async (itemId) => {
     const url = `/deletePost/${itemId}`;
     try {
@@ -85,7 +84,6 @@ function OwnedPostItem({ item }) {
     }
   };
 
-  //modal delete post
   const [deletePost, setDeletePost] = useState(false);
 
   function showDeletePost() {

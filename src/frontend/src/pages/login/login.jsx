@@ -10,13 +10,13 @@ function Login() {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const navigate = useNavigate()
-  const [error, setStateError] = useState(false); // Variável de estado para controlar a exibição da mensagem de erro
+  const [error, setStateError] = useState(false); 
 
   sessionStorage.clear()
 
 
   const loginOk = async () => {
-    // TODO: Fazer as de login -> Sugestão utilizar talz react forms
+   
     try {
       const response = await api.post("/login", {
         email: inputEmail,

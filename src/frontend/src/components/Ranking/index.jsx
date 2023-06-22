@@ -14,12 +14,12 @@ export default function Ranking() {
     axios
       .get("/getRank")
       .then((response) => {
-        // Armazena os dados da resposta no estado
+      
         console.log(response.data);
         setDados(response.data);
       })
       .catch((error) => {
-        // console.error(error);
+    
       });
 
     const userId = JSON.parse(sessionStorage.getItem("user"));
@@ -28,7 +28,7 @@ export default function Ranking() {
     axios
       .get(`/getRankUser/${userId.user.id}`)
       .then((response) => {
-        // Armazena os dados da resposta no estado
+  
         console.log(response.data);
         setDadosUser(response.data);
       })

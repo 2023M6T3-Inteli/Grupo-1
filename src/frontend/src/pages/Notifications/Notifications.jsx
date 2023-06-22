@@ -31,14 +31,14 @@ useEffect(() => {
     .get(`/getNotifications/${userId.user.id}`)
     .then((response) => {
       setDados(response.data);
-      setLoading(false); // set loading to false once data is fetched
+      setLoading(false); 
     })
     .catch((error) => {
       console.error(error);
     });
 }, []);
 
-console.log(dados); // Log state here
+console.log(dados);
 
 if (loading) {
   return <div>Loading...</div>;

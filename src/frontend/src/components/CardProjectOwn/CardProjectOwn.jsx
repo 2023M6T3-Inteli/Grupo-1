@@ -65,24 +65,7 @@ function CardProjectOwn(props){
                     </li>
                 </ul>
             </div>
-            <div className="cardFooter">
-                <div className="iconsFooter">
-                    {props.cardDisliked && 
-                        <img 
-                        onClick={()=>props.onLike()}
-                        src={heart} 
-                        alt="like"/>
-                    }
-                    {props.cardLiked && 
-                        <img
-                        onClick={()=> props.onDisLike()}
-                        src={fullHeart}
-                        alt="like"/>
-                    }
-                    <img src={chat} alt="comment"/>
-                </div>
-            </div>
-        
+            
             {manageModal&&(
                 <>
                     <ManageApply

@@ -2,7 +2,7 @@ import "./style.css";
 import TopBar from "../../components/TopBar/TopBar";
 import TopNavBar from "../../components/Top-nav-bar/Top-nav-bar";
 import CardProject from "../../components/CardProject/CardProject";
-//import Search from "../../components/Search/Search"
+import Search from "../../components/Search/Search";
 import CardProjectOwn from "../../components/CardProjectOwn/CardProjectOwn"
 import NavBar from "../../components/NavBar/NavBar"
 //import ManageApply from "../../components/ManageApply/ManageApply";
@@ -61,6 +61,9 @@ export default function AllProjects() {
           createdProjectPage={createdProjectPage}
         />
       </div>
+      <div className="search-div-proj">
+          <Search></Search>
+        </div>
       <div className="behind"></div>
       {allProjectPage && (
         <main className="projects-container">

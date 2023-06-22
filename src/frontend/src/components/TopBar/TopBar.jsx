@@ -1,6 +1,6 @@
 import "./TopBar.css"
 import faq from "../../assets/faq.svg"
-import AlarmBell from "../../assets/AlarmBell.jsx";
+import AlarmBellTop from "../../assets/AlarmBellTop.jsx";
 import { Link } from 'react-router-dom';
 
 export default function TopBar(props){
@@ -8,10 +8,9 @@ export default function TopBar(props){
       <div className="TopBar">
         <p className="TextTitle">{props.title}</p>
 
-        <p className="TextSubTitle">{props.subtitle}</p>
         <div className="topBarIcons">
           <Link to="/Notifications">
-            <AlarmBell/>
+            <AlarmBellTop/>
           </Link>
           
           <Link to="/Faq">

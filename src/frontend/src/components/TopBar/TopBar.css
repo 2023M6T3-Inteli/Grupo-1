@@ -19,14 +19,16 @@ p{
     justify-content: center;
     align-items: center;
     border-radius: 0px 0px 50px 50px;
-    flex-direction: column;
+    flex-direction: row;
     /* position:fixed; */
 }
 
 .topBarIcons{
-    position:absolute;
-    top:3vh;
+    position: absolute;
+    top:3.5vh;
     right: 8vw;
+    display: flex;
+    align-items: center;
 }
 
 .faq{
@@ -50,4 +52,5 @@ p{
     font-family:'Roboto', sans-serif;
     font-size: 2rem;
     font-weight: 300;
+    
 }

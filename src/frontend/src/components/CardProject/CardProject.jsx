@@ -87,14 +87,7 @@ function CardProject(props) {
                         <button onClick={() => applyToProject(item.idUser, item.id, item.projectRole[0].id)}>
                             Apply
                         </button>
-                        <div className="iconsFooter">
-                            {props.cardDisliked && (
-                                <img onClick={() => props.onLike()} src={heart} alt="like" />
-                            )}
-                            {props.cardLiked && (
-                                <img onClick={() => props.onDisLike()} src={fullHeart} alt="like" />
-                            )}
-                        </div>
+                    
                     </div>
                 </div>
             ))}

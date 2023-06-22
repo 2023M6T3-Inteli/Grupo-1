@@ -9,7 +9,7 @@
     width: 100%;
     background-color: #F0F0F0;
     min-height: 100hv;
-    z-index:900;
+    /* z-index:900; */
 }
 
 .header{
@@ -18,22 +18,17 @@
     flex-direction: column;
     top: 0;
     position: fixed;
-    z-index: 900;
+    z-index: 980;
     background-color: #F0F0F0;
-    z-index:994;
-}
-
-.search-container{
-    width: 100%;
-    margin-top: 8px;
-    display: flex;
-    justify-content: center;
+    z-index:989;
+    height: 218px;;
 }
 
 .behind{
     width: 100%;
-    height: 155px;
-    z-index:993;
+    height: 218px;
+    z-index:988;
+    background-color: #f0f0f0;
 }
 
 .projects-container{
@@ -46,10 +41,17 @@
     margin-top: 16px;
     /* margin-bottom: 100px; */
     width: 100%;
-    z-index:993;
+    
 }
 
 
 .nav-proj{
     z-index:994;
+}
+.search-div-proj{
+    top:160px;
+    position:fixed;
+    z-index:994;
+    display: flex;
+    justify-content: center;
 }

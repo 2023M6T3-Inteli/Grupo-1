@@ -148,7 +148,7 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get("/getPost")
+      .get("/getPost?tag=Oi")
       .then((response) => {
         // Store the response data in the state
         Promise.all(

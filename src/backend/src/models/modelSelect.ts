@@ -12,6 +12,34 @@ import { use } from 'passport';
 export class ModelSelect {
     constructor(private prisma: PrismaService) { }
 
+
+    async getProjectRoles(idProject: number) {
+        try {
+            const result = await this.prisma.projectRole.findMany({
+                where: {
+                    idProject: idProject,
+                },
+                select: {
+                    Role: true,
+                },
+            });
+
+            const roles = result.map((item) => {
+                return item.Role;
+            });
+
+            return roles;
+        } catch (error) {
+            throw new HttpException(
+                {
+                    status: HttpStatus.BAD_REQUEST,
+                    error: error,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
     async getAllProjects() {
         try {
             const result = await this.prisma.project.findMany({
@@ -243,7 +271,7 @@ export class ModelSelect {
                 where: {
                     idPost: idPost,
                 },
-                select: { id:true,comment: true, User: { select: { fullName: true } } },
+                select: { id: true, comment: true, User: { select: { fullName: true } } },
             });
 
             return result;

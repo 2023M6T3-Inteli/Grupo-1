@@ -7,6 +7,7 @@ import { GetRankingUserModule } from './getRankById/app.module';
 import { HealthModule } from './health/app.module';
 import { GetAllTagsModule } from './getAllTags/app.module';
 import { GetAllRolesModule } from './getAllRoles/app.module';
+import { moduleGetRoleByProject } from './getRoleByProject/app.module';
 
 @Module({
     imports: [
@@ -17,7 +18,8 @@ import { GetAllRolesModule } from './getAllRoles/app.module';
         GetRankingModule,
         GetRankingUserModule,
         GetAllTagsModule,
-        GetAllRolesModule
+        GetAllRolesModule,
+        moduleGetRoleByProject
     ],
     exports: [
         GetProjectForTagModule,
@@ -27,6 +29,7 @@ import { GetAllRolesModule } from './getAllRoles/app.module';
         GetRankingModule,
         GetRankingUserModule,
         GetAllTagsModule,
+        moduleGetRoleByProject
     ],
 })
 export class SystemModule { }

@@ -13,10 +13,11 @@ function CardProject(props) {
     const [dados, setDados] = useState(null);
     const [pdOpen, setPdOpen] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
-    const [formSubmitStatus, setFormSubmitStatus] = useState("");
+    const [selectedItemId, setSelectedItemId] = useState(null);
 
-    const toggleModal = () => {
+    const toggleModal = (itemId) => {
         setModalOpen((prevState) => !prevState);
+        setSelectedItemId(itemId);
     };
 
     useEffect(() => {
@@ -63,16 +64,15 @@ function CardProject(props) {
                         </ul>
                     </div>
                     <div className="cardFooter">
-                        <button onClick={toggleModal}>
+                        <button onClick={() => toggleModal(item.id)}>
                             Apply
                         </button>
-                    
                     </div>
                 </div>
             ))}
-            {isModalOpen && (
+            {isModalOpen && selectedItemId && (
                 <div>
-                    <ApplyProject />
+                    <ApplyProject toggleModal={toggleModal} projectId={selectedItemId} />
                 </div>
             )}
             {pdOpen && (

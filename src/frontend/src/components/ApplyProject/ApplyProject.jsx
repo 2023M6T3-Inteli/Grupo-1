@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ApplyProject.css";
 
 export default function Modal() {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true); // Alterado para true
 
   const toggleModal = () => {
     setModal(!modal);
@@ -16,10 +16,7 @@ export default function Modal() {
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
-
+      {/* Removido o botão "Open" */}
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
@@ -32,31 +29,26 @@ export default function Modal() {
             <div className="roles">
               <div>
                 <input className="frontend " type="checkbox" name="role" value="frontend" />
-                <label for="frontend">Frontend</label>
+                <label htmlFor="frontend">Frontend</label> {/* Alterado for para htmlFor */}
               </div>
               <div>
                 <input className="ux" type="checkbox" name="role" value="ux" /> <label
-                  for="ux">UX Designer</label>
+                  htmlFor="ux">UX Designer</label> {/* Alterado for para htmlFor */}
               </div>
               <div>
                 <input className="data" type="checkbox" name="role" value="data" /> <label
-                  for="data">Data Analyst</label>
+                  htmlFor="data">Data Analyst</label> {/* Alterado for para htmlFor */}
               </div>
               <div>
                 <button className="apply" type="submit">Apply</button>
               </div>
-
-
-
             </div>
-
             <button className="close-modal" onClick={toggleModal}>
               <span className="close-modal-text"> X </span>
             </button>
           </div>
         </div>
       )}
-
     </>
   );
 }

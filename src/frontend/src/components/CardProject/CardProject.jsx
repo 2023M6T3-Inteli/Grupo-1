@@ -1,51 +1,27 @@
-import "./CardProject.css";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import moment from "moment";
+import ProjectDetail from "../projectDetail/projectDetail";
+import ApplyProject from "../ApplyProject/ApplyProject";
 import alert from "../../assets/alert.svg";
 import heart from "../../assets/heart.svg";
 import chat from "../../assets/chat.svg";
 import fullHeart from "../../assets/fullHeart.svg";
-import { useState, useEffect } from "react";
-import Modal from "../../components/ApplyProject/ApplyProject.jsx";
-import axios from 'axios';
-import ProjectDetail from "../projectDetail/projectDetail";
-import moment from "moment";
+import "./CardProject.css";
 
 function CardProject(props) {
-    const userId = JSON.parse(sessionStorage.getItem("user"));
-    const [liked, setLiked] = useState(false);
+    const [dados, setDados] = useState(null);
+    const [pdOpen, setPdOpen] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false);
     const [formSubmitStatus, setFormSubmitStatus] = useState("");
 
-    const applyToProject = (idUser, idProject, idRole) => {
-        const postData = {
-            idUser,
-            idProject,
-            idRole,
-        };
-
-
-        axios
-            .post("http://localhost:3000/applyProject", postData)
-            .then((response) => {
-                setFormSubmitStatus("success");
-                // Faça qualquer ação adicional que você deseja realizar após o envio bem-sucedido
-            })
-            .catch((error) => {
-                setFormSubmitStatus("error");
-                console.error(error);
-            });
+    const toggleModal = () => {
+        setModalOpen((prevState) => !prevState);
     };
-
-    function openClosePD(){
-        setPdOpen((prevState) => !prevState)
-    }
-
-
-    const [pdOpen, setPdOpen] = useState(false);
-    const [dados, setDados] = useState(null);
 
     useEffect(() => {
         axios.get('http://localhost:3000/getAllProjects')
             .then(response => {
-                // Armazena os dados da resposta no estado
                 setDados(response.data);
             })
             .catch(error => {
@@ -57,8 +33,11 @@ function CardProject(props) {
         return <div>Loading...</div>;
     }
 
-    // Revertendo a ordem dos dados no feed
     const dadosInvertidos = [...dados].reverse();
+
+    function openClosePD() {
+        setPdOpen((prevState) => !prevState);
+    }
 
     return (
         <div className="card-main">
@@ -84,7 +63,7 @@ function CardProject(props) {
                         </ul>
                     </div>
                     <div className="cardFooter">
-                        <button onClick={() => applyToProject(item.idUser, item.id, item.projectRole[0].id)}>
+                        <button onClick={toggleModal}>
                             Apply
                         </button>
                         <div className="iconsFooter">
@@ -99,19 +78,24 @@ function CardProject(props) {
                     </div>
                 </div>
             ))}
+            {isModalOpen && (
+                <div>
+                    <ApplyProject />
+                </div>
+            )}
             {pdOpen && (
                 <div>
                     <ProjectDetail
-                    onPdOpen={openClosePD}
-                    title="Web Development"
-                    desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
-                    area="Development"
-                    deadLine="09/01/23"
-                    startDate="09/01/23"
-                    endDate="09/01/23"
-                    status="Recruiting"
-                    jobs={3}
-                    ocupation="Front-End Developer"
+                        onPdOpen={openClosePD}
+                        title="Web Development"
+                        desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
+                        area="Development"
+                        deadLine="09/01/23"
+                        startDate="09/01/23"
+                        endDate="09/01/23"
+                        status="Recruiting"
+                        jobs={3}
+                        ocupation="Front-End Developer"
                     />
                 </div>
             )}

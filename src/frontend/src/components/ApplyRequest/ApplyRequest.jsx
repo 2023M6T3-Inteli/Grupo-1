@@ -1,7 +1,7 @@
 import "./ApplyRequest.css"
 
-function ApplyRequest(){
-    return(
+function ApplyRequest() {
+    return (
         <div className="applyRequestContent">
             <div className="requestTitle">
                 <label>Luisa Leite</label>
@@ -18,7 +18,7 @@ function ApplyRequest(){
             <div>
                 <hr></hr>
             </div>
-           
+
         </div>
     )
 }

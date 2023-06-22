@@ -31,13 +31,14 @@ export class ControllerGetPosts {
             message,
         );
 
-        const formatedRecommendations = JSON.parse(recommendations)
+        if (recommendations !== 'No message received') {
+            const formatedRecommendations = JSON.parse(recommendations);
 
-
-        posts.forEach((post, index) => {
-            post.description = formatedRecommendations[index]
-        })
-
+            posts.forEach((post, index) => {
+                post.description = formatedRecommendations[index];
+            });
+        }
+        
         return posts;
     }
 }

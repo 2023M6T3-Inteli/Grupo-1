@@ -13,7 +13,7 @@ import ArrowUp from "../../assets/ArrowUp.svg";
 import Search from "../Search/Search"; 
 
 function PostItem({ item }) {
-  // console.log(item); // Log to check the item data
+
   const userId = JSON.parse(sessionStorage.getItem("user"));
   const [liked, setLiked] = useState(
     item.postLike.some((like) => like.idUser === userId.user.id)

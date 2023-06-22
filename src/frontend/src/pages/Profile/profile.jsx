@@ -4,15 +4,29 @@ import Tags from '../../components/Tags/Tags'
 import './profile.css';
 import Picture from '../../assets/Picture.jsx'
 import {useState,useEffect} from "react"
+import axios from "../../../api";
 
 
 function Profile() {
 
+  const [dadosRanking, setDadosRanking] = useState([]);
   //const [loading, setLoading] = useState(true);
   const userData = JSON.parse(sessionStorage.getItem("user"));
   console.log(userData)
 
-
+  useEffect(() => {
+    
+  
+    axios
+      .get(`/getRankUser/${userData.user.id}`)
+      .then((response) => {
+        setDadosRanking(response.data);
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
   <>
@@ -47,7 +61,7 @@ function Profile() {
         <p>Experience</p>
         </div>
         <div className='TextExperience2'>
-        <h1>{userData.user.rankPoints} xp</h1>
+        <h1>{dadosRanking.rankPoints} xp</h1>
         </div>
         </div>
     </div>

@@ -67,7 +67,7 @@ async function main() {
     await prisma.tag.create({
         data: {
             id: 1,
-            name: 'HTML',
+            name: 'Iron Man',
         },
     });
 

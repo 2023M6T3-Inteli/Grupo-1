@@ -23,10 +23,14 @@ p{
     /* position:fixed; */
 }
 
-.faq{
+.topBarIcons{
     position:absolute;
-    top:3.8vh;
+    top:3vh;
     right: 8vw;
+}
+
+.faq{
+    margin-left: 12px;
 }
 
 .TextTitle { 

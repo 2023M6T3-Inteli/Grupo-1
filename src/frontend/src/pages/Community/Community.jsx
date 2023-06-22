@@ -11,10 +11,13 @@ import OwnedPost from "../../components/OwnedPost/OwnedPost";
 function Community() {
   const [allPostsPage, setAllPostsPage] = useState(true);
   const [MyPostsPage, setMyPostsPage] = useState(false);
-
+  const [searchTerm, setSearchTerm] = useState("");
   const [cardLiked, setCardLiked] = useState(false);
   const [cardDisliked, setCardDisliked] = useState(true);
 
+   const handleSearch = (event) => {
+     setSearchTerm(event.target.value);
+   };
   function likeCard() {
     setCardLiked(true);
     setCardDisliked(false);
@@ -48,7 +51,7 @@ function Community() {
           />
         </div>
         <div className="search-div">
-          <Search></Search>
+          <Search searchTerm={searchTerm} handleSearch={handleSearch} />{" "}
         </div>
       </div>
 
@@ -59,6 +62,7 @@ function Community() {
             onDisLike={dislikeCard}
             cardLiked={cardLiked}
             cardDisliked={cardDisliked}
+            searchTerm={searchTerm}
           ></Post>
         </main>
       )}
@@ -70,6 +74,7 @@ function Community() {
             onDisLike={dislikeCard}
             cardLiked={cardLiked}
             cardDisliked={cardDisliked}
+            searchTerm={searchTerm}
           ></OwnedPost>
         </main>
       )}

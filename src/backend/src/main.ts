@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 const mqtt = require("mqtt");
 
+
 // initialize the MQTT client
 var client = mqtt.connect("mqtt://mqtt-dashboard.com");
 
@@ -16,6 +17,14 @@ client.on("connect", () => {
     console.log(`Subscribe to topic '${topic}'`);
   });
 });
+
+client.on("error", (error) => {
+  console.log("Error connecting to mqtt-dashboard.com");
+  console.log("Connecting to test.mosquitto.org");
+  client.end(); // Encerrar a conexão atual
+  client = mqtt.connect("mqtt://test.mosquitto.org"); // Conectar ao broker alternativo
+});
+
 
 export async function publish(topic: string, message: string): Promise<any> {
     client.publish(topic, message);

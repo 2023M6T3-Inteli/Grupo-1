@@ -11,6 +11,7 @@ import axios from "../../../api";
 import Comments from "../../components/Comments/Comments.jsx";
 import ArrowUp from "../../assets/ArrowUp.svg";
 import Search from "../Search/Search"; 
+import { publish } from '../../main';
 
 function PostItem({ item }) {
   // console.log(item); // Log to check the item data
@@ -143,6 +144,42 @@ function PostItem({ item }) {
   );
 }
 
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("/getPost?tag=Oi");
+      const updatedPosts = await Promise.all(
+        response.data.map(async (post) => {
+          const commentResponse = await axios.get(`/getComment/${post.id}`);
+          post.comments = commentResponse.data;
+          return post;
+        })
+      );
+      setDados(updatedPosts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchData();
+
+  // Verificar a conexão com mqtt-dashboard.com a cada 10 segundos
+  const checkConnectionInterval = setInterval(() => {
+    if (client && client.connected) {
+      clearInterval(checkConnectionInterval);
+    } else {
+      console.log("Reconnecting to mqtt-dashboard.com");
+      client.end(); // Encerrar a conexão atual
+      client = mqtt.connect("mqtt://test.mosquitto.org"); // Conectar ao broker alternativo
+    }
+  }, 10000);
+
+  return () => {
+    clearInterval(checkConnectionInterval);
+  };
+}, []);
+
+
 function Post({ searchTerm }) {
   const [dados, setDados] = useState(null);
 
@@ -186,5 +223,7 @@ function Post({ searchTerm }) {
     </ul>
   );
 }
+
+
 
 export default Post;

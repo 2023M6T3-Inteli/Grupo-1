@@ -10,6 +10,7 @@ import DocPost from "../DocPost/DocPost";
 import axios from "../../../api";
 import Comments from "../../components/Comments/Comments.jsx";
 import ArrowUp from "../../assets/ArrowUp.svg";
+import Search from "../Search/Search"; 
 
 function PostItem({ item }) {
   // console.log(item); // Log to check the item data
@@ -143,20 +144,24 @@ function PostItem({ item }) {
 }
 
 function Post() {
-  //GET All Posts
+ 
   const [dados, setDados] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(""); 
 
+  const handleSearch = (event) => {
+ 
+    setSearchTerm(event.target.value);
+  };
   useEffect(() => {
     axios
       .get("/getPost?tag=Oi")
       .then((response) => {
-        // Store the response data in the state
+ 
         Promise.all(
           response.data.map((post) => {
             return axios
               .get(`/getComment/${post.id}`)
               .then((commentResponse) => {
-                // Store the comment data in the post object
                 post.comments = commentResponse.data;
                 return post;
               });
@@ -171,16 +176,22 @@ function Post() {
   if (dados === null) {
     return <div>Loading...</div>;
   }
-
-  //to revert the data order on the feed
-  const dadosInvertidos = [...dados].reverse();
-
+  const filteredPosts = dados.filter((post) =>
+    post.postTag.some((tag) =>
+      tag.Tag.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+  const dadosInvertidos = [...filteredPosts].reverse();
   return (
-    <ul className="post-ul">
-      {dadosInvertidos.map((item) => (
-        <PostItem key={item.id} item={item} />
-      ))}
-    </ul>
+    <div>
+      <Search searchTerm={searchTerm} handleSearch={handleSearch} />{" "}
+      <ul className="post-ul">
+        {dadosInvertidos.map((item) => (
+          <PostItem key={item.id} item={item} />
+        ))}
+      </ul>
+    </div>
   );
 }
+
 export default Post;

@@ -168,7 +168,7 @@ function OwnedPostItem({ item }) {
   );
 }
 
-function OwnedPost() {
+function OwnedPost({ searchTerm }) {
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -200,7 +200,13 @@ function OwnedPost() {
     return <div>Loading...</div>;
   }
 
-  const dadosInvertidos = [...dados].reverse();
+  const filteredPosts = dados.filter((post) =>
+    post.postTag.some((tag) =>
+      tag.Tag.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+  console.log(dados)
+  const dadosInvertidos = [...filteredPosts].reverse();
 
   return (
     <ul className="owned-post-ul">

@@ -7,21 +7,39 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/ApplyProject/ApplyProject.jsx";
 import axios from 'axios';
 import ProjectDetail from "../projectDetail/projectDetail";
+import moment from "moment";
 
 function CardProject(props) {
-    
-    const[pdOpen,setPdOpen]=useState(false)
-    
-    const [applyProject, setApplyProject] = useState(false)
+    const userId = JSON.parse(sessionStorage.getItem("user"));
+    const [liked, setLiked] = useState(false);
+    const [formSubmitStatus, setFormSubmitStatus] = useState("");
 
-    function showApplyProjects() {
-        setApplyProject((prevState) => !prevState)
-    }
+    const applyToProject = (idUser, idProject, idRole) => {
+        const postData = {
+            idUser,
+            idProject,
+            idRole,
+        };
+
+
+        axios
+            .post("http://localhost:3000/applyProject", postData)
+            .then((response) => {
+                setFormSubmitStatus("success");
+                // Faça qualquer ação adicional que você deseja realizar após o envio bem-sucedido
+            })
+            .catch((error) => {
+                setFormSubmitStatus("error");
+                console.error(error);
+            });
+    };
 
     function openClosePD(){
         setPdOpen((prevState) => !prevState)
     }
 
+
+    const [pdOpen, setPdOpen] = useState(false);
     const [dados, setDados] = useState(null);
 
     useEffect(() => {
@@ -39,63 +57,45 @@ function CardProject(props) {
         return <div>Loading...</div>;
     }
 
-    //to revert the data ordem on the feed
+    // Revertendo a ordem dos dados no feed
     const dadosInvertidos = [...dados].reverse();
-    //console.log(dadosInvertidos);
-
 
     return (
         <div className="card-main">
-            {dadosInvertidos.map(item => (
-                <div className="cardProject">
-
+            {dadosInvertidos.map((item, index) => (
+                <div className="cardProject" key={index}>
                     <div className="cardHeader">
-                        <label className="cardTitle" >{item.name}</label>
+                        <label className="cardTitle">{item.name}</label>
                         <div className="iconsHeader">
-                            <label
-                            onClick= {()=>openClosePD()}
-                            >+ info</label>
+                            <label onClick={() => openClosePD()}>+ info</label>
                             <img src={alert} alt="report" />
                         </div>
                     </div>
                     <div className="cardContent">
                         <ul>
                             <li>
-                                <p className="title">Aplications Until:</p>
-                                <p className="desc" >11/04/2023</p>
-                            </li>
-                            <li>
-                                <p className="title">Ocupation:</p>
-                                <p className="desc" >Back-end Developer</p>
+                                <p className="title">Applications Until:</p>
+                                <p className="desc">{moment(item.applicationDeadline).format("DD MMMM YYYY")}</p>
                             </li>
                             <li>
                                 <p className="title">Status:</p>
-                                <p className="statusProject" >In Progress</p>
+                                <p className="statusProject">{item.status}</p>
                             </li>
                         </ul>
                     </div>
                     <div className="cardFooter">
-                        <button
-                            onClick={() => showApplyProjects()}>
+                        <button onClick={() => applyToProject(item.idUser, item.id, item.projectRole[0].id)}>
                             Apply
                         </button>
                         <div className="iconsFooter">
-                            {props.cardDisliked &&
-                                <img
-                                    onClick={() => props.onLike()}
-                                    src={heart}
-                                    alt="like" />
-                            }
-                            {props.cardLiked &&
-                                <img
-                                    onClick={() => props.onDisLike()}
-                                    src={fullHeart}
-                                    alt="like" />
-                            }
-                            <img src={chat} alt="comment" />
+                            {props.cardDisliked && (
+                                <img onClick={() => props.onLike()} src={heart} alt="like" />
+                            )}
+                            {props.cardLiked && (
+                                <img onClick={() => props.onDisLike()} src={fullHeart} alt="like" />
+                            )}
                         </div>
                     </div>
-                    
                 </div>
             ))}
             {pdOpen && (
@@ -115,7 +115,7 @@ function CardProject(props) {
                 </div>
             )}
         </div>
-    )
+    );
 }
 
-export default CardProject
+export default CardProject;

@@ -54,10 +54,10 @@ const router = createBrowserRouter([
     element: <SavedPosts />
   },
 
-  {
-    path: "/SavedProjects",
-    element: <SavedProjects />
-  },
+  // {
+  //   path: "/SavedProjects",
+  //   element: <SavedProjects />
+  // },
   {
     path:"/AuxPage",
     element:<AuxPage/>

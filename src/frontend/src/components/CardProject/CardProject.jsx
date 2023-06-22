@@ -66,14 +66,7 @@ function CardProject(props) {
                         <button onClick={toggleModal}>
                             Apply
                         </button>
-                        <div className="iconsFooter">
-                            {props.cardDisliked && (
-                                <img onClick={() => props.onLike()} src={heart} alt="like" />
-                            )}
-                            {props.cardLiked && (
-                                <img onClick={() => props.onDisLike()} src={fullHeart} alt="like" />
-                            )}
-                        </div>
+                    
                     </div>
                 </div>
             ))}

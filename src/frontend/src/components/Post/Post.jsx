@@ -143,20 +143,16 @@ function PostItem({ item }) {
   );
 }
 
-function Post() {
- 
+function Post({ searchTerm }) {
   const [dados, setDados] = useState(null);
-  const [searchTerm, setSearchTerm] = useState(""); 
 
   const handleSearch = (event) => {
- 
     setSearchTerm(event.target.value);
   };
   useEffect(() => {
     axios
       .get("/getPost?tag=Oi")
       .then((response) => {
- 
         Promise.all(
           response.data.map((post) => {
             return axios
@@ -183,14 +179,11 @@ function Post() {
   );
   const dadosInvertidos = [...filteredPosts].reverse();
   return (
-    <div>
-      <Search searchTerm={searchTerm} handleSearch={handleSearch} />{" "}
-      <ul className="post-ul">
-        {dadosInvertidos.map((item) => (
-          <PostItem key={item.id} item={item} />
-        ))}
-      </ul>
-    </div>
+    <ul className="post-ul">
+      {dadosInvertidos.map((item) => (
+        <PostItem key={item.id} item={item} />
+      ))}
+    </ul>
   );
 }
 

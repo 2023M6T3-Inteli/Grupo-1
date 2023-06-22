@@ -2,7 +2,7 @@ import "./style.css";
 import TopBar from "../../components/TopBar/TopBar";
 import TopNavBar from "../../components/Top-nav-bar/Top-nav-bar";
 import CardProject from "../../components/CardProject/CardProject";
-//import Search from "../../components/Search/Search"
+import Search from "../../components/Search/Search"
 import CardProjectOwn from "../../components/CardProjectOwn/CardProjectOwn"
 import NavBar from "../../components/NavBar/NavBar"
 //import ManageApply from "../../components/ManageApply/ManageApply";
@@ -15,6 +15,8 @@ export default function AllProjects() {
   const [createdProjectPage, setCreatedProjectPage] = useState(false);
   const [cardLiked, setCardLiked] = useState(false)
   const [cardDisliked, setCardDisliked] = useState(true)
+
+
 
 
   function likeCard() {
@@ -60,6 +62,7 @@ export default function AllProjects() {
           allProjectPage={allProjectPage}
           createdProjectPage={createdProjectPage}
         />
+        <Search />
       </div>
       <div className="behind"></div>
       {allProjectPage && (

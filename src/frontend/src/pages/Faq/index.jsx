@@ -8,7 +8,7 @@ import Search from "../../components/Search/Search";
 export default function FaqPage() {
     return (
       <div className="body">
-        <TopBar title={"FAQ"} ></TopBar>
+        <TopBar title={"FAQ"} subtitle={"Frequently Asked Questions"}></TopBar>
         <div className="componentFaq">
           <Search />
           <FaqCard

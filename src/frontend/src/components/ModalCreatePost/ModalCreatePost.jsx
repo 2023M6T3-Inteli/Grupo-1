@@ -1,6 +1,4 @@
-
-import  { useState, useEffect } from "react";
-
+import React, { useState,useEffect } from "react";
 import "./ModalCreatePost.css";
 import axios from 'axios';
 import Select from 'react-select';
@@ -51,8 +49,8 @@ export default function ModalCreatePost(props) {
     event.preventDefault();
     const selectedValues = selectedOptions.map(option => option.value);
     const updatedDados = {
-      ...dados,
-      idTag: selectedValues
+    ...dados,
+    idTag: selectedValues
     };
     axios.post('http://localhost:3000/createPost', updatedDados)
       .then(response => {
@@ -100,7 +98,7 @@ export default function ModalCreatePost(props) {
   const handleChangeTag = (selected) => {
     setSelectedOptions(selected);
   }
-
+  
   return (
     <div className="modal-create-post">
       <div onClick={props.toggleModal} className="overlay-create-post"></div>
@@ -109,9 +107,9 @@ export default function ModalCreatePost(props) {
           <h2 className="button-create-post">Create Post</h2>
         </div>
         <div className="line-create-post"></div>
-        <form
-          onSubmit={handleSubmit}
-          className="form-create-post">
+        <form 
+        onSubmit={handleSubmit}
+        className="form-create-post">
           <fieldset>
             <div className="details-create-post">
               <div>
@@ -119,8 +117,8 @@ export default function ModalCreatePost(props) {
                   <input className="description-create-post" name="description-post" rows="4" cols="2" value={formData.description} onChange={handleInputChange}></input>
                 </label> */}
                 <label className="label-post" for="description">Description:
-                  <input
-                    className="description-create-post"
+                  <input 
+                    className="description-create-post" 
                     type="text"
                     rows="4" cols="2" name="description" value={dados.description} onChange={handleChange}></input>
                 </label>
@@ -135,38 +133,38 @@ export default function ModalCreatePost(props) {
                   <input className="description-create-post" name="input-media-post" rows="3" cols="1" value={formData.description} onChange={handleInputChange}></input>
                 </label> */}
                 <label className="input-media-post" for="media">Enter media url:
-                  <input
-                    className="description-create-post"
+                  <input 
+                    className="description-create-post" 
                     name="media" rows="3" cols="1" value={dados.media} onChange={handleChange}></input>
                 </label>
               </div>
-
+              
               <div>
-                <label for="idTag">Keywords:</label>
-                <Select
-                  className="keys-create-post"
-                  name={selectedOptions}
-                  options={optionsTagPost}
-                  isMulti
-                  value={selectedOptions}
-                  onChange={handleChangeTag}
+              <label for="idTag">Keywords:</label>
+                <Select 
+                className="keys-create-post" 
+                name={selectedOptions}
+                options={optionsTagPost}
+                isMulti
+                value={selectedOptions}
+                onChange={handleChangeTag}
                 ></Select>
               </div>
-
+              
               {/* 
               <div className="tags-input-container-create-post">
                 <input onKeyDown={props.handleKeyDown} type="text" className="tags-input-create-post" placeholder="Type something" />
               </div> */}
 
               <div className="submit-create-post">
-                <button className="submit-btn-create-post" type="submit" onClick={() => props.onShowCreateNav()}>Create Post</button>
+                <button className="submit-btn-create-post" type="submit" onClick={()=> props.onShowCreateNav()}>Create Post</button>
               </div>
 
             </div>
           </fieldset>
         </form>
 
-        <button className="close-modal-create-post" onClick={() => { props.onShowCreatePost(); props.onShowCreateNav() }}>
+        <button className="close-modal-create-post" onClick={()=> {props.onShowCreatePost(); props.onShowCreateNav()}}>
           <span className="close-modal-text-create-post"> X </span>
         </button>
       </div>

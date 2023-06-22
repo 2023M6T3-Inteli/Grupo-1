@@ -22,15 +22,11 @@ function NavBar() {
   const router = useLocation();
   const currentPath = router.pathname;
   const [createNavOpen, setCreateNavOpen] = useState(false);
-  const [createProjectOpen, setCreateProjectOpen] = useState(false);
-  const [createPostOpen, setCreatePostOpen] = useState(false)
+  const[createProjectOpen,setCreateProjectOpen]=useState(false);
+  const[createPostOpen,setCreatePostOpen]=useState(false)
 
   function showCreateNav() {
     setCreateNavOpen((prevState) => !prevState);
-  }
-
-  function closeCreateNav(){
-    setCreateNavOpen(false)
   }
 
   const toggleProjectModal = () => {
@@ -61,13 +57,13 @@ function NavBar() {
     setTags(tags.filter((el, i) => i !== index));
   }
 
-  function showCreateProject() {
-    setCreateProjectOpen((prevState) => !prevState)
+  function showCreateProject(){
+    setCreateProjectOpen((prevState)=>!prevState)
     setCreateNavOpen((prevState) => !prevState);
   }
 
-  function showCreatePost() {
-    setCreatePostOpen((prevState) => !prevState)
+  function showCreatePost(){
+    setCreatePostOpen((prevState)=>!prevState)
     setCreateNavOpen((prevState) => !prevState);
   }
   return (
@@ -75,25 +71,19 @@ function NavBar() {
       <div className="nav-toda">
         <div className="nav-bar">
           <div className="nav-item">
-            <Link className="nav-button" to="/Projects">
-              <CarryCase />
-              <p>Projects</p>
-            </Link>
-           
+            <CarryCase />
+            <a href="/Projects">Projects</a>
           </div>
           <div className="nav-item">
-            <Link className="nav-button" to="/Community">
-              <People />
-              <p>Community</p>
-            </Link>
-           
+            <People />
+            <a href="/Community">Community</a>
           </div>
           <div className="nav-item">
             <button
               onClick={
                 currentPath === "/Community"
                   ? () =>
-                    console.log("Coloque sua função de togglePostModal aqui")
+                      console.log("Coloque sua função de togglePostModal aqui")
                   : toggleProjectModal
               }
             >
@@ -101,45 +91,37 @@ function NavBar() {
             </button>
           </div>
           <div className="nav-item">
-            <Link className="nav-button" to="/Ranking">
-              <Trophy />
-              <p>Ranking</p>
-            </Link>
-            
+            <Trophy />
+            <a href="/Ranking">Ranking</a>
           </div>
-          <div className="nav-item" >
-            <Link className="nav-button" to="/Profile">
-              <Person></Person>
-              <p>Profile</p>
-            </Link>
-            
+          <div className="nav-item">
+            <Person></Person>
+            <a href="/Profile">Profile</a>
           </div>
         </div>
       </div>
       {createNavOpen && (
         <>
-          <CreateNav
-            onCloseCreateNav={closeCreateNav}
-            onShowCreateNav={showCreateNav}
-            onShowCreateProject={showCreateProject}
-            onShowCreatePost={showCreatePost}
-
+          <CreateNav 
+          onShowCreateNav={showCreateNav}
+          onShowCreateProject={showCreateProject}
+          onShowCreatePost={showCreatePost} 
+          
           />
         </>
       )}
-      {createProjectOpen && (
+      {createProjectOpen&& (
         <>
           <Modal
             onShowCreateProject={showCreateProject}
-            onShowCreateNav2={showCreateNav}
           />
         </>
       )}
-      {createPostOpen && (
+      {createPostOpen&& (
         <>
           <ModalCreatePost
-            onShowCreatePost={showCreatePost}
-            onShowCreateNav={showCreateNav}
+          onShowCreatePost={showCreatePost} 
+          onShowCreateNav={showCreateNav}
           />
         </>
       )}

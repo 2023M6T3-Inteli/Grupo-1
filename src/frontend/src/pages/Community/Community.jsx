@@ -78,9 +78,7 @@ function Community() {
           ></OwnedPost>
         </main>
       )}
-      <div className="likedButton">
-        <LikedComp></LikedComp>
-      </div>
+
       <div>
         <NavBar></NavBar>
       </div>

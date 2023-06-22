@@ -29,6 +29,10 @@ function NavBar() {
     setCreateNavOpen((prevState) => !prevState);
   }
 
+  function closeCreateNav(){
+    setCreateNavOpen(false)
+  }
+
   const toggleProjectModal = () => {
     setProjectModal((prevState) => !prevState);
   };
@@ -71,12 +75,18 @@ function NavBar() {
       <div className="nav-toda">
         <div className="nav-bar">
           <div className="nav-item">
-            <CarryCase />
-            <a href="/Projects">Projects</a>
+            <Link className="nav-button" to="/Projects">
+              <CarryCase />
+              <p>Projects</p>
+            </Link>
+           
           </div>
           <div className="nav-item">
-            <People />
-            <a href="/Community">Community</a>
+            <Link className="nav-button" to="/Community">
+              <People />
+              <p>Community</p>
+            </Link>
+           
           </div>
           <div className="nav-item">
             <button
@@ -91,18 +101,25 @@ function NavBar() {
             </button>
           </div>
           <div className="nav-item">
-            <Trophy />
-            <a href="/Ranking">Ranking</a>
+            <Link className="nav-button" to="/Ranking">
+              <Trophy />
+              <p>Ranking</p>
+            </Link>
+            
           </div>
-          <div className="nav-item">
-            <Person></Person>
-            <a href="/Profile">Profile</a>
+          <div className="nav-item" >
+            <Link className="nav-button" to="/Profile">
+              <Person></Person>
+              <p>Profile</p>
+            </Link>
+            
           </div>
         </div>
       </div>
       {createNavOpen && (
         <>
           <CreateNav
+            onCloseCreateNav={closeCreateNav}
             onShowCreateNav={showCreateNav}
             onShowCreateProject={showCreateProject}
             onShowCreatePost={showCreatePost}

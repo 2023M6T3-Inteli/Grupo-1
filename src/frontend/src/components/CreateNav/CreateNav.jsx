@@ -11,7 +11,7 @@ function CreateNav (props){
             </div>
             <div className="cardCreateContainer">
                     <button 
-                    onClick={()=>props.onShowCreateProject()}
+                    onClick={()=>{props.onShowCreateProject();props.onCloseCreateNav()}}
                     className="createOption" id="createProject">
                     <label>Create <span style={{ color: '#0672CB' }}>Project</span></label>
                         <CarryCase/>

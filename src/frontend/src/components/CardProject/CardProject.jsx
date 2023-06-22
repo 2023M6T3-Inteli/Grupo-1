@@ -94,7 +94,6 @@ function CardProject(props) {
                             {props.cardLiked && (
                                 <img onClick={() => props.onDisLike()} src={fullHeart} alt="like" />
                             )}
-                            <img src={chat} alt="comment" />
                         </div>
                     </div>
                 </div>

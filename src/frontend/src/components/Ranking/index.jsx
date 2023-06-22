@@ -11,7 +11,8 @@ export default function Ranking() {
   const [user, setDadosUser] = useState(null);
 
   useEffect(() => {
-    axios.get("/getRank")
+    axios
+      .get("/getRank")
       .then((response) => {
         // Armazena os dados da resposta no estado
         console.log(response.data);
@@ -41,43 +42,29 @@ export default function Ranking() {
   if (dados === null) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className="ranking-content">
       <div className="ranking">
         <div className="rankingTable">
           <div className="rankingLine">
             <div className="trophyDiv">
-              <img 
-                className="goldTrophy"
-                src={goldTrophy} 
-                alt="goldTrophy"
-              ></img>
+              <img className="goldTrophy" src={goldTrophy} alt="goldTrophy" />
             </div>
-            
             <div className="postionRankng">{dados[0].fullName}</div>
             <div className="dell-points"> {dados[0].rankPoints} xp</div>
           </div>
           <div className="rankingLine">
             <div className="trophyDiv">
-              <img
-                className="silverTrophy"
-                src={silverTrophy} 
-                alt="silverTrophy"
-              ></img>
+              <img className="silverTrophy" src={silverTrophy} alt="silverTrophy" />
             </div>
-            
             <div className="postionRankng">{dados[1].fullName}</div>
             <div className="dell-points">{dados[1].rankPoints} xp</div>
           </div>
           <div className="rankingLine">
             <div className="trophyDiv">
-              <img 
-                className="bronzeTrophy"
-                src={bronzeTrophy} 
-                alt="bronzeTrophy"
-                ></img>
+              <img className="bronzeTrophy" src={bronzeTrophy} alt="bronzeTrophy" />
             </div>
-            
             <div className="postionRankng">{dados[2].fullName}</div>
             <div className="dell-points">{dados[2].rankPoints} xp</div>
           </div>
@@ -86,8 +73,12 @@ export default function Ranking() {
           </div>
           <div className="user">
             <p className="you">You</p>
-            <div>{user.fullName}</div>
-            <div className="dell-points">{user.rankPoints} xp</div>
+            {user && (
+              <>
+                <div>{user.fullName}</div>
+                <div className="dell-points">{user.rankPoints} xp</div>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -7,11 +7,13 @@ import {useState} from 'react'
 import ManageApply from "../ManageApply/ManageApply"
 import OwnerOptions from "../../components/OwnerOptions/OwnerOptions.jsx"
 import DeleteProject from "../DeleteProject/DeleteProject"
+import ProjectDetail from "../projectDetail/projectDetail";
 
 function CardProjectOwn(props){
     const[manageModal,setManageModal]=useState(false)
     const[ownerOptions,setOwnerOptions]=useState(false)
     const[deleteProject,setDeleteProject]=useState(false)
+    const[pdOpen, setPdOpen] = useState(false);
 
     function showManageModal(){
         setManageModal((prevState)=>!prevState);
@@ -27,13 +29,17 @@ function CardProjectOwn(props){
         setOwnerOptions(false)
     }
 
+    function openClosePD() {
+        setPdOpen((prevState) => !prevState);
+    }
+
     return(
        
         <div className="cardProject">
             <div className="cardHeader">
                 <label className="cardTitle">Web Development</label>
                 <div className="iconsHeader">
-                    <label >+info</label>
+                    <label onClick={() => openClosePD()}>+info</label>
                     <img 
                     onClick={()=>showOwnerOptions()}
                     src={profile} 
@@ -79,7 +85,23 @@ function CardProjectOwn(props){
                     onShowDeleteProject={showDeleteProject}
                     />
                 </>
-            )}      
+            )} 
+            {pdOpen && (
+                <div>
+                    <ProjectDetail
+                        onPdOpen={openClosePD}
+                        title="Web Development"
+                        desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
+                        area="Development"
+                        deadLine="09/01/23"
+                        startDate="09/01/23"
+                        endDate="09/01/23"
+                        status="Recruiting"
+                        jobs={3}
+                        ocupation="Front-End Developer"
+                    />
+                </div>
+            )}     
         </div>
     )
 }

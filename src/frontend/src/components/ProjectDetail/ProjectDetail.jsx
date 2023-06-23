@@ -1,5 +1,7 @@
 import "./ProjectDetail.css"
 import {useState} from 'react'
+
+
 export default function ProjectDetail(props){
 
     const[title,setTitle]=useState(props.title)

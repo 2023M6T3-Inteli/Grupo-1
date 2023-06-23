@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "../../../api";
 import moment from "moment";
 import ProjectDetail from "../projectDetail/projectDetail";
 import ApplyProject from "../ApplyProject/ApplyProject";
@@ -29,6 +29,10 @@ function CardProject(props) {
                 console.error(error);
             });
     }, []);
+
+    useEffect(()=>{
+        axios.get('')
+    },[pdOpen])
 
     if (dados === null) {
         return <div>Loading...</div>;

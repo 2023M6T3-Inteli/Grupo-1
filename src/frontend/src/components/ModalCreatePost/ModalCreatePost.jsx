@@ -158,7 +158,7 @@ export default function ModalCreatePost(props) {
               </div> */}
 
               <div className="submit-create-post">
-                <button className="submit-btn-create-post" type="submit" onClick={() => props.onShowCreateNav()}>Create Post</button>
+                <button className="submit-btn-create-post" type="submit" onClick={() => { props.onShowCreatePost(); props.onShowCreateNav() }}>Create Post</button>
               </div>
 
             </div>

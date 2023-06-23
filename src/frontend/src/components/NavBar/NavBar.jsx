@@ -29,9 +29,6 @@ function NavBar() {
     setCreateNavOpen((prevState) => !prevState);
   }
 
-  function closeCreateNav(){
-    setCreateNavOpen(false)
-  }
 
   const toggleProjectModal = () => {
     setProjectModal((prevState) => !prevState);
@@ -97,7 +94,8 @@ function NavBar() {
                   : toggleProjectModal
               }
             >
-              <Create onShowCreateNav={showCreateNav} />
+              <Create 
+              onShowCreateNav={showCreateNav} />
             </button>
           </div>
           <div className="nav-item">
@@ -119,7 +117,6 @@ function NavBar() {
       {createNavOpen && (
         <>
           <CreateNav
-            onCloseCreateNav={closeCreateNav}
             onShowCreateNav={showCreateNav}
             onShowCreateProject={showCreateProject}
             onShowCreatePost={showCreatePost}

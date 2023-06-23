@@ -158,7 +158,7 @@ export default function Modal(props) {
                 />
               </div>
               <div className="submit">
-                <button className="submit-btn" type="submit" onClick={() => props.onShowCreateNav2()}>Create project</button>
+                <button className="submit-btn" type="submit" onClick={() => { props.onShowCreateProject(); props.onShowCreateNav2() }}>Create project</button>
               </div>
             </div>
           </fieldset>

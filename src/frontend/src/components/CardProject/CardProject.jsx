@@ -14,6 +14,7 @@ function CardProject(props) {
     const [pdOpen, setPdOpen] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedItemId, setSelectedItemId] = useState(null);
+   
 
     const toggleModal = (itemId) => {
         setModalOpen((prevState) => !prevState);
@@ -30,9 +31,6 @@ function CardProject(props) {
             });
     }, []);
 
-    useEffect(()=>{
-        axios.get('')
-    },[pdOpen])
 
     if (dados === null) {
         return <div>Loading...</div>;
@@ -44,6 +42,7 @@ function CardProject(props) {
         setPdOpen((prevState) => !prevState);
     }
 
+    
     return (
         <div className="card-main">
             {dadosInvertidos.map((item, index) => (
@@ -82,16 +81,17 @@ function CardProject(props) {
             {pdOpen && (
                 <div>
                     <ProjectDetail
+                    
                         onPdOpen={openClosePD}
-                        title="Web Development"
-                        desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
-                        area="Development"
-                        deadLine="09/01/23"
-                        startDate="09/01/23"
-                        endDate="09/01/23"
-                        status="Recruiting"
-                        jobs={3}
-                        ocupation="Front-End Developer"
+                        // title={dados.project.name}
+                        // desc="Eu estou assistindo a aula de negocios no inteli e estou tendo uma paastra na aula da lisane"
+                        // area="Development"
+                        // deadLine="09/01/23"
+                        // startDate="09/01/23"
+                        // endDate="09/01/23"
+                        // status="Recruiting"
+                        // jobs={3}
+                        // ocupation="Front-End Developer"
                     />
                 </div>
             )}

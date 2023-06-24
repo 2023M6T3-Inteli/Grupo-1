@@ -20,7 +20,7 @@ Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenhar
 
 # Descrição
 
-*Descrição_resumida_do_projeto*
+Como o problema está centrado na falta de engajamento e motivação dos funcionários em relação à Dell, urge que uma solução seja construída com base nesse óbice. Dessa forma, foi pensado como paliação um sistema que oferecesse e entregasse conteúdos que fizessem com que os funcionários pegassem o celular fora do horário de trabalho, fazendo com que eles queiram participar de projetos da empresa e que queiram aprender novos assuntos. Um dos benefícios esperados é a otimização do processo de seleção de tópicos interessantes por meio do sistema de recomendação. Outro benefício esperado é o aumento da transparência e comunicação entre os colaboradores, permitindo troca de feedbacks e críticas construtivas.
 
 # Descrição da Base de Dados
 
@@ -73,4 +73,4 @@ Por último nessa sprint 4 temos a parte de comunicação assíncrona, no moment
 
 # Documentação
 
-Os arquivos da documentação deste projeto estão na pasta [/docs](/docs), e o seu conteúdo é publicado via GitHub Pages.
+Os arquivos da documentação deste projeto estão na pasta [docs/index.md](docs/index.md), e o seu conteúdo é publicado via GitHub Pages.

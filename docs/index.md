@@ -694,7 +694,7 @@ Por último nessa sprint 4 temos a parte de comunicação assíncrona, no moment
 
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
 
-file:///C:/Users/Inteli/Downloads/Manual%20do%20usu%C3%A1rio%20Dell%20Genius.pdf
+https://www.canva.com/design/DAFmeXym_Uw/3-4DmjnlKDqeZn4yt-oBGw/edit?utm_content=DAFmeXym_Uw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
 # Referências
